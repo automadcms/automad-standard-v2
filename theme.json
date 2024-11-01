@@ -1,0 +1,25 @@
+{
+  "name": "The New Standard",
+  "description": "The official Automad 2 theme",
+  "author": "Marc Anton Dahmen",
+  "version": "0.1.0",
+  "license": "MIT",
+  "masks": {
+    "page": [
+      "imageFavicon", 
+      "imageAppleTouchIcon", 
+      "checkboxEnableSearch"
+    ],
+    "shared": [
+      "+hero", 
+      "+main", 
+      "checkboxShowPageInNavbar", 
+      "checkboxShowPageInFooterPrimary", 
+      "checkboxShowPageInFooterSecondary"
+    ]
+  },
+  "tooltips": {
+    "+hero": "The hero section",
+    "+main": "The main content block area"
+  }
+}

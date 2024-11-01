@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"allowJs": true,
+		"checkJs": false,
+		"moduleResolution": "node",
+		"noImplicitAny": true,
+		"preserveConstEnums": false,
+		"resolveJsonModule": true,
+		"target": "es6",
+		"outDir": "dist",
+		"paths": {
+			"@/*": ["./client/*"]
+		}
+	},
+	"exclude": ["node_modules", "dist"]
+}
