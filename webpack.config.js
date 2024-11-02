@@ -6,6 +6,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const pkg = require('./package.json');
 
+const optimizeTemplate = (html) => {
+	return html
+		.replace(/\$\{"([^"]+)"(\s\/\*\s[\w\.\-]+\s\*\/)?\}/g, '$1')
+		.replace(/\s+/g, ' ')
+		.replace(/\<\s+/g, '<')
+		.replace(/\s+\>/g, '>')
+		.replace(/\>\s+\</g, '><')
+		.replace(/(^`\s|\s`$)/g, '`');
+};
+
 module.exports = (env, argv) => {
 	const devMode = argv.mode === 'development';
 	const config = {
@@ -20,7 +30,20 @@ module.exports = (env, argv) => {
 			rules: [
 				{
 					test: /\.ts$/,
-					use: ['ts-loader'],
+					use: [
+						{
+							loader: 'string-replace-loader',
+							options: {
+								search: /(`[^`]+`)/g,
+								replace(match, p1, offset, string) {
+									return optimizeTemplate(p1);
+								},
+							},
+						},
+						{
+							loader: 'ts-loader',
+						},
+					],
 					exclude: /node_modules/,
 				},
 				{
