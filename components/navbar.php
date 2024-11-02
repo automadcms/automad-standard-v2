@@ -31,6 +31,7 @@
 <@ snippet navbar ~@>
 	<@ navbarBrand @>	
 	<@ navbarNav @>
+	<std-theme-switcher></std-theme-switcher>
 	<@ navbarSearch @>
 <@~ end ~@>
 
