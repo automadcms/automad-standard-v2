@@ -5,16 +5,12 @@
   "version": "0.1.0",
   "license": "MIT",
   "masks": {
-    "page": [
-      "imageFavicon", 
-      "imageAppleTouchIcon", 
-      "checkboxEnableSearch"
-    ],
+    "page": ["imageFavicon", "imageAppleTouchIcon", "checkboxDisableSearch"],
     "shared": [
-      "+hero", 
-      "+main", 
-      "checkboxShowPageInNavbar", 
-      "checkboxShowPageInFooterPrimary", 
+      "+hero",
+      "+main",
+      "checkboxShowPageInNavbar",
+      "checkboxShowPageInFooterPrimary",
       "checkboxShowPageInFooterSecondary"
     ]
   },
