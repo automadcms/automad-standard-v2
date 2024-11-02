@@ -1,0 +1,53 @@
+.std-search {
+	&__modal {
+		position: fixed;
+		z-index: 9999;
+		display: none;
+		justify-content: center;
+		align-items: start;
+		inset: 0;
+
+		&--open {
+			display: flex;
+		}
+
+		&-backdrop {
+			position: fixed;
+			inset: 0;
+			background-color: var(--std-search-modal-backdrop-bg);
+			opacity: var(--std-search-modal-backdrop-opacity);
+		}
+
+		&-dialog {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			width: var(--std-search-modal-dialog-width);
+			background-color: var(--std-bg);
+		}
+	}
+
+	&__input {
+	}
+
+	&__results {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__result {
+		display: flex;
+		flex-direction: column;
+		text-decoration: none;
+
+		&--selected {
+			background-color: var(--std-search-result-selected-bg);
+		}
+
+		&-title {
+		}
+
+		&-context {
+		}
+	}
+}
