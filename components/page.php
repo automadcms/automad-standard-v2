@@ -10,7 +10,9 @@
 	<@ with @{ imageAppleTouchIcon } ~@>
 		<link href="@{ :file }" rel="apple-touch-icon" />
 	<@~ end @>
+	<link href="/packages/@{ theme }/dist/vendor.bundle.css" rel="stylesheet">
 	<link href="/packages/@{ theme }/dist/main.bundle.css" rel="stylesheet">
+	<script src="/packages/@{ theme }/dist/vendor.bundle.js" type="text/javascript"></script>
 	<script src="/packages/@{ theme }/dist/main.bundle.js" type="text/javascript"></script>
 </head>
 <body>

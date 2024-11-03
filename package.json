@@ -16,6 +16,7 @@
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "mini-css-extract-plugin": "^2.9.2",
+    "modern-normalize": "^3.0.1",
     "string-replace-loader": "^3.1.0",
     "terser-webpack-plugin": "^5.3.10",
     "ts-loader": "^9.5.1",
