@@ -31,7 +31,9 @@
 <@ snippet navbar ~@>
 	<@ navbarBrand @>	
 	<@ navbarNav @>
-	<std-theme-switcher></std-theme-switcher>
+	<@ if @{ selectColorTheme | def ('switcher') } = 'switcher' @>
+		<std-theme-switcher></std-theme-switcher>
+	<@ end @>
 	<@ navbarSearch @>
 <@~ end ~@>
 

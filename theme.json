@@ -14,6 +14,13 @@
       "checkboxShowPageInFooterSecondary"
     ]
   },
+  "options": {
+    "selectColorTheme": {
+      "switcher": "Show Theme Switcher",
+      "light": "Light Theme",
+      "dark": "Dark Theme"
+    }
+  },
   "tooltips": {
     "+hero": "The hero section",
     "+main": "The main content block area"
