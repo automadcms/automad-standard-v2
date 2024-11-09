@@ -1,4 +1,13 @@
-<@ snippet footerNav @>
+<# 
+
+Automad Standard v2
+
+Copyright (c) 2024 by Marc Anton Dahmen, MIT license
+https://marcdahmen.de
+
+#>
+
+<@~ snippet footerNav @>
 	<@ if @{ :pagelistCount} @>
 		<nav>
 			<@ foreach in pagelist ~@>
@@ -8,25 +17,25 @@
 	<@ end @>
 <@ end @>
 
-<@ snippet footerNavPrimary ~@>
+<@~ snippet footerNavPrimary ~@>
 	<# @{ checkboxShowPageInFooterPrimary } #>
 	<@ newPagelist { 
 		excludeHidden: false, 
 		match: '{ "checkboxShowPageInFooterPrimary": "/[^0]+/" }' 
 	} ~@>
 	<@ footerNav @>
-<@~ end ~@>
+<@~ end @>
 
-<@ snippet footerNavSecondary ~@>
+<@~ snippet footerNavSecondary ~@>
 	<# @{ checkboxShowPageInFooterSecondary } #>
 	<@ newPagelist { 
 		excludeHidden: false, 
 		match: '{ "checkboxShowPageInFooterSecondary": "/[^0]+/" }' 
 	} ~@>
 	<@ footerNav @>
-<@~ end ~@>
+<@~ end @>
 
-<@ snippet footer ~@>
+<@~ snippet footer ~@>
 	<footer>
 		<@ footerNavPrimary @>
 		<@ footerNavSecondary @>

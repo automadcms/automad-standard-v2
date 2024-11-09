@@ -1,3 +1,10 @@
+/*
+ * Automad Standard v2
+ *
+ * Copyright 2024 Marc Anton Dahmen, MIT license
+ * https://marcdahmen.de
+ */
+
 export const create = (
 	tag: string,
 	classes: string[] = [],

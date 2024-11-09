@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<# 
+
+Automad Standard v2
+
+Copyright (c) 2024 by Marc Anton Dahmen, MIT license
+https://marcdahmen.de
+
+#><!DOCTYPE html>
 <html lang="en" class="@{ template | sanitize }<@ if @{ selectColorTheme | def ('switcher') } != 'switcher' @> @{ selectColorTheme }<@ end @>">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -1,8 +1,17 @@
-<@ snippet treeLink ~@>
-	<a href="@{ url }">@{title}</a>
-<@~ end ~@>
+<# 
 
-<@ snippet treeNode ~@>
+Automad Standard v2
+
+Copyright (c) 2024 by Marc Anton Dahmen, MIT license
+https://marcdahmen.de
+
+#>
+
+<@~ snippet treeLink ~@>
+	<a href="@{ url }">@{title}</a>
+<@~ end @>
+
+<@~ snippet treeNode ~@>
 	<li class="level-@{ :level }<@ if @{ :current } @> active<@ end @>">
 		<@ treeLink @>
 		<@ if @{ :pagelistCount } and @{ :currentPath } ~@>
@@ -11,9 +20,9 @@
 			</ul>
 		<@~ end ~@>
 	</li>	
-<@~ end ~@>
+<@~ end @>
 
-<@ snippet tree ~@>
+<@~ snippet tree ~@>
 	<@ newPagelist {
 		context: false,
 		type: 'children'
@@ -22,9 +31,9 @@
 	<@~ foreach in pagelist @>
 		<@~ treeNode ~@>
 	<@ end ~@>
-<@ end ~@>
+<@~ end @>
 
-<@ snippet sidebar ~@>
+<@~ snippet sidebar ~@>
 	<aside>
 		<@ with '/' ~@>
 			<ul>

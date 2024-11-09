@@ -1,8 +1,17 @@
-<@ snippet navbarBrand @>
+<# 
+
+Automad Standard v2
+
+Copyright (c) 2024 by Marc Anton Dahmen, MIT license
+https://marcdahmen.de
+
+#>
+
+<@~ snippet navbarBrand @>
 	Brand
 <@ end @>
 
-<@ snippet navbarNav @>
+<@~ snippet navbarNav @>
 	<# @{ checkboxShowPageInNavbar } #>
 	<@ newPagelist { 
 		excludeHidden: false, 
@@ -17,7 +26,7 @@
 	<@ end @>
 <@ end @>
 
-<@ snippet navbarSearch @>
+<@~ snippet navbarSearch @>
 	<@ if not @{ checkboxDisableSearch } @>
 		<std-search src="/_api/public/pagelist">
 			Search
@@ -28,7 +37,7 @@
 	<@ end @>	
 <@ end @>
 
-<@ snippet navbar ~@>
+<@~ snippet navbar ~@>
 	<@ navbarBrand @>	
 	<@ navbarNav @>
 	<@ if @{ selectColorTheme | def ('switcher') } = 'switcher' @>

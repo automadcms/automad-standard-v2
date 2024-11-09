@@ -1,29 +1,55 @@
+/*
+ * Automad Standard v2
+ *
+ * Copyright 2024 Marc Anton Dahmen, MIT license
+ * https://marcdahmen.de
+ */
+
 .std-search {
 	&__modal {
 		position: fixed;
 		z-index: 9999;
-		display: none;
+		display: flex;
 		justify-content: center;
 		align-items: start;
 		inset: 0;
-
-		&--open {
-			display: flex;
-		}
+		pointer-events: none;
 
 		&-backdrop {
 			position: fixed;
 			inset: 0;
 			background-color: var(--std-search-modal-backdrop-bg);
-			opacity: var(--std-search-modal-backdrop-opacity);
+			backdrop-filter: blur(30px);
+			pointer-events: none;
+			opacity: 0;
+			transition: opacity 0.2s;
+		}
+
+		&--open &-backdrop {
+			opacity: 1;
+			pointer-events: all;
 		}
 
 		&-dialog {
 			position: relative;
 			display: flex;
 			flex-direction: column;
+			top: 5rem;
 			width: var(--std-search-modal-dialog-width);
-			background-color: var(--std-bg);
+			max-height: ~'calc(100vh - 8rem)';
+			background-color: var(--std-search-modal-dialog-bg);
+			pointer-events: none;
+			opacity: 0;
+			transform: translateY(-15px);
+			transition:
+				opacity 0.2s,
+				transform 0.2s;
+		}
+
+		&--open &-dialog {
+			opacity: 1;
+			pointer-events: all;
+			transform: translateY(0);
 		}
 	}
 
@@ -45,9 +71,11 @@
 		}
 
 		&-title {
+			color: var(--std-search-result-title);
 		}
 
 		&-context {
+			color: var(--std-search-result-context);
 		}
 	}
 }
