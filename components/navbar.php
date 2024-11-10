@@ -38,12 +38,16 @@ https://marcdahmen.de
 <@ end @>
 
 <@~ snippet navbar ~@>
-	<@ navbarBrand @>	
-	<@ navbarNav @>
-	<@ if @{ selectColorTheme | def ('switcher') } = 'switcher' @>
-		<std-theme-switcher></std-theme-switcher>
-	<@ end @>
-	<@ navbarSearch @>
+	<div class="std-layout__brand">
+		<@ navbarBrand @>	
+	</div>
+	<div class="std-layout__nav">
+		<@ navbarNav @>
+		<@ navbarSearch @>
+		<@ if @{ selectColorTheme | def ('switcher') } = 'switcher' @>
+			<std-theme-switcher></std-theme-switcher>
+		<@ end @>
+	</div>
 <@~ end ~@>
 
 <@ navbar @>

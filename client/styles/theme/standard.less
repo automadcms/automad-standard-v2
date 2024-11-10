@@ -1,17 +1,31 @@
-:root {
-	--std-bg: #ffffff;
-	--std-fg: #111111;
+/*
+ * Automad Standard v2
+ *
+ * Copyright 2024 Marc Anton Dahmen, MIT license
+ * https://marcdahmen.de
+ */
 
-	--std-search-modal-backdrop-bg: var(--std-bg);
-	--std-search-modal-backdrop-opacity: 0.7;
-	--std-search-modal-dialog-width: 40rem;
-	--std-search-result-selected-bg: #f0f0f0;
+@import './blocks.less';
+
+:root {
+	--std-fg: #111111;
+	--std-muted-fg: #555555;
+	--std-bg: #ffffff;
+	--std-highlight-bg: #dddddd;
+	--std-backdrop-bg: rgba(180, 180, 180, 0.2);
+
+	// Search Modal
+	--std-search-modal-backdrop-bg: var(--std-backdrop-bg);
+	--std-search-modal-dialog-bg: var(--std-bg);
+	--std-search-result-selected-bg: var(--std-highlight-bg);
+	--std-search-result-title: var(--std-fg);
+	--std-search-result-context: var(--std-muted-fg);
 }
 
 .dark {
-	--std-bg: #111111;
 	--std-fg: #eeeeee;
-
-	--std-search-modal-backdrop-bg: var(--std-bg);
-	--std-search-result-selected-bg: #181818;
+	--std-muted-fg: #999999;
+	--std-bg: #111111;
+	--std-highlight-bg: #222222;
+	--std-backdrop-bg: rgba(25, 25, 25, 0.2);
 }

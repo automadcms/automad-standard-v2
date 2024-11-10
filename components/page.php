@@ -23,6 +23,8 @@ https://marcdahmen.de
 	<script src="/packages/@{ theme }/dist/main.bundle.js" type="text/javascript"></script>
 </head>
 <body>
-	<@ layout.php @>
+	<div class="std-layout std-layout--@{ template | sanitize }">
+		<@ layout.php @>
+	</div>
 </body>
 </html>

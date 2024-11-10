@@ -36,8 +36,10 @@ https://marcdahmen.de
 <@~ end @>
 
 <@~ snippet footer ~@>
-	<footer>
+	<footer class="std-layout__footer-1">
 		<@ footerNavPrimary @>
+	</footer>
+	<footer class="std-layout__footer-2">
 		<@ footerNavSecondary @>
 	</footer>
 <@~ end ~@>

@@ -10,7 +10,10 @@ https://marcdahmen.de
 <@~ snippet layout ~@>
 	<@ navbar.php @>
 	<@ sidebar.php @>
+	<@ subnav.php @>
+	<@ title.php @>
 	<@ main.php @>
+	<@ toc.php @>
 	<@ footer.php @>
 <@~ end ~@>
 

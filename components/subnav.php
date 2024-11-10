@@ -7,10 +7,8 @@ https://marcdahmen.de
 
 #>
 
-<@~ snippet main ~@>
-	<main class="std-layout__main">
-		@{ +main }
-	</main>
+<@~ snippet subnav @>
+	<nav class="std-layout__subnav">Subnav</nav>	
 <@~ end ~@>
 
-<@ main @>
+<@ subnav @>

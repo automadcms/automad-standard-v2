@@ -1,0 +1,239 @@
+/*
+ * Automad Standard v2
+ *
+ * Copyright 2024 Marc Anton Dahmen, MIT license
+ * https://marcdahmen.de
+ */
+
+html,
+body {
+	min-height: 100%;
+}
+
+body {
+	padding: 1.5rem;
+}
+
+.std-layout {
+	display: grid;
+	align-items: start;
+	width: @std-layout-width;
+	min-height: 100%;
+	margin: 0 auto;
+	--title-height: auto;
+	--title-space: 2rem;
+	--block-margin-left: auto;
+
+	grid-template-rows:
+		[navbar-top]
+		auto
+		[navbar-bottom]
+		6rem
+		[subnav-top]
+		auto
+		[subnav-bottom]
+		2rem
+		[title-top]
+		var(--title-height)
+		[title-bottom]
+		var(--title-space)
+		[main-top]
+		1fr
+		[main-bottom]
+		6rem
+		[footer-top]
+		auto
+		[footer-bottom];
+
+	&--page-sidebar {
+		@space-aside-to-main: (
+			(@std-layout-width - (@std-aside-width * 2) - @std-block-width) / 2
+		);
+		@gap-footer: 4rem;
+		@footer-width: ((@std-block-width - @gap-footer) / 2);
+		--block-margin-left: 0px;
+
+		grid-template-columns:
+			[brand-start] 0 [sidebar-start]
+			@std-aside-width
+			[brand-end] 0 [sidebar-end]
+			@space-aside-to-main
+			[nav-start] 0 [subnav-start] 0 [title-start] 0 [main-start] 0 [footer-1-start]
+			@footer-width
+			[footer-1-end]
+			@gap-footer
+			[footer-2-start]
+			@footer-width
+			[subnav-end] 0 [title-end] 0 [footer-2-end]
+			@std-aside-width + @space-aside-to-main
+			[main-end] 0 [nav-end];
+	}
+
+	&--page-sidebar-and-toc {
+		@space-aside-to-main: 2rem;
+		@space-main-to-title: (
+			(
+					@std-layout-width - (2 * @std-aside-width) -
+						@std-block-width - (2 * @space-aside-to-main)
+				) / 2
+		);
+		@gap-footer: 4rem;
+		@footer-width: ((@std-block-width - @gap-footer) / 2);
+
+		grid-template-columns:
+			[brand-start] 0px [sidebar-start]
+			@std-aside-width
+			[brand-end] 0px [sidebar-end]
+			@space-aside-to-main
+			[main-start]
+			@space-main-to-title
+			[nav-start] 0px [subnav-start] 0px [title-start] 0px [footer-1-start]
+			@footer-width
+			[footer-1-end]
+			@gap-footer
+			[footer-2-start]
+			@footer-width
+			[subnav-end] 0px [title-end] 0px [footer-2-end]
+			@space-main-to-title
+			[main-end]
+			@space-aside-to-main
+			[toc-start]
+			@std-aside-width
+			[nav-end] 0px [toc-end];
+	}
+
+	&--page-full-width-centered {
+		@space-brand-to-nav: 4rem;
+		@space-side: ((@std-layout-width - @std-block-width) / 2);
+		@brand-width: (@space-side - @space-brand-to-nav);
+		@gap-footer: 4rem;
+		@footer-width: ((@std-block-width - @gap-footer) / 2);
+
+		grid-template-columns:
+			[brand-start] 0 [main-start]
+			@brand-width
+			[brand-end]
+			@space-brand-to-nav
+			[nav-start] 0 [subnav-start] 0 [title-start] 0 [footer-1-start]
+			@footer-width
+			[footer-1-end]
+			@gap-footer
+			[footer-2-start]
+			@footer-width
+			[subnav-end] 0 [title-end] 0 [footer-2-end]
+			@space-side
+			[nav-end] 0 [main-end];
+	}
+
+	&--page-full-width-left {
+		@gap: ((@std-layout-width / 2) - @std-block-width);
+		--block-margin-left: 0px;
+
+		grid-template-columns:
+			[brand-start] 0 [subnav-start] 0 [title-start] 0 [main-start] 0 [footer-1-start]
+			@std-block-width
+			[brand-end] 0 [subnav-end] 0 [title-end] 0 [footer-1-end]
+			@gap
+			[nav-start] 0 [footer-2-start]
+			50%
+			[nav-end] 0 [main-end] 0 [footer-2-end];
+	}
+
+	&--page-full-width-left-and-toc {
+		@gap: ((@std-layout-width / 2) - @std-block-width);
+		@space-nav-start-to-main-end: (
+			(@std-layout-width / 2) - @std-aside-width - @gap
+		);
+		--block-margin-left: 0px;
+
+		grid-template-columns:
+			[brand-start] 0 [subnav-start] 0 [title-start] 0 [main-start] 0 [footer-1-start]
+			@std-block-width
+			[brand-end] 0 [subnav-end] 0 [title-end] 0 [footer-1-end]
+			@gap
+			[nav-start] 0 [footer-2-start]
+			@space-nav-start-to-main-end
+			[main-end]
+			@gap
+			[toc-start]
+			@std-aside-width
+			[nav-end] 0 [toc-end] 0 [footer-2-end];
+	}
+
+	&--page-split {
+		@gap: 4rem;
+		--title-height: 0px;
+		--title-space: 0px;
+		--block-margin-left: 0px;
+
+		grid-template-columns:
+			[brand-start] 0 [subnav-start] 0 [title-start] 0 [footer-1-start]
+			~'calc(50% - @{gap})'
+			[brand-end] 0 [subnav-end] 0 [title-end] 0 [footer-1-end]
+			@gap
+			[nav-start] 0 [main-start] 0 [footer-2-start]
+			50%
+			[nav-end] 0 [main-end] 0 [footer-2-end];
+	}
+
+	& .am-block {
+		margin-left: var(--block-margin-left);
+
+		& .am-block {
+			margin-left: auto;
+		}
+	}
+
+	&__brand {
+		grid-column: brand-start / brand-end;
+		grid-row: navbar-top / navbar-bottom;
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		grid-column: nav-start / nav-end;
+		grid-row: navbar-top / navbar-bottom;
+	}
+
+	&__subnav {
+		grid-column: subnav-start / subnav-end;
+		grid-row: subnav-top / subnav-bottom;
+	}
+
+	&__sidebar {
+		grid-column: sidebar-start / sidebar-end;
+		grid-row: main-top / main-bottom;
+	}
+
+	&__title {
+		grid-column: title-start / title-end;
+		grid-row: title-top / title-bottom;
+	}
+
+	&__main {
+		grid-column: main-start / main-end;
+		grid-row: main-top / main-bottom;
+	}
+
+	&__toc {
+		grid-column: toc-start / toc-end;
+		grid-row: main-top / main-bottom;
+	}
+
+	&__footer-1 {
+		display: flex;
+		grid-column: footer-1-start / footer-1-end;
+		grid-row: footer-top / footer-bottom;
+	}
+
+	&__footer-2 {
+		display: flex;
+		grid-column: footer-2-start / footer-2-end;
+		grid-row: footer-top / footer-bottom;
+	}
+
+	& > * {
+		border: 1px solid red;
+	}
+}

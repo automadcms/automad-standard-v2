@@ -7,10 +7,8 @@ https://marcdahmen.de
 
 #>
 
-<@~ snippet main ~@>
-	<main class="std-layout__main">
-		@{ +main }
-	</main>
+<@~ snippet toc @>
+	<aside class="std-layout__toc">Toc</aside>	
 <@~ end ~@>
 
-<@ main @>
+<@ toc @>

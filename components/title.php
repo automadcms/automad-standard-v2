@@ -7,10 +7,10 @@ https://marcdahmen.de
 
 #>
 
-<@~ snippet main ~@>
-	<main class="std-layout__main">
-		@{ +main }
-	</main>
+<@~ snippet title @>
+	<div class="std-layout__title">
+		<h1>@{ title }</h1>
+	</div>
 <@~ end ~@>
 
-<@ main @>
+<@ title @>

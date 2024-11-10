@@ -7,10 +7,7 @@ https://marcdahmen.de
 
 #>
 
-<@~ snippet main ~@>
-	<main class="std-layout__main">
-		@{ +main }
-	</main>
-<@~ end ~@>
+<@~ components/page.php @>
 
-<@ main @>
+<@ snippet toc @>
+<@ end @>

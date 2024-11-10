@@ -34,7 +34,7 @@ https://marcdahmen.de
 <@~ end @>
 
 <@~ snippet sidebar ~@>
-	<aside>
+	<aside class="std-layout__sidebar">
 		<@ with '/' ~@>
 			<ul>
 				<li class="level-1<@ if @{ :current } @> active<@ end @>"><@ treeLink @></li>	
