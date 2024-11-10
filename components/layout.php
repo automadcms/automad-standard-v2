@@ -9,6 +9,7 @@ https://marcdahmen.de
 
 <@~ snippet layout ~@>
 	<@ navbar.php @>
+	<@ hero.php @>
 	<@ sidebar.php @>
 	<@ subnav.php @>
 	<@ title.php @>

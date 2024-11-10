@@ -28,7 +28,11 @@ body {
 		[navbar-top]
 		auto
 		[navbar-bottom]
-		6rem
+		2rem
+		[hero-top]
+		auto
+		[hero-bottom]
+		4rem
 		[subnav-top]
 		auto
 		[subnav-bottom]
@@ -54,7 +58,7 @@ body {
 		--block-margin-left: 0px;
 
 		grid-template-columns:
-			[brand-start] 0 [sidebar-start]
+			[brand-start] 0 [hero-start] 0 [sidebar-start]
 			@std-aside-width
 			[brand-end] 0 [sidebar-end]
 			@space-aside-to-main
@@ -66,10 +70,10 @@ body {
 			@footer-width
 			[subnav-end] 0 [title-end] 0 [footer-2-end]
 			@std-aside-width + @space-aside-to-main
-			[main-end] 0 [nav-end];
+			[nav-end] 0 [hero-end] 0 [main-end];
 	}
 
-	&--page-sidebar-and-toc {
+	&--page-sidebar-and-toc-centered {
 		@space-aside-to-main: 2rem;
 		@space-main-to-title: (
 			(
@@ -81,25 +85,25 @@ body {
 		@footer-width: ((@std-block-width - @gap-footer) / 2);
 
 		grid-template-columns:
-			[brand-start] 0px [sidebar-start]
+			[brand-start] 0 [hero-start] 0 [sidebar-start]
 			@std-aside-width
-			[brand-end] 0px [sidebar-end]
+			[brand-end] 0 [sidebar-end]
 			@space-aside-to-main
 			[main-start]
 			@space-main-to-title
-			[nav-start] 0px [subnav-start] 0px [title-start] 0px [footer-1-start]
+			[nav-start] 0 [subnav-start] 0 [title-start] 0 [footer-1-start]
 			@footer-width
 			[footer-1-end]
 			@gap-footer
 			[footer-2-start]
 			@footer-width
-			[subnav-end] 0px [title-end] 0px [footer-2-end]
+			[subnav-end] 0 [title-end] 0 [footer-2-end]
 			@space-main-to-title
 			[main-end]
 			@space-aside-to-main
 			[toc-start]
 			@std-aside-width
-			[nav-end] 0px [toc-end];
+			[nav-end] 0 [hero-end] 0 [toc-end];
 	}
 
 	&--page-full-width-centered {
@@ -110,7 +114,7 @@ body {
 		@footer-width: ((@std-block-width - @gap-footer) / 2);
 
 		grid-template-columns:
-			[brand-start] 0 [main-start]
+			[brand-start] 0 [hero-start] 0 [main-start]
 			@brand-width
 			[brand-end]
 			@space-brand-to-nav
@@ -122,7 +126,7 @@ body {
 			@footer-width
 			[subnav-end] 0 [title-end] 0 [footer-2-end]
 			@space-side
-			[nav-end] 0 [main-end];
+			[nav-end] 0 [hero-end] 0 [main-end];
 	}
 
 	&--page-full-width-left {
@@ -130,13 +134,13 @@ body {
 		--block-margin-left: 0px;
 
 		grid-template-columns:
-			[brand-start] 0 [subnav-start] 0 [title-start] 0 [main-start] 0 [footer-1-start]
+			[brand-start] 0 [hero-start] 0 [subnav-start] 0 [title-start] 0 [main-start] 0 [footer-1-start]
 			@std-block-width
 			[brand-end] 0 [subnav-end] 0 [title-end] 0 [footer-1-end]
 			@gap
 			[nav-start] 0 [footer-2-start]
 			50%
-			[nav-end] 0 [main-end] 0 [footer-2-end];
+			[nav-end] 0 [hero-end] 0 [main-end] 0 [footer-2-end];
 	}
 
 	&--page-full-width-left-and-toc {
@@ -147,7 +151,7 @@ body {
 		--block-margin-left: 0px;
 
 		grid-template-columns:
-			[brand-start] 0 [subnav-start] 0 [title-start] 0 [main-start] 0 [footer-1-start]
+			[brand-start] 0 [hero-start] 0 [subnav-start] 0 [title-start] 0 [main-start] 0 [footer-1-start]
 			@std-block-width
 			[brand-end] 0 [subnav-end] 0 [title-end] 0 [footer-1-end]
 			@gap
@@ -157,7 +161,7 @@ body {
 			@gap
 			[toc-start]
 			@std-aside-width
-			[nav-end] 0 [toc-end] 0 [footer-2-end];
+			[nav-end] 0 [hero-end] 0 [toc-end] 0 [footer-2-end];
 	}
 
 	&--page-split {
@@ -167,13 +171,13 @@ body {
 		--block-margin-left: 0px;
 
 		grid-template-columns:
-			[brand-start] 0 [subnav-start] 0 [title-start] 0 [footer-1-start]
+			[brand-start] 0 [hero-start] 0 [subnav-start] 0 [title-start] 0 [footer-1-start]
 			~'calc(50% - @{gap})'
 			[brand-end] 0 [subnav-end] 0 [title-end] 0 [footer-1-end]
 			@gap
 			[nav-start] 0 [main-start] 0 [footer-2-start]
 			50%
-			[nav-end] 0 [main-end] 0 [footer-2-end];
+			[nav-end] 0 [hero-end] 0 [main-end] 0 [footer-2-end];
 	}
 
 	& .am-block {
@@ -194,6 +198,11 @@ body {
 		justify-content: space-between;
 		grid-column: nav-start / nav-end;
 		grid-row: navbar-top / navbar-bottom;
+	}
+
+	&__hero {
+		grid-column: hero-start / hero-end;
+		grid-row: hero-top / hero-bottom;
 	}
 
 	&__subnav {
