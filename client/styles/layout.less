@@ -24,6 +24,7 @@ body {
 	--title-space: 2rem;
 	--block-margin-left: auto;
 
+	grid-template-columns: var(--columns);
 	grid-template-rows:
 		[navbar-top]
 		auto
@@ -53,24 +54,26 @@ body {
 		@space-aside-to-main: (
 			(@std-layout-width - (@std-aside-width * 2) - @std-block-width) / 2
 		);
+		@space-main-end: (@std-aside-width + @space-aside-to-main);
 		@gap-footer: 4rem;
 		@footer-width: ((@std-block-width - @gap-footer) / 2);
 		--block-margin-left: 0px;
 
-		grid-template-columns:
-			[brand-start] 0 [hero-start] 0 [sidebar-start]
+		/* prettier-ignore */
+		--columns:
+			[brand-start hero-start sidebar-start]
 			@std-aside-width
-			[brand-end] 0 [sidebar-end]
+			[brand-end sidebar-end]
 			@space-aside-to-main
-			[nav-start] 0 [subnav-start] 0 [title-start] 0 [main-start] 0 [footer-1-start]
+			[nav-start subnav-start title-start main-start footer-1-start]
 			@footer-width
 			[footer-1-end]
 			@gap-footer
 			[footer-2-start]
 			@footer-width
-			[subnav-end] 0 [title-end] 0 [footer-2-end]
-			@std-aside-width + @space-aside-to-main
-			[nav-end] 0 [hero-end] 0 [main-end];
+			[subnav-end title-end footer-2-end]
+			@space-main-end
+			[nav-end hero-end main-end];
 	}
 
 	&--page-sidebar-and-toc-centered {
@@ -84,26 +87,27 @@ body {
 		@gap-footer: 4rem;
 		@footer-width: ((@std-block-width - @gap-footer) / 2);
 
-		grid-template-columns:
-			[brand-start] 0 [hero-start] 0 [sidebar-start]
+		/* prettier-ignore */
+		--columns:
+			[brand-start hero-start sidebar-start]
 			@std-aside-width
-			[brand-end] 0 [sidebar-end]
+			[brand-end sidebar-end]
 			@space-aside-to-main
 			[main-start]
 			@space-main-to-title
-			[nav-start] 0 [subnav-start] 0 [title-start] 0 [footer-1-start]
+			[nav-start subnav-start title-start footer-1-start]
 			@footer-width
 			[footer-1-end]
 			@gap-footer
 			[footer-2-start]
 			@footer-width
-			[subnav-end] 0 [title-end] 0 [footer-2-end]
+			[subnav-end title-end footer-2-end]
 			@space-main-to-title
 			[main-end]
 			@space-aside-to-main
 			[toc-start]
 			@std-aside-width
-			[nav-end] 0 [hero-end] 0 [toc-end];
+			[nav-end hero-end toc-end];
 	}
 
 	&--page-full-width-centered {
@@ -113,34 +117,36 @@ body {
 		@gap-footer: 4rem;
 		@footer-width: ((@std-block-width - @gap-footer) / 2);
 
-		grid-template-columns:
-			[brand-start] 0 [hero-start] 0 [main-start]
+		/* prettier-ignore */
+		--columns:
+			[brand-start hero-start main-start]
 			@brand-width
 			[brand-end]
 			@space-brand-to-nav
-			[nav-start] 0 [subnav-start] 0 [title-start] 0 [footer-1-start]
+			[nav-start subnav-start title-start footer-1-start]
 			@footer-width
 			[footer-1-end]
 			@gap-footer
 			[footer-2-start]
 			@footer-width
-			[subnav-end] 0 [title-end] 0 [footer-2-end]
+			[subnav-end title-end footer-2-end]
 			@space-side
-			[nav-end] 0 [hero-end] 0 [main-end];
+			[nav-end hero-end main-end];
 	}
 
 	&--page-full-width-left {
 		@gap: ((@std-layout-width / 2) - @std-block-width);
 		--block-margin-left: 0px;
 
-		grid-template-columns:
-			[brand-start] 0 [hero-start] 0 [subnav-start] 0 [title-start] 0 [main-start] 0 [footer-1-start]
+		/* prettier-ignore */
+		--columns:
+			[brand-start hero-start subnav-start title-start main-start footer-1-start]
 			@std-block-width
-			[brand-end] 0 [subnav-end] 0 [title-end] 0 [footer-1-end]
+			[brand-end subnav-end title-end footer-1-end]
 			@gap
-			[nav-start] 0 [footer-2-start]
+			[nav-start footer-2-start]
 			50%
-			[nav-end] 0 [hero-end] 0 [main-end] 0 [footer-2-end];
+			[nav-end hero-end main-end footer-2-end];
 	}
 
 	&--page-full-width-left-and-toc {
@@ -150,18 +156,19 @@ body {
 		);
 		--block-margin-left: 0px;
 
-		grid-template-columns:
-			[brand-start] 0 [hero-start] 0 [subnav-start] 0 [title-start] 0 [main-start] 0 [footer-1-start]
+		/* prettier-ignore */
+		--columns:
+			[brand-start hero-start subnav-start title-start main-start footer-1-start]
 			@std-block-width
-			[brand-end] 0 [subnav-end] 0 [title-end] 0 [footer-1-end]
+			[brand-end subnav-end title-end footer-1-end]
 			@gap
-			[nav-start] 0 [footer-2-start]
+			[nav-start footer-2-start]
 			@space-nav-start-to-main-end
 			[main-end]
 			@gap
 			[toc-start]
 			@std-aside-width
-			[nav-end] 0 [hero-end] 0 [toc-end] 0 [footer-2-end];
+			[nav-end hero-end toc-end footer-2-end];
 	}
 
 	&--page-split {
@@ -170,14 +177,15 @@ body {
 		--title-space: 0px;
 		--block-margin-left: 0px;
 
-		grid-template-columns:
-			[brand-start] 0 [hero-start] 0 [subnav-start] 0 [title-start] 0 [footer-1-start]
+		/* prettier-ignore */
+		--columns:
+			[brand-start hero-start subnav-start title-start footer-1-start]
 			~'calc(50% - @{gap})'
-			[brand-end] 0 [subnav-end] 0 [title-end] 0 [footer-1-end]
+			[brand-end subnav-end title-end footer-1-end]
 			@gap
-			[nav-start] 0 [main-start] 0 [footer-2-start]
+			[nav-start main-start footer-2-start]
 			50%
-			[nav-end] 0 [hero-end] 0 [main-end] 0 [footer-2-end];
+			[nav-end hero-end main-end footer-2-end];
 	}
 
 	& .am-block {
@@ -198,6 +206,10 @@ body {
 		justify-content: space-between;
 		grid-column: nav-start / nav-end;
 		grid-row: navbar-top / navbar-bottom;
+
+		& > nav {
+			flex-grow: 1;
+		}
 	}
 
 	&__hero {
@@ -243,6 +255,6 @@ body {
 	}
 
 	& > * {
-		border: 1px solid red;
+		border: 1px solid;
 	}
 }
