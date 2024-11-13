@@ -17,7 +17,7 @@ body {
 .std-layout {
 	display: grid;
 	align-items: start;
-	width: @std-layout-width;
+	max-width: @std-layout-max-width;
 	min-height: 100%;
 	margin: 0 auto;
 	--title-height: auto;
@@ -51,12 +51,7 @@ body {
 		[footer-bottom];
 
 	&--page-sidebar {
-		@space-aside-to-main: (
-			(@std-layout-width - (@std-aside-width * 2) - @std-block-width) / 2
-		);
-		@space-main-end: (@std-aside-width + @space-aside-to-main);
-		@gap-footer: 4rem;
-		@footer-width: ((@std-block-width - @gap-footer) / 2);
+		@footer-width: ((@std-block-width - @std-layout-gap) / 2);
 		--block-margin-left: 0px;
 
 		/* prettier-ignore */
@@ -64,115 +59,99 @@ body {
 			[brand-start hero-start sidebar-start]
 			@std-aside-width
 			[brand-end sidebar-end]
-			@space-aside-to-main
+			~'max(@{std-layout-gap}, calc(((100% - @{std-block-width}) / 2) - @{std-aside-width}))'
 			[nav-start subnav-start title-start main-start footer-1-start]
 			@footer-width
 			[footer-1-end]
-			@gap-footer
+			@std-layout-gap
 			[footer-2-start]
 			@footer-width
 			[subnav-end title-end footer-2-end]
-			@space-main-end
+			1fr
 			[nav-end hero-end main-end];
 	}
 
 	&--page-sidebar-and-toc-centered {
-		@space-aside-to-main: 2rem;
-		@space-main-to-title: (
-			(
-					@std-layout-width - (2 * @std-aside-width) -
-						@std-block-width - (2 * @space-aside-to-main)
-				) / 2
-		);
-		@gap-footer: 4rem;
-		@footer-width: ((@std-block-width - @gap-footer) / 2);
+		@footer-width: ((@std-block-width - @std-layout-gap) / 2);
 
 		/* prettier-ignore */
 		--columns:
 			[brand-start hero-start sidebar-start]
 			@std-aside-width
 			[brand-end sidebar-end]
-			@space-aside-to-main
+			@std-layout-gap
 			[main-start]
-			@space-main-to-title
+			1fr
 			[nav-start subnav-start title-start footer-1-start]
 			@footer-width
 			[footer-1-end]
-			@gap-footer
+			@std-layout-gap
 			[footer-2-start]
 			@footer-width
 			[subnav-end title-end footer-2-end]
-			@space-main-to-title
+			1fr
 			[main-end]
-			@space-aside-to-main
+			@std-layout-gap
 			[toc-start]
 			@std-aside-width
 			[nav-end hero-end toc-end];
 	}
 
 	&--page-full-width-centered {
-		@space-brand-to-nav: 4rem;
-		@space-side: ((@std-layout-width - @std-block-width) / 2);
-		@brand-width: (@space-side - @space-brand-to-nav);
-		@gap-footer: 4rem;
-		@footer-width: ((@std-block-width - @gap-footer) / 2);
+		@footer-width: ((@std-block-width - @std-layout-gap) / 2);
 
 		/* prettier-ignore */
 		--columns:
 			[brand-start hero-start main-start]
-			@brand-width
+			1fr
 			[brand-end]
-			@space-brand-to-nav
+			@std-layout-gap
 			[nav-start subnav-start title-start footer-1-start]
 			@footer-width
 			[footer-1-end]
-			@gap-footer
+			@std-layout-gap
 			[footer-2-start]
 			@footer-width
 			[subnav-end title-end footer-2-end]
-			@space-side
+			1fr
+			[spacer]
+			@std-layout-gap
 			[nav-end hero-end main-end];
 	}
 
 	&--page-full-width-left {
-		@gap: ((@std-layout-width / 2) - @std-block-width);
 		--block-margin-left: 0px;
 
 		/* prettier-ignore */
 		--columns:
 			[brand-start hero-start subnav-start title-start main-start footer-1-start]
-			@std-block-width
-			[brand-end subnav-end title-end footer-1-end]
-			@gap
+			1fr
+			[brand-end footer-1-end]
+			~'max(@{std-layout-gap}, calc(50% - @{std-block-width}))'
 			[nav-start footer-2-start]
 			50%
-			[nav-end hero-end main-end footer-2-end];
+			[nav-end hero-end subnav-end title-end main-end footer-2-end];
 	}
 
 	&--page-full-width-left-and-toc {
-		@gap: ((@std-layout-width / 2) - @std-block-width);
-		@space-nav-start-to-main-end: (
-			(@std-layout-width / 2) - @std-aside-width - @gap
-		);
 		--block-margin-left: 0px;
 
 		/* prettier-ignore */
 		--columns:
 			[brand-start hero-start subnav-start title-start main-start footer-1-start]
-			@std-block-width
-			[brand-end subnav-end title-end footer-1-end]
-			@gap
+			1fr
+			[brand-end footer-1-end]
+			@std-layout-gap
 			[nav-start footer-2-start]
-			@space-nav-start-to-main-end
-			[main-end]
-			@gap
+			~'calc(50% - @{std-layout-gap} - @{std-aside-width})'
+			[subnav-end title-end main-end]
+			@std-layout-gap
 			[toc-start]
 			@std-aside-width
 			[nav-end hero-end toc-end footer-2-end];
 	}
 
 	&--page-split {
-		@gap: 4rem;
 		--title-height: 0px;
 		--title-space: 0px;
 		--block-margin-left: 0px;
@@ -180,12 +159,12 @@ body {
 		/* prettier-ignore */
 		--columns:
 			[brand-start hero-start subnav-start title-start footer-1-start]
-			~'calc(50% - @{gap})'
-			[brand-end subnav-end title-end footer-1-end]
-			@gap
+			1fr
+			[brand-end title-end footer-1-end]
+			@std-layout-gap
 			[nav-start main-start footer-2-start]
-			50%
-			[nav-end hero-end main-end footer-2-end];
+			~'max(50%, @{std-block-width} + 4rem)'
+			[nav-end hero-end subnav-end main-end footer-2-end];
 	}
 
 	& .am-block {
