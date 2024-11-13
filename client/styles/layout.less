@@ -11,7 +11,7 @@ body {
 }
 
 body {
-	padding: 1.5rem;
+	padding: @std-body-padding;
 }
 
 .std-layout {
@@ -121,13 +121,14 @@ body {
 
 	&--page-full-width-left {
 		--block-margin-left: 0px;
+		--am-block-max-width: ~'max(@{std-block-min-width}, calc(50% - @{std-layout-gap}))';
 
 		/* prettier-ignore */
 		--columns:
 			[brand-start hero-start subnav-start title-start main-start footer-1-start]
 			1fr
 			[brand-end footer-1-end]
-			~'max(@{std-layout-gap}, calc(50% - @{std-block-width}))'
+			@std-layout-gap
 			[nav-start footer-2-start]
 			50%
 			[nav-end hero-end subnav-end title-end main-end footer-2-end];
@@ -135,6 +136,7 @@ body {
 
 	&--page-full-width-left-and-toc {
 		--block-margin-left: 0px;
+		--am-block-max-width: ~'max(@{std-block-min-width} ,calc(((100% + @{std-layout-gap} + @{std-aside-width}) / 2) - @{std-layout-gap}))';
 
 		/* prettier-ignore */
 		--columns:
@@ -234,6 +236,6 @@ body {
 	}
 
 	& > * {
-		border: 1px solid;
+		// border: 1px solid;
 	}
 }
