@@ -10,18 +10,18 @@ import { create, debounce, shorten } from '@/lib/utils';
 const css = {
 	search: 'std-search',
 	modal: {
-		modal: 'std-search__modal',
-		open: 'std-search__modal--open',
-		backdrop: 'std-search__modal-backdrop',
-		dialog: 'std-search__modal-dialog',
+		modal: 'std-search-modal',
+		open: 'std-search-modal--open',
+		backdrop: 'std-search-modal__backdrop',
+		dialog: 'std-search-modal__dialog',
 	},
-	input: 'std-search__input',
-	results: 'std-search__results',
+	input: 'std-search-input',
+	results: 'std-search-results',
 	result: {
-		result: 'std-search__result',
-		selected: 'std-search__result--selected',
-		title: 'std-search__result-title',
-		context: 'std-search__result-context',
+		result: 'std-search-result',
+		selected: 'std-search-result--selected',
+		title: 'std-search-result__title',
+		context: 'std-search-result__context',
 	},
 } as const;
 

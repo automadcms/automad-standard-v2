@@ -6,7 +6,7 @@
  */
 
 .std-search {
-	&__modal {
+	&-modal {
 		position: fixed;
 		z-index: 9999;
 		display: flex;
@@ -15,7 +15,7 @@
 		inset: 0;
 		pointer-events: none;
 
-		&-backdrop {
+		&__backdrop {
 			position: fixed;
 			inset: 0;
 			background-color: var(--std-search-modal-backdrop-bg);
@@ -25,12 +25,12 @@
 			transition: opacity 0.2s;
 		}
 
-		&--open &-backdrop {
+		&--open &__backdrop {
 			opacity: 1;
 			pointer-events: all;
 		}
 
-		&-dialog {
+		&__dialog {
 			position: relative;
 			display: flex;
 			flex-direction: column;
@@ -46,22 +46,22 @@
 				transform 0.2s;
 		}
 
-		&--open &-dialog {
+		&--open &__dialog {
 			opacity: 1;
 			pointer-events: all;
 			transform: translateY(0);
 		}
 	}
 
-	&__input {
+	&-input {
 	}
 
-	&__results {
+	&-results {
 		display: flex;
 		flex-direction: column;
 	}
 
-	&__result {
+	&-result {
 		display: flex;
 		flex-direction: column;
 		text-decoration: none;
@@ -70,11 +70,11 @@
 			background-color: var(--std-search-result-selected-bg);
 		}
 
-		&-title {
+		&__title {
 			color: var(--std-search-result-title);
 		}
 
-		&-context {
+		&__context {
 			color: var(--std-search-result-context);
 		}
 	}
