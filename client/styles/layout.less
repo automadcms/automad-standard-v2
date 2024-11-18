@@ -23,6 +23,13 @@ body {
 	--title-height: auto;
 	--title-space: 2rem;
 	--block-margin-left: auto;
+	--sidebar-width: @std-aside-width;
+	--gap: @std-layout-gap;
+
+	@media (max-width: @std-breakpoint-s-max) {
+		--sidebar-width: 0;
+		--gap: 0;
+	}
 
 	grid-template-columns: var(--columns);
 	grid-template-rows:
@@ -51,71 +58,54 @@ body {
 		[footer-bottom];
 
 	&--page-sidebar {
-		@footer-width: ((@std-block-width - @std-layout-gap) / 2);
 		--block-margin-left: 0px;
 
 		/* prettier-ignore */
 		--columns:
 			[brand-start hero-start sidebar-start]
-			@std-aside-width
+			var(--sidebar-width)
 			[brand-end sidebar-end]
-			~'max(@{std-layout-gap}, calc(((100% - @{std-block-width}) / 2) - @{std-aside-width}))'
-			[nav-start subnav-start title-start main-start footer-1-start]
-			@footer-width
-			[footer-1-end]
-			@std-layout-gap
-			[footer-2-start]
-			@footer-width
-			[subnav-end title-end footer-2-end]
+			~'max(var(--gap), calc(((100% - @{std-block-width}) / 2) - var(--sidebar-width)))'
+			[nav-start subnav-start title-start main-start footer-start]
+			@std-block-width
+			[subnav-end title-end footer-end]
 			1fr
 			[nav-end hero-end main-end];
 	}
 
 	&--page-sidebar-and-toc-centered {
-		@footer-width: ((@std-block-width - @std-layout-gap) / 2);
-
 		/* prettier-ignore */
 		--columns:
 			[brand-start hero-start sidebar-start]
-			@std-aside-width
+			var(--sidebar-width)
 			[brand-end sidebar-end]
-			@std-layout-gap
+			var(--gap)
 			[main-start]
 			1fr
-			[nav-start subnav-start title-start footer-1-start]
-			@footer-width
-			[footer-1-end]
-			@std-layout-gap
-			[footer-2-start]
-			@footer-width
-			[subnav-end title-end footer-2-end]
+			[nav-start subnav-start title-start footer-start]
+			~'min(100%, @{std-block-width})'
+			[subnav-end title-end footer-end]
 			1fr
 			[main-end]
-			@std-layout-gap
+			var(--gap)
 			[toc-start]
-			@std-aside-width
+			var(--sidebar-width)
 			[nav-end hero-end toc-end];
 	}
 
 	&--page-full-width-centered {
-		@footer-width: ((@std-block-width - @std-layout-gap) / 2);
-
 		/* prettier-ignore */
 		--columns:
 			[brand-start hero-start main-start]
-			1fr
+			~'calc((100% - @{std-block-width}) / 2)'
 			[brand-end]
-			@std-layout-gap
-			[nav-start subnav-start title-start footer-1-start]
-			@footer-width
-			[footer-1-end]
-			@std-layout-gap
-			[footer-2-start]
-			@footer-width
-			[subnav-end title-end footer-2-end]
-			1fr
+			var(--gap)
+			[nav-start subnav-start title-start footer-start]
+			~'min(100%, @{std-block-width})'
+			[subnav-end title-end footer-end]
+			var(--gap)
 			[spacer]
-			@std-layout-gap
+			~'calc((100% - @{std-block-width}) / 2)'
 			[nav-end hero-end main-end];
 	}
 
@@ -125,48 +115,51 @@ body {
 
 		/* prettier-ignore */
 		--columns:
-			[brand-start hero-start subnav-start title-start main-start footer-1-start]
+			[brand-start hero-start subnav-start title-start main-start footer-start]
 			1fr
-			[brand-end footer-1-end]
+			[brand-end]
 			@std-layout-gap
-			[nav-start footer-2-start]
+			[nav-start]
 			50%
-			[nav-end hero-end subnav-end title-end main-end footer-2-end];
+			[nav-end hero-end subnav-end title-end main-end footer-end];
 	}
 
 	&--page-full-width-left-and-toc {
 		--block-margin-left: 0px;
-		--am-block-max-width: ~'max(@{std-block-min-width} ,calc(((100% + @{std-layout-gap} + @{std-aside-width}) / 2) - @{std-layout-gap}))';
+		--am-block-max-width: ~'max(@{std-block-min-width}, calc(((100% + @{std-layout-gap} + @{std-aside-width}) / 2) - @{std-layout-gap}))';
 
 		/* prettier-ignore */
 		--columns:
-			[brand-start hero-start subnav-start title-start main-start footer-1-start]
+			[brand-start hero-start subnav-start title-start main-start footer-start]
 			1fr
-			[brand-end footer-1-end]
-			@std-layout-gap
-			[nav-start footer-2-start]
-			~'calc(50% - @{std-layout-gap} - @{std-aside-width})'
+			[brand-end]
+			var(--gap)
+			[nav-start]
+			~'calc(50% - var(--gap) - var(--sidebar-width))'
 			[subnav-end title-end main-end]
-			@std-layout-gap
+			var(--gap)
 			[toc-start]
-			@std-aside-width
-			[nav-end hero-end toc-end footer-2-end];
+			var(--sidebar-width)
+			[nav-end hero-end toc-end footer-end];
 	}
 
 	&--page-split {
-		--title-height: 0px;
-		--title-space: 0px;
 		--block-margin-left: 0px;
+
+		@media (min-width: @std-breakpoint-m) {
+			--title-height: 0px;
+			--title-space: 0px;
+		}
 
 		/* prettier-ignore */
 		--columns:
-			[brand-start hero-start subnav-start title-start footer-1-start]
+			[brand-start hero-start subnav-start title-start]
 			1fr
-			[brand-end title-end footer-1-end]
-			@std-layout-gap
-			[nav-start main-start footer-2-start]
-			~'max(50%, @{std-block-width} + 4rem)'
-			[nav-end hero-end subnav-end main-end footer-2-end];
+			[brand-end title-end]
+			var(--gap)
+			[nav-start main-start footer-start]
+			~'max(50%, calc(4rem + var(--sidebar-width)))'
+			[nav-end hero-end subnav-end main-end footer-end];
 	}
 
 	& .am-block {
@@ -184,12 +177,16 @@ body {
 
 	&__nav {
 		display: flex;
-		justify-content: space-between;
+		justify-content: end;
 		grid-column: nav-start / nav-end;
 		grid-row: navbar-top / navbar-bottom;
 
 		& > nav {
 			flex-grow: 1;
+
+			@media (max-width: @std-breakpoint-s-max) {
+				display: none;
+			}
 		}
 	}
 
@@ -206,6 +203,10 @@ body {
 	&__sidebar {
 		grid-column: sidebar-start / sidebar-end;
 		grid-row: main-top / main-bottom;
+
+		@media (max-width: @std-breakpoint-s-max) {
+			display: none;
+		}
 	}
 
 	&__title {
@@ -221,18 +222,22 @@ body {
 	&__toc {
 		grid-column: toc-start / toc-end;
 		grid-row: main-top / main-bottom;
+
+		@media (max-width: @std-breakpoint-s-max) {
+			display: none;
+		}
 	}
 
-	&__footer-1 {
-		display: flex;
-		grid-column: footer-1-start / footer-1-end;
+	&__footer {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: @std-layout-gap;
+		grid-column: footer-start / footer-end;
 		grid-row: footer-top / footer-bottom;
-	}
 
-	&__footer-2 {
-		display: flex;
-		grid-column: footer-2-start / footer-2-end;
-		grid-row: footer-top / footer-bottom;
+		@media (max-width: @std-breakpoint-xs-max) {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	& > * {
