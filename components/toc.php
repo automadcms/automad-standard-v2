@@ -8,7 +8,9 @@ https://marcdahmen.de
 #>
 
 <@~ snippet toc @>
-	<aside class="std-layout__toc">Toc</aside>	
+	<aside class="std-layout__toc">
+		<std-toc></std-toc>
+	</aside>	
 <@~ end ~@>
 
 <@ toc @>
