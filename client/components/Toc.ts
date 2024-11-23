@@ -5,6 +5,13 @@
  * https://marcdahmen.de
  */
 
+const css = {
+	wrapper: 'std-toc',
+	ul: 'std-toc__list',
+	li: 'std-toc__item',
+	a: 'std-toc__link',
+} as const;
+
 class TocComponent extends HTMLElement {
 	constructor() {
 		super();
@@ -15,6 +22,8 @@ class TocComponent extends HTMLElement {
 		const headings = Array.from(
 			main.querySelectorAll('h2[id], h3[id], h4[id]')
 		);
+
+		this.classList.add(css.wrapper);
 
 		let open = 0;
 		let lastLevel = 1;
@@ -28,7 +37,7 @@ class TocComponent extends HTMLElement {
 
 				for (let n = 1; n <= diff; n++) {
 					open++;
-					html += '<ul><li>';
+					html += `<ul class="${css.ul}"><li class="${css.li}">`;
 				}
 			}
 
@@ -45,7 +54,7 @@ class TocComponent extends HTMLElement {
 				html += '</li><li>';
 			}
 
-			html += `<a href="#${heading.id}">${heading.textContent}</a>`;
+			html += `<a href="#${heading.id}" class="${css.a}">${heading.textContent}</a>`;
 			lastLevel = level;
 		});
 
