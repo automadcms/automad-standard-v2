@@ -35,4 +35,10 @@ html.std-has-open-sidebar {
 	.std-layout:not([class*='-sidebar']) & {
 		.sidebar-offcanvas();
 	}
+
+	&__navlinks {
+		@media (min-width: @std-breakpoint-m) {
+			display: none;
+		}
+	}
 }
