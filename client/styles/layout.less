@@ -27,8 +27,8 @@ body {
 	--gap: @std-layout-gap;
 
 	@media (max-width: @std-breakpoint-s-max) {
-		--sidebar-width: 0;
-		--gap: 0;
+		--sidebar-width: 0px;
+		--gap: 0px;
 	}
 
 	grid-template-columns: var(--columns);
@@ -60,14 +60,18 @@ body {
 	&--page-sidebar {
 		--block-margin-left: 0px;
 
+		@media (min-width: @std-breakpoint-m) {
+			--gap: ~'calc(((100% - @{std-block-width}) / 2) - var(--sidebar-width))';
+		}
+
 		/* prettier-ignore */
 		--columns:
 			[brand-start hero-start sidebar-start]
 			var(--sidebar-width)
 			[brand-end sidebar-end]
-			~'max(var(--gap), calc(((100% - @{std-block-width}) / 2) - var(--sidebar-width)))'
+			var(--gap)
 			[nav-start subnav-start title-start main-start footer-start]
-			@std-block-width
+			~'min(100%, @{std-block-width})'
 			[subnav-end title-end footer-end]
 			1fr
 			[nav-end hero-end main-end];
@@ -97,7 +101,7 @@ body {
 		/* prettier-ignore */
 		--columns:
 			[brand-start hero-start main-start]
-			~'calc((100% - @{std-block-width}) / 2)'
+			~'calc(((100% - @{std-block-width}) / 2) - var(--gap))'
 			[brand-end]
 			var(--gap)
 			[nav-start subnav-start title-start footer-start]
@@ -105,7 +109,7 @@ body {
 			[subnav-end title-end footer-end]
 			var(--gap)
 			[spacer]
-			~'calc((100% - @{std-block-width}) / 2)'
+			~'calc(((100% - @{std-block-width}) / 2) - var(--gap))'
 			[nav-end hero-end main-end];
 	}
 
@@ -181,7 +185,7 @@ body {
 		grid-column: nav-start / nav-end;
 		grid-row: navbar-top / navbar-bottom;
 
-		& > nav {
+		& &-links {
 			flex-grow: 1;
 
 			@media (max-width: @std-breakpoint-s-max) {
@@ -203,10 +207,6 @@ body {
 	&__sidebar {
 		grid-column: sidebar-start / sidebar-end;
 		grid-row: main-top / main-bottom;
-
-		@media (max-width: @std-breakpoint-s-max) {
-			display: none;
-		}
 	}
 
 	&__title {

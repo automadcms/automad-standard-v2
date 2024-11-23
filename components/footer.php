@@ -18,20 +18,12 @@ https://marcdahmen.de
 <@ end @>
 
 <@~ snippet footerNavPrimary ~@>
-	<# @{ checkboxShowPageInFooterPrimary } #>
-	<@ newPagelist { 
-		excludeHidden: false, 
-		match: '{ "checkboxShowPageInFooterPrimary": "/[^0]+/" }' 
-	} ~@>
+	<@ ../lib/footerPrimaryPagelist.php ~@>
 	<@ footerNav @>
 <@~ end @>
 
 <@~ snippet footerNavSecondary ~@>
-	<# @{ checkboxShowPageInFooterSecondary } #>
-	<@ newPagelist { 
-		excludeHidden: false, 
-		match: '{ "checkboxShowPageInFooterSecondary": "/[^0]+/" }' 
-	} ~@>
+	<@ ../lib/footerSecondaryPagelist.php ~@>
 	<@ footerNav @>
 <@~ end @>
 

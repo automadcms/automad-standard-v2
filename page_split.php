@@ -9,7 +9,5 @@ https://marcdahmen.de
 
 <@~ components/page.php @>
 
-<@ snippet sidebar @>
-<@ end @>
 <@ snippet toc @>
 <@ end @>

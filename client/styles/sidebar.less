@@ -1,0 +1,38 @@
+/*
+ * Automad Standard v2
+ *
+ * Copyright 2024 Marc Anton Dahmen, MIT license
+ * https://marcdahmen.de
+ */
+
+html.std-has-open-sidebar {
+	overflow: hidden;
+}
+
+.std-sidebar {
+	&-backdrop {
+		.backdrop();
+		z-index: 7999;
+
+		.std-has-open-sidebar & {
+			pointer-events: all;
+			opacity: 1;
+		}
+	}
+
+	.std-layout[class*='-sidebar'] & {
+		@media (max-width: @std-breakpoint-s-max) {
+			.sidebar-offcanvas();
+		}
+
+		&-toggle {
+			@media (min-width: @std-breakpoint-m) {
+				display: none;
+			}
+		}
+	}
+
+	.std-layout:not([class*='-sidebar']) & {
+		.sidebar-offcanvas();
+	}
+}

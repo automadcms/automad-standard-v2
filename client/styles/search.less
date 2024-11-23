@@ -16,13 +16,7 @@
 		pointer-events: none;
 
 		&__backdrop {
-			position: fixed;
-			inset: 0;
-			background-color: var(--std-search-modal-backdrop-bg);
-			backdrop-filter: blur(30px);
-			pointer-events: none;
-			opacity: 0;
-			transition: opacity 0.2s;
+			.backdrop();
 		}
 
 		&--open &__backdrop {

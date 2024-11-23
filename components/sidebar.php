@@ -7,13 +7,13 @@ https://marcdahmen.de
 
 #>
 
-<@~ snippet treeLink ~@>
+<@~ snippet navLink ~@>
 	<a href="@{ url }">@{title}</a>
 <@~ end @>
 
 <@~ snippet treeNode ~@>
 	<li class="level-@{ :level }<@ if @{ :current } @> active<@ end @>">
-		<@ treeLink @>
+		<@ navLink @>
 		<@ if @{ :pagelistCount } and @{ :currentPath } ~@>
 			<ul>
 				<@~ tree ~@>
@@ -34,10 +34,23 @@ https://marcdahmen.de
 <@~ end @>
 
 <@~ snippet sidebar ~@>
-	<aside class="std-layout__sidebar">
+	<aside class="std-layout__sidebar std-sidebar">
+		<# Navbar links #>	
+		<@ if not @{ checkboxHideNavbarLinksInMobileSidebar} @>
+			<ul class="std-sidebar__navlinks">
+				<@ ../lib/navbarLinksPagelist.php @>	
+				<@ foreach in pagelist @>
+					<li class="<@ if @{ :current } @> active<@ end @>"><@ navLink @></li>	
+				<@ end @>
+			</ul>
+		<@ end @>
+
+		<# Tree #>
 		<@ with '/' ~@>
-			<ul>
-				<li class="level-1<@ if @{ :current } @> active<@ end @>"><@ treeLink @></li>	
+			<ul class="std-sidebar__tree">
+				<@ if not @{ hidden } @>
+					<li class="level-1<@ if @{ :current } @> active<@ end @>"><@ navLink @></li>	
+				<@ end @>
 				<@ tree @>
 			</ul>
 		<@~ end @>

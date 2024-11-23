@@ -12,15 +12,19 @@ https://marcdahmen.de
 <@ end @>
 
 <@~ snippet navbarNav @>
-	<# @{ checkboxShowPageInNavbar } #>
-	<@ newPagelist { 
-		excludeHidden: false, 
-		match: '{ "checkboxShowPageInNavbar": "/[^0]+/" }' 
-	} @>
+	<@ ../lib/navbarLinksPagelist.php @>
 	<@ if @{ :pagelistCount } @>
-		<nav>
-		<@ foreach in pagelist ~@>
+		<nav class="std-layout__nav-links">
+			<@ foreach in pagelist ~@>
 				<a href="@{ url }" class="<@ if @{ :current } @>active<@ end @>">@{ title }</a>
+			<@~ end ~@>
+		</nav>
+	<@ end @>
+	<@ ../lib/navbarActionsPagelist.php @>
+	<@ if @{ :pagelistCount } @>
+		<nav class="std-layout__nav-actions">
+			<@ foreach in pagelist ~@>
+				<a href="@{ url }">@{ title }</a>
 			<@~ end ~@>
 		</nav>
 	<@ end @>
@@ -37,6 +41,23 @@ https://marcdahmen.de
 	<@ end @>	
 <@ end @>
 
+<@~ snippet sidebarToggle @>
+	<@~ ../lib/navbarLinksPagelist.php @>
+	<@~ set {
+		:navCount: @{ :pagelistCount }
+	} @>
+	<@~ newPagelist {
+		context: '/',
+		type: 'children'
+	} @>
+	<@~ set {
+		:navCount: @{ :navCount | + @{ :pagelistCount } }
+	} @>
+	<@~ if @{ :navCount } ~@>
+		<std-sidebar-toggle></std-sidebar-toggle>
+	<@~ end ~@>
+<@ end @>
+
 <@~ snippet navbar ~@>
 	<div class="std-layout__brand">
 		<@ navbarBrand @>	
@@ -47,6 +68,7 @@ https://marcdahmen.de
 		<@ if @{ selectColorTheme | def ('switcher') } = 'switcher' @>
 			<std-theme-switcher></std-theme-switcher>
 		<@ end @>
+		<@ sidebarToggle @>
 	</div>
 <@~ end ~@>
 
