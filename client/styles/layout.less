@@ -153,16 +153,26 @@ body {
 		@media (min-width: @std-breakpoint-m) {
 			--title-height: 0px;
 			--title-space: 0px;
+
+			/* prettier-ignore */
+			--columns:
+				[brand-start hero-start subnav-start title-start]
+				1fr
+				[brand-end title-end]
+				var(--gap)
+				[nav-start main-start footer-start]
+				50%
+				[nav-end hero-end subnav-end main-end footer-end];
 		}
 
 		/* prettier-ignore */
 		--columns:
-			[brand-start hero-start subnav-start title-start]
+			[brand-start hero-start subnav-start title-start main-start footer-start]
 			1fr
 			[brand-end title-end]
 			var(--gap)
-			[nav-start main-start footer-start]
-			~'max(50%, calc(4rem + var(--sidebar-width)))'
+			[nav-start]
+			50%
 			[nav-end hero-end subnav-end main-end footer-end];
 	}
 
