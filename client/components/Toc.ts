@@ -10,6 +10,7 @@ const css = {
 	ul: 'std-toc__list',
 	li: 'std-toc__item',
 	a: 'std-toc__link',
+	active: 'std-toc__link--active',
 } as const;
 
 class TocComponent extends HTMLElement {
@@ -63,6 +64,25 @@ class TocComponent extends HTMLElement {
 		}
 
 		this.innerHTML = html;
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				const id = entry.target.getAttribute('id');
+				const link = this.querySelector(`a[href="#${id}"]`);
+
+				try {
+					if (entry.intersectionRatio > 0) {
+						link.classList.add(css.active);
+					} else {
+						link.classList.remove(css.active);
+					}
+				} catch (e) {}
+			});
+		});
+
+		headings.forEach((heading) => {
+			observer.observe(heading);
+		});
 	}
 }
 
