@@ -34,26 +34,28 @@ https://marcdahmen.de
 <@~ end @>
 
 <@~ snippet sidebar ~@>
-	<aside class="std-layout__sidebar std-sidebar">
-		<# Navbar links #>	
-		<@ if not @{ checkboxHideNavbarLinksInMobileSidebar} @>
+	<aside class="std-layout__sidebar">
+		<div class="std-sidebar">
+			<# Navbar links #>	
+			<@ if not @{ checkboxHideNavbarLinksInMobileSidebar} @>
 			<ul class="std-sidebar__navlinks">
 				<@ ../lib/navbarLinksPagelist.php @>	
 				<@ foreach in pagelist @>
-					<li class="<@ if @{ :current } @> active<@ end @>"><@ navLink @></li>	
+				<li class="<@ if @{ :current } @> active<@ end @>"><@ navLink @></li>	
 				<@ end @>
 			</ul>
-		<@ end @>
+			<@ end @>
 
-		<# Tree #>
-		<@ with '/' ~@>
+			<# Tree #>
+			<@ with '/' ~@>
 			<ul class="std-sidebar__tree">
 				<@ if not @{ hidden } @>
-					<li class="level-1<@ if @{ :current } @> active<@ end @>"><@ navLink @></li>	
+				<li class="level-1<@ if @{ :current } @> active<@ end @>"><@ navLink @></li>	
 				<@ end @>
 				<@ tree @>
 			</ul>
-		<@~ end @>
+			<@~ end @>
+		</div>
 	</aside>
 <@~ end ~@>
 
