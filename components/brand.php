@@ -7,9 +7,6 @@ https://marcdahmen.de
 
 #>
 
-
-
-
 <@~ snippet brand @>
 	<@ with '/'	~@>
 		<a href="@{ url }" class="std-brand">
