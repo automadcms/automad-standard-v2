@@ -6,19 +6,35 @@
   "license": "MIT",
   "masks": {
     "page": ["imageFavicon", "imageAppleTouchIcon", "checkboxDisableSearch"],
-    "shared": [
-      "+hero",
-      "+main",
-      "checkboxShowPageInNavbar",
-      "checkboxShowPageInFooterPrimary",
-      "checkboxShowPageInFooterSecondary"
-    ]
+    "shared": ["+hero", "+main"]
   },
+  "fieldOrder": [
+    "selectColorTheme",
+    "brand",
+    "imageLogo",
+    "logoWidthDesktop",
+    "logoWidthMobile",
+    "checkboxDisableSearch",
+    "checkboxHideNavbarLinksInMobileSidebar",
+    "selectShowPageInNavbar",
+    "selectShowPageInFooter",
+    "imageFavicon",
+    "imageAppleTouchIcon",
+    "metaTitle"
+  ],
   "options": {
     "selectColorTheme": {
-      "switcher": "Show Theme Switcher",
-      "light": "Light Theme",
-      "dark": "Dark Theme"
+      "switcher": "Show theme switcher",
+      "light": "Light theme",
+      "dark": "Dark theme"
+    },
+    "selectShowPageInNavbar": {
+      "link": "Show as normal link",
+      "action": "Show as a call-to-action button"
+    },
+    "selectShowPageInFooter": {
+      "primary": "Show in primary footer section",
+      "secondary": "Show in secondary footer section"
     }
   },
   "tooltips": {
