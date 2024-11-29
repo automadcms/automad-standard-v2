@@ -8,6 +8,7 @@ https://marcdahmen.de
 #>
 
 <@~ snippet layout ~@>
+	<@ brand.php @>
 	<@ navbar.php @>
 	<@ hero.php @>
 	<@ sidebar.php @>
