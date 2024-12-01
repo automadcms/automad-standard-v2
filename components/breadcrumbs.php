@@ -8,7 +8,7 @@ https://marcdahmen.de
 #>
 
 <@~ snippet breadcrumbs @>
-	<@ if @{ url } != '/' and not @{ checkboxHideBreadcrumbs } @>
+	<@ if @{ :parent } and not @{ checkboxHideBreadcrumbs } @>
 		<@ newPagelist {
 			type: 'breadcrumbs',
 			excludeCurrent: true
