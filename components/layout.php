@@ -12,7 +12,7 @@ https://marcdahmen.de
 	<@ navbar.php @>
 	<@ hero.php @>
 	<@ sidebar.php @>
-	<@ subnav.php @>
+	<@ breadcrumbs.php @>
 	<@ title.php @>
 	<@ main.php @>
 	<@ prevNext.php @>

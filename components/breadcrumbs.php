@@ -7,13 +7,13 @@ https://marcdahmen.de
 
 #>
 
-<@~ snippet subnav @>
+<@~ snippet breadcrumbs @>
 	<@ if @{ url } != '/' and not @{ checkboxHideBreadcrumbs } @>
 		<@ newPagelist {
 			type: 'breadcrumbs',
 			excludeCurrent: true
 		} @>
-		<nav class="std-layout__subnav">
+		<nav class="std-layout__breadcrumbs">
 			<@ foreach in pagelist @>
 				<a href="@{ url }">@{ title }</a>
 			<@ end @>
@@ -21,4 +21,4 @@ https://marcdahmen.de
 	<@ end @>
 <@~ end ~@>
 
-<@ subnav @>
+<@ breadcrumbs @>
