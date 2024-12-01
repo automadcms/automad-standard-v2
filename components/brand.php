@@ -11,13 +11,13 @@ https://marcdahmen.de
 	<@ with '/'	~@>
 		<a href="@{ url }" class="std-brand">
 			<@~ with @{ imageLogo } @>
-				<@~ with @{ imageLogo } { width: @{ logoWidthMobile | def (40) } } @>
+				<@~ with @{ imageLogo } { width: @{ numberLogoWidthMobile | def (40) } } @>
 					<@~ set { 
 						:logoMobile: @{ :fileResized }, 
 						:logoMobileWidth: @{ :widthResized } 
 					} @>
 				<@~ end @>
-				<@~ with @{ imageLogo } { width: @{ logoWidthDesktop | def (65) } } @>
+				<@~ with @{ imageLogo } { width: @{ numberLogoWidthDesktop | def (65) } } @>
 					<@~ set { 
 						:logoDesktop: @{ :fileResized }, 
 						:logoDesktopWidth: @{ :widthResized } 
@@ -28,7 +28,7 @@ https://marcdahmen.de
 				factor of 1.125 in order match the large 
 				font size on large screens.
 				#>
-				<@~ with @{ imageLogo } { width: @{ logoWidthDesktop | def (65) | * 1.125 } } @>
+				<@~ with @{ imageLogo } { width: @{ numberLogoWidthDesktop | def (65) | * 1.125 } } @>
 					<@~ set { :logoDesktopLarge: @{ :fileResized }, :logoDesktopLargeWidth: @{ :widthResized } } @>
 				<@~ end ~@>
 				<img 
