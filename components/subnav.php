@@ -8,7 +8,17 @@ https://marcdahmen.de
 #>
 
 <@~ snippet subnav @>
-	<nav class="std-layout__subnav">Subnav</nav>	
+	<@ if @{ url } != '/' and not @{ checkboxHideBreadcrumbs } @>
+		<@ newPagelist {
+			type: 'breadcrumbs',
+			excludeCurrent: true
+		} @>
+		<nav class="std-layout__subnav">
+			<@ foreach in pagelist @>
+				<a href="@{ url }">@{ title }</a>
+			<@ end @>
+		</nav>	
+	<@ end @>
 <@~ end ~@>
 
 <@ subnav @>

@@ -16,6 +16,7 @@
     "numberLogoWidthMobile",
     "checkboxDisableSearch",
     "checkboxHideNavbarLinksInMobileSidebar",
+    "checkboxHideBreadcrumbs",
     "selectShowPageInNavbar",
     "selectShowPageInFooter",
     "imageFavicon",
