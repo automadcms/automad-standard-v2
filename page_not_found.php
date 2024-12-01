@@ -9,10 +9,9 @@ https://marcdahmen.de
 
 <@~ components/page.php ~@>
 
-<@ snippet main ~@>
-	<h1>404</h1>
-	<p><a href="/">Home</a></p>
+<@~ snippet main ~@>
+	<main class="std-layout__main">
+		<p><a href="/">Home</a></p>
+	</main>
 <@~ end ~@>
 
-<@ snippet sidebar @>
-<@ end @>
