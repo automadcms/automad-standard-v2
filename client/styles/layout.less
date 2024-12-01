@@ -42,7 +42,7 @@ body {
 		[hero-bottom]
 		4rem
 		[subnav-top]
-		auto
+		1.6rem
 		[subnav-bottom]
 		2rem
 		[title-top]
@@ -52,6 +52,10 @@ body {
 		[main-top]
 		1fr
 		[main-bottom]
+		2rem
+		[prev-next-top]
+		auto
+		[prev-next-bottom]
 		6rem
 		[footer-top]
 		auto
@@ -70,9 +74,9 @@ body {
 			var(--sidebar-width)
 			[brand-end sidebar-end]
 			var(--gap)
-			[nav-start subnav-start title-start main-start footer-start]
+			[nav-start subnav-start title-start main-start prev-next-start footer-start]
 			~'min(100%, @{std-block-width})'
-			[subnav-end title-end footer-end]
+			[subnav-end title-end prev-next-end footer-end]
 			1fr
 			[nav-end hero-end main-end];
 	}
@@ -86,9 +90,9 @@ body {
 			var(--gap)
 			[main-start]
 			1fr
-			[nav-start subnav-start title-start footer-start]
+			[nav-start subnav-start title-start prev-next-start footer-start]
 			~'min(100%, @{std-block-width})'
-			[subnav-end title-end footer-end]
+			[subnav-end title-end prev-next-end footer-end]
 			1fr
 			[main-end]
 			var(--gap)
@@ -104,9 +108,9 @@ body {
 			~'calc(((100% - @{std-block-width}) / 2) - var(--gap))'
 			[brand-end]
 			var(--gap)
-			[nav-start subnav-start title-start footer-start]
+			[nav-start subnav-start title-start prev-next-start footer-start]
 			~'min(100%, @{std-block-width})'
-			[subnav-end title-end footer-end]
+			[subnav-end title-end prev-next-end footer-end]
 			var(--gap)
 			[spacer]
 			~'calc(((100% - @{std-block-width}) / 2) - var(--gap))'
@@ -119,13 +123,13 @@ body {
 
 		/* prettier-ignore */
 		--columns:
-			[brand-start hero-start subnav-start title-start main-start footer-start]
+			[brand-start hero-start subnav-start title-start main-start prev-next-start footer-start]
 			1fr
 			[brand-end]
 			@std-layout-gap
 			[nav-start]
 			50%
-			[nav-end hero-end subnav-end title-end main-end footer-end];
+			[nav-end hero-end subnav-end title-end main-end prev-next-end footer-end];
 	}
 
 	&--page-full-width-left-and-toc {
@@ -134,13 +138,13 @@ body {
 
 		/* prettier-ignore */
 		--columns:
-			[brand-start hero-start subnav-start title-start main-start footer-start]
+			[brand-start hero-start subnav-start title-start main-start prev-next-start footer-start]
 			1fr
 			[brand-end]
 			var(--gap)
 			[nav-start]
 			~'calc(50% - var(--gap) - var(--sidebar-width))'
-			[subnav-end title-end main-end]
+			[subnav-end title-end prev-next-end main-end]
 			var(--gap)
 			[toc-start]
 			var(--sidebar-width)
@@ -160,20 +164,20 @@ body {
 				1fr
 				[brand-end title-end]
 				var(--gap)
-				[nav-start main-start footer-start]
+				[nav-start main-start prev-next-start footer-start]
 				50%
-				[nav-end hero-end subnav-end main-end footer-end];
+				[nav-end hero-end subnav-end main-end prev-next-end footer-end];
 		}
 
 		/* prettier-ignore */
 		--columns:
-			[brand-start hero-start subnav-start title-start main-start footer-start]
+			[brand-start hero-start subnav-start title-start main-start prev-next-start footer-start]
 			1fr
 			[brand-end title-end]
 			var(--gap)
 			[nav-start]
 			50%
-			[nav-end hero-end subnav-end main-end footer-end];
+			[nav-end hero-end subnav-end main-end prev-next-end footer-end];
 	}
 
 	& .am-block {
@@ -214,7 +218,6 @@ body {
 	}
 
 	&__subnav {
-		min-height: 1.6rem;
 		grid-column: subnav-start / subnav-end;
 		grid-row: subnav-top / subnav-bottom;
 	}
@@ -240,6 +243,18 @@ body {
 
 		@media (max-width: @std-breakpoint-s-max) {
 			display: none;
+		}
+	}
+
+	&__prev-next {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: @std-layout-gap;
+		grid-column: prev-next-start / prev-next-end;
+		grid-row: prev-next-top / prev-next-bottom;
+
+		@media (max-width: @std-breakpoint-xs-max) {
+			grid-template-columns: 1fr;
 		}
 	}
 

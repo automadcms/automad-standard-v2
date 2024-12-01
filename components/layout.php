@@ -15,6 +15,7 @@ https://marcdahmen.de
 	<@ subnav.php @>
 	<@ title.php @>
 	<@ main.php @>
+	<@ prevNext.php @>
 	<@ toc.php @>
 	<@ footer.php @>
 <@~ end ~@>

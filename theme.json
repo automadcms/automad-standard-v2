@@ -17,6 +17,7 @@
     "checkboxDisableSearch",
     "checkboxHideNavbarLinksInMobileSidebar",
     "checkboxHideBreadcrumbs",
+    "checkboxHidePreviousAndNextPageNavigation",
     "selectShowPageInNavbar",
     "selectShowPageInFooter",
     "imageFavicon",
