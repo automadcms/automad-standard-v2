@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "masks": {
-    "page": ["imageFavicon", "imageAppleTouchIcon", "checkboxDisableSearch"],
+    "page": ["checkboxDisableSearch"],
     "shared": ["+hero", "+main"]
   },
   "fieldOrder": [
@@ -18,10 +18,11 @@
     "checkboxHideNavbarLinksInMobileSidebar",
     "checkboxHideBreadcrumbs",
     "checkboxHidePreviousAndNextPageNavigation",
+    "checkboxHideRelatedPages",
+    "selectRelatedPagelistType",
     "selectShowPageInNavbar",
     "selectShowPageInFooter",
-    "imageFavicon",
-    "imageAppleTouchIcon",
+    "imagePagelist",
     "metaTitle"
   ],
   "options": {
