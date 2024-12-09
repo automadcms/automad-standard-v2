@@ -57,6 +57,10 @@ body {
 		auto
 		[prev-next-bottom]
 		6rem
+		[related-top]
+		auto
+		[related-bottom]
+		6rem
 		[footer-top]
 		auto
 		[footer-bottom];
@@ -75,9 +79,9 @@ body {
 			var(--sidebar-width)
 			[brand-end sidebar-end]
 			var(--gap)
-			[nav-start breadcrumbs-start title-start main-start prev-next-start footer-start]
+			[nav-start breadcrumbs-start title-start main-start prev-next-start related-start footer-start]
 			~'min(100%, @{std-block-width})'
-			[breadcrumbs-end title-end prev-next-end footer-end]
+			[breadcrumbs-end title-end prev-next-end related-end footer-end]
 			1fr
 			[nav-end hero-end main-end];
 	}
@@ -91,9 +95,9 @@ body {
 			var(--gap)
 			[main-start]
 			1fr
-			[nav-start breadcrumbs-start title-start prev-next-start footer-start]
+			[nav-start breadcrumbs-start title-start prev-next-start related-start footer-start]
 			~'min(100%, @{std-block-width})'
-			[breadcrumbs-end title-end prev-next-end footer-end]
+			[breadcrumbs-end title-end prev-next-end related-end footer-end]
 			1fr
 			[main-end]
 			var(--gap)
@@ -109,9 +113,9 @@ body {
 			~'calc(((100% - @{std-block-width}) / 2) - var(--gap))'
 			[brand-end]
 			var(--gap)
-			[nav-start breadcrumbs-start title-start prev-next-start footer-start]
+			[nav-start breadcrumbs-start title-start prev-next-start related-start footer-start]
 			~'min(100%, @{std-block-width})'
-			[breadcrumbs-end title-end prev-next-end footer-end]
+			[breadcrumbs-end title-end prev-next-end related-end footer-end]
 			var(--gap)
 			[spacer]
 			~'calc(((100% - @{std-block-width}) / 2) - var(--gap))'
@@ -124,13 +128,13 @@ body {
 
 		/* prettier-ignore */
 		--columns:
-			[brand-start hero-start breadcrumbs-start title-start main-start prev-next-start footer-start]
+			[brand-start hero-start breadcrumbs-start title-start main-start prev-next-start related-start footer-start]
 			1fr
 			[brand-end]
 			@std-layout-gap
 			[nav-start]
 			50%
-			[nav-end hero-end breadcrumbs-end title-end main-end prev-next-end footer-end];
+			[nav-end hero-end breadcrumbs-end title-end main-end prev-next-end related-end footer-end];
 	}
 
 	&--page-full-width-left-and-toc {
@@ -139,17 +143,17 @@ body {
 
 		/* prettier-ignore */
 		--columns:
-			[brand-start hero-start breadcrumbs-start title-start main-start prev-next-start footer-start]
+			[brand-start hero-start breadcrumbs-start title-start main-start prev-next-start related-start footer-start]
 			1fr
 			[brand-end]
 			var(--gap)
 			[nav-start]
 			~'calc(50% - var(--gap) - var(--sidebar-width))'
-			[breadcrumbs-end title-end prev-next-end main-end]
+			[breadcrumbs-end title-end main-end]
 			var(--gap)
 			[toc-start]
 			var(--sidebar-width)
-			[nav-end hero-end toc-end footer-end];
+			[nav-end hero-end toc-end prev-next-end related-end footer-end];
 	}
 
 	&--page-split {
@@ -161,24 +165,24 @@ body {
 
 			/* prettier-ignore */
 			--columns:
-				[brand-start hero-start breadcrumbs-start title-start]
+				[brand-start hero-start breadcrumbs-start title-start related-start footer-start]
 				1fr
 				[brand-end title-end]
 				var(--gap)
-				[nav-start main-start prev-next-start footer-start]
-				50%
-				[nav-end hero-end breadcrumbs-end main-end prev-next-end footer-end];
+				[nav-start main-start prev-next-start]
+				1fr
+				[nav-end hero-end breadcrumbs-end main-end prev-next-end related-end footer-end];
 		}
 
 		/* prettier-ignore */
 		--columns:
-			[brand-start hero-start breadcrumbs-start title-start main-start prev-next-start footer-start]
+			[brand-start hero-start breadcrumbs-start title-start main-start prev-next-start related-start footer-start]
 			1fr
 			[brand-end title-end]
 			var(--gap)
 			[nav-start]
-			50%
-			[nav-end hero-end breadcrumbs-end main-end prev-next-end footer-end];
+			1fr
+			[nav-end hero-end breadcrumbs-end main-end prev-next-end related-end footer-end];
 	}
 
 	& .am-block {
@@ -257,6 +261,11 @@ body {
 		@media (max-width: @std-breakpoint-xs-max) {
 			grid-template-columns: 1fr;
 		}
+	}
+
+	&__related {
+		grid-column: related-start / related-end;
+		grid-row: related-top / related-bottom;
 	}
 
 	&__footer {

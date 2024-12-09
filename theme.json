@@ -30,6 +30,10 @@
       "light": "Light theme",
       "dark": "Dark theme"
     },
+    "selectRelatedPagelistType": {
+      "portfolio": "Portfolio",
+      "blog": "Blog"
+    },
     "selectShowPageInNavbar": {
       "link": "Show as normal link",
       "action": "Show as a call-to-action button"
