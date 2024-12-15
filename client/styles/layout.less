@@ -131,9 +131,9 @@ body {
 			[brand-start hero-start breadcrumbs-start title-start main-start prev-next-start related-start footer-start]
 			1fr
 			[brand-end]
-			@std-layout-gap
+			var(--gap)
 			[nav-start]
-			50%
+			1fr
 			[nav-end hero-end breadcrumbs-end title-end main-end prev-next-end related-end footer-end];
 	}
 
@@ -144,11 +144,11 @@ body {
 		/* prettier-ignore */
 		--columns:
 			[brand-start hero-start breadcrumbs-start title-start main-start prev-next-start related-start footer-start]
-			1fr
+			~'calc(50% - (var(--gap) / 2))'
 			[brand-end]
 			var(--gap)
 			[nav-start]
-			~'calc(50% - var(--gap) - var(--sidebar-width))'
+			1fr
 			[breadcrumbs-end title-end main-end]
 			var(--gap)
 			[toc-start]

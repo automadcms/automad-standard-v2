@@ -1,0 +1,42 @@
+/*
+ * Automad Standard v2
+ *
+ * Copyright 2024 Marc Anton Dahmen, MIT license
+ * https://marcdahmen.de
+ */
+
+.std-pagelist {
+	&-portfolio {
+		display: grid;
+		grid-template-columns: repeat(
+			auto-fill,
+			minmax(var(--std-portfolio-card-size, 12rem), 1fr)
+		);
+		grid-template-rows: auto auto;
+		gap: var(--std-portfolio-card-gap, @std-layout-gap);
+
+		&__item {
+			display: grid;
+			grid-template-columns: subgrid;
+			grid-template-rows: subgrid;
+			grid-row: span 3;
+			gap: 0.5rem;
+			text-decoration: none;
+		}
+
+		&__img {
+			max-height: 13rem;
+			align-self: end;
+		}
+
+		&__img-fallback {
+			align-self: end;
+			width: 7rem;
+			height: 7rem;
+			padding: 0.25rem 0.5rem;
+			font-size: 2.5rem;
+			color: var(--std-muted-fg);
+			background-color: var(--std-highlight-bg);
+		}
+	}
+}

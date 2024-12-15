@@ -10,9 +10,14 @@ https://marcdahmen.de
 <@ snippet related @>
 	<@ if not @{ checkboxHideRelatedPages } @>
 		<@ newPagelist {
-			type: 'related'
+			type: 'related',
+			sort: @{ selectSortRelatedPages | def (':index asc') }
 		} @>
-		<@ set { :relatedType: @{ selectRelatedPagelistType | def ('portfolio') } } @>
+		<@ set {
+			:relatedType: @{ selectRelatedPagelistType | def ('portfolio') },
+			:dateFormat: @{ selectRelatedPagelistDateFormat | def ('MMM Y') },
+			:locale: @{ locale | def (@{ :lang }) | def ('en_US') }
+		} @>
 		<div class="std-layout__related">
 			<@ if @{ :relatedType } = 'portfolio' @><@ ../blocks/pagelist/portfolio.php @><@ end @>	
 			<@ if @{ :relatedType } = 'blog' @><@ ../blocks/pagelist/blog.php @><@ end @>	

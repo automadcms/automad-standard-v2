@@ -16,20 +16,38 @@
     "numberLogoWidthMobile",
     "checkboxDisableSearch",
     "checkboxHideNavbarLinksInMobileSidebar",
+    "selectShowPageInNavbar",
+    "selectShowPageInFooter",
     "checkboxHideBreadcrumbs",
     "checkboxHidePreviousAndNextPageNavigation",
     "checkboxHideRelatedPages",
     "selectRelatedPagelistType",
-    "selectShowPageInNavbar",
-    "selectShowPageInFooter",
-    "imagePagelist",
-    "metaTitle"
+    "selectSortRelatedPages",
+    "selectRelatedPagelistDateFormat",
+    "locale",
+    "imagePagelist"
   ],
   "options": {
     "selectColorTheme": {
       "switcher": "Show theme switcher",
       "light": "Light theme",
       "dark": "Dark theme"
+    },
+    "selectRelatedPagelistDateFormat": {
+      "MMM Y": "Month and Year",
+      "Y": "Year only",
+      "d. LLLL Y": "Long",
+      "EEEE, d. LLLL Y": "Long with weekday",
+      "LLLL d, Y": "US format",
+      "EEEE, LLLL d, Y": "US format with weekday",
+      "Y-MM-dd": "YYYY-MM-DD",
+      "yyMMdd": "YYMMDD"
+    },
+    "selectSortRelatedPages": {
+      ":index asc": "Manual order",
+      "date desc": "Recent first",
+      "date asc": "Oldest first",
+      "title asc": "Alphabetically"
     },
     "selectRelatedPagelistType": {
       "portfolio": "Portfolio",
