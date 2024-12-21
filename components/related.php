@@ -14,12 +14,15 @@ https://marcdahmen.de
 			sort: @{ selectSortRelatedPages | def (':index asc') }
 		} @>
 		<@ set {
-			:relatedType: @{ selectRelatedPagelistType | def ('portfolio') },
+			:relatedType: @{ selectRelatedPagelistType | def ('grid') },
 			:dateFormat: @{ selectRelatedPagelistDateFormat | def ('MMM Y') },
 			:locale: @{ locale | def (@{ :lang }) | def ('en_US') }
 		} @>
 		<div class="std-layout__related">
-			<@ if @{ :relatedType } = 'portfolio' @><@ ../blocks/pagelist/portfolio.php @><@ end @>	
+			<@ if @{ :relatedType } = 'grid' @><@ ../blocks/pagelist/grid.php @><@ end @>	
+			<@ if @{ :relatedType } = 'grid-large' @><@ ../blocks/pagelist/grid-large.php @><@ end @>	
+			<@ if @{ :relatedType } = 'masonry' @><@ ../blocks/pagelist/masonry.php @><@ end @>	
+			<@ if @{ :relatedType } = 'masonry-large' @><@ ../blocks/pagelist/masonry-large.php @><@ end @>	
 			<@ if @{ :relatedType } = 'blog' @><@ ../blocks/pagelist/blog.php @><@ end @>	
 		</div>
 	<@ end @>

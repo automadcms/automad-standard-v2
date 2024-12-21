@@ -50,7 +50,10 @@
       "title asc": "Alphabetically"
     },
     "selectRelatedPagelistType": {
-      "portfolio": "Portfolio",
+      "grid": "Grid",
+      "grid-large": "Grid large",
+      "masonry": "Masonry",
+      "masonry-large": "Masonry large",
       "blog": "Blog"
     },
     "selectShowPageInNavbar": {
