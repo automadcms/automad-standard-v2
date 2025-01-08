@@ -218,9 +218,14 @@ body {
 
 		& &-links {
 			flex-grow: 1;
+			display: flex;
 
 			@media (max-width: @std-breakpoint-s-max) {
 				display: none;
+			}
+
+			&--vertical {
+				flex-direction: column;
 			}
 		}
 	}

@@ -17,6 +17,7 @@
     "checkboxDisableSearch",
     "checkboxHideNavbarLinksInMobileSidebar",
     "selectShowPageInNavbar",
+    "checkboxShowNavbarLinksInVerticalMenu",
     "selectShowPageInFooter",
     "checkboxHideBreadcrumbs",
     "checkboxHideTags",

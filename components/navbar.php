@@ -10,7 +10,7 @@ https://marcdahmen.de
 <@~ snippet navbarItems @>
 	<@ ../lib/navbarLinksPagelist.php @>
 	<@ if @{ :pagelistCount } @>
-		<nav class="std-layout__navbar-links">
+		<nav class="std-layout__navbar-links<@ if @{ checkboxShowNavbarLinksInVerticalMenu } @> std-layout__navbar-links--vertical<@ end @>">
 			<@ foreach in pagelist ~@>
 				<a href="@{ url }" class="<@ if @{ :current } @>active<@ end @>">@{ title }</a>
 			<@~ end ~@>
@@ -29,7 +29,7 @@ https://marcdahmen.de
 <@~ snippet search @>
 	<@ if not @{ checkboxDisableSearch } @>
 		<std-search src="/_api/public/pagelist">
-			Search
+			<@ ../lib/icons/search.php @>
 			<span>
 				<std-meta-key></std-meta-key>K
 			</span>
