@@ -11,7 +11,7 @@ https://marcdahmen.de
 	<@ if not @{ checkboxHideRelatedPages } @>
 		<@ newPagelist {
 			type: 'related',
-			sort: @{ selectSortRelatedPages | def (':index asc') }
+			sort: @{ selectRelatedPagelistSort | def (':index asc') }
 		} @>
 		<@ set {
 			:relatedType: @{ selectRelatedPagelistType | def ('grid') },
@@ -19,11 +19,7 @@ https://marcdahmen.de
 			:locale: @{ locale | def (@{ :lang }) | def ('en_US') }
 		} @>
 		<div class="std-layout__related">
-			<@ if @{ :relatedType } = 'grid' @><@ ../blocks/pagelist/grid.php @><@ end @>	
-			<@ if @{ :relatedType } = 'grid-large' @><@ ../blocks/pagelist/grid-large.php @><@ end @>	
-			<@ if @{ :relatedType } = 'masonry' @><@ ../blocks/pagelist/masonry.php @><@ end @>	
-			<@ if @{ :relatedType } = 'masonry-large' @><@ ../blocks/pagelist/masonry-large.php @><@ end @>	
-			<@ if @{ :relatedType } = 'blog' @><@ ../blocks/pagelist/blog.php @><@ end @>	
+			<@ ../lib/includePagelist.php @>
 		</div>
 	<@ end @>
 <@ end @>

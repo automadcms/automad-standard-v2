@@ -7,15 +7,15 @@ https://marcdahmen.de
 
 #>
 
-<div class="std-pagelist-portfolio">
+<div class="std-pagelist-grid">
 	<@ foreach in pagelist @>
 		<@ ../../lib/setPagelistImage.php @>
 		<@ ../../lib/setPagelistText.php @>
-		<a href="@{ url }" class="std-pagelist-portfolio__item">
+		<a href="@{ url }" class="std-pagelist-grid__item">
 			<@ with @{ :pagelistImage } { width: 400 } @>
-				<img src="@{ :fileResized }" class="std-pagelist-portfolio__img" alt="@{ :caption | def (@{ :basename }) }" />
+				<img src="@{ :fileResized }" class="std-pagelist-grid__img" alt="@{ :caption | def (@{ :basename }) }" />
 			<@ else @>
-				<div class="std-pagelist-portfolio__img-fallback">@{ title | replace ('/^(.{2}).*/', '$1') | strtoupper }</div>
+				<div class="std-pagelist-grid__img-fallback">@{ title | replace ('/^(.{2}).*/', '$1') | strtoupper }</div>
 			<@ end @>
 			<div>@{ title }</div>
 			<div>

@@ -6,14 +6,14 @@
  */
 
 .std-pagelist {
-	&-portfolio {
+	&-grid {
 		display: grid;
 		grid-template-columns: repeat(
 			auto-fill,
-			minmax(var(--std-portfolio-card-size, 12rem), 1fr)
+			minmax(var(--std-pagelist-grid-size, 12rem), 1fr)
 		);
 		grid-template-rows: auto auto;
-		gap: var(--std-portfolio-card-gap, @std-layout-gap);
+		gap: var(--std-pagelist-grid-gap, @std-layout-gap);
 
 		&__item {
 			display: grid;

@@ -6,7 +6,7 @@
  */
 
 import { create } from '@/lib/utils';
-import iconMenu from '@/svg/menu.svg';
+import iconMenu from '@/lib/icons/menu.svg';
 
 const css = {
 	open: 'std-has-open-sidebar',

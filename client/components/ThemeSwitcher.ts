@@ -5,8 +5,8 @@
  * https://marcdahmen.de
  */
 
-import iconLight from '@/svg/light.svg';
-import iconDark from '@/svg/dark.svg';
+import iconLight from '@/lib/icons/light.svg';
+import iconDark from '@/lib/icons/dark.svg';
 
 type Theme = 'light' | 'dark';
 
