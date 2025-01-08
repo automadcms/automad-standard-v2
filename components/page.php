@@ -15,8 +15,10 @@ https://marcdahmen.de
 	<script src="/packages/@{ theme }/dist/main.bundle.js" type="text/javascript"></script>
 </head>
 <body>
-	<div class="std-layout std-layout--@{ template | sanitize }">
+	<@ if @{ ?tag } @>
+		<@ layoutTag.php @>
+	<@ else @>
 		<@ layout.php @>
-	</div>
+	<@ end @>
 </body>
 </html>

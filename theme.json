@@ -19,10 +19,14 @@
     "selectShowPageInNavbar",
     "selectShowPageInFooter",
     "checkboxHideBreadcrumbs",
+    "checkboxHideTags",
+    "selectTagPagelistType",
+    "selectTagPagelistSort",
+    "selectTagPagelistDateFormat",
     "checkboxHidePreviousAndNextPageNavigation",
     "checkboxHideRelatedPages",
     "selectRelatedPagelistType",
-    "selectSortRelatedPages",
+    "selectRelatedPagelistSort",
     "selectRelatedPagelistDateFormat",
     "locale",
     "imagePagelist"
@@ -43,13 +47,36 @@
       "Y-MM-dd": "YYYY-MM-DD",
       "yyMMdd": "YYMMDD"
     },
-    "selectSortRelatedPages": {
+    "selectRelatedPagelistSort": {
       ":index asc": "Manual order",
       "date desc": "Recent first",
       "date asc": "Oldest first",
       "title asc": "Alphabetically"
     },
     "selectRelatedPagelistType": {
+      "grid": "Grid",
+      "grid-large": "Grid large",
+      "masonry": "Masonry",
+      "masonry-large": "Masonry large",
+      "blog": "Blog"
+    },
+    "selectTagPagelistDateFormat": {
+      "MMM Y": "Month and Year",
+      "Y": "Year only",
+      "d. LLLL Y": "Long",
+      "EEEE, d. LLLL Y": "Long with weekday",
+      "LLLL d, Y": "US format",
+      "EEEE, LLLL d, Y": "US format with weekday",
+      "Y-MM-dd": "YYYY-MM-DD",
+      "yyMMdd": "YYMMDD"
+    },
+    "selectTagPagelistSort": {
+      ":index asc": "Manual order",
+      "date desc": "Recent first",
+      "date asc": "Oldest first",
+      "title asc": "Alphabetically"
+    },
+    "selectTagPagelistType": {
       "grid": "Grid",
       "grid-large": "Grid large",
       "masonry": "Masonry",
