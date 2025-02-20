@@ -7,4 +7,10 @@ https://marcdahmen.de
 
 #>
 
-Masonry
+<std-masonry class="std-pagelist-masonry">
+	<@ foreach in pagelist @>
+		<div>
+			<@ ../../components/pagelist/item.php @>
+		</div>
+	<@ end @>
+</std-masonry>
