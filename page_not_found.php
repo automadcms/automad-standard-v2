@@ -11,7 +11,7 @@ https://marcdahmen.de
 
 <@~ snippet main ~@>
 	<main class="std-layout__main">
-		<p><a href="/">Home</a></p>
+		<p class="am-block"><a href="/">Home</a></p>
 	</main>
 <@~ end ~@>
 
