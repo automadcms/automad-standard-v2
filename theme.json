@@ -6,7 +6,20 @@
   "license": "MIT",
   "masks": {
     "page": ["checkboxDisableSearch"],
-    "shared": ["+hero", "+main"]
+    "shared": [
+      "+hero",
+      "+main",
+      "imagePagelist",
+      "urlMainPagelistContext",
+      "selectShowPageInNavbar",
+      "selectShowPageInFooter",
+      "selectMainPagelistSubset",
+      "urlMainPagelistContext",
+      "selectMainPagelistLayout",
+      "checkboxStretchMainPagelist",
+      "selectMainPagelistSort",
+      "selectMainPagelistDateFormat"
+    ]
   },
   "fieldOrder": [
     "selectColorTheme",
@@ -14,21 +27,28 @@
     "imageLogo",
     "numberLogoWidthDesktop",
     "numberLogoWidthMobile",
-    "checkboxDisableSearch",
-    "checkboxHideNavbarLinksInMobileSidebar",
-    "selectShowPageInNavbar",
-    "checkboxShowNavbarLinksInVerticalMenu",
-    "selectShowPageInFooter",
-    "checkboxHideBreadcrumbs",
+    "checkboxHideTitle",
     "checkboxHideTags",
-    "selectTagPagelistType",
+    "checkboxDisableSearch",
+    "checkboxHideBreadcrumbs",
+    "checkboxHidePreviousAndNextPageNavigation",
+    "selectShowPageInNavbar",
+    "selectShowPageInFooter",
+    "selectMainPagelistSubset",
+    "urlMainPagelistContext",
+    "selectMainPagelistLayout",
+    "checkboxStretchMainPagelist",
+    "selectMainPagelistSort",
+    "selectMainPagelistDateFormat",
+    "selectTagPagelistLayout",
     "selectTagPagelistSort",
     "selectTagPagelistDateFormat",
-    "checkboxHidePreviousAndNextPageNavigation",
     "checkboxHideRelatedPages",
-    "selectRelatedPagelistType",
+    "selectRelatedPagelistLayout",
     "selectRelatedPagelistSort",
     "selectRelatedPagelistDateFormat",
+    "checkboxHideNavbarLinksInMobileSidebar",
+    "checkboxShowNavbarLinksInVerticalMenu",
     "locale",
     "imagePagelist"
   ],
@@ -37,6 +57,33 @@
       "switcher": "Show theme switcher",
       "light": "Light theme",
       "dark": "Dark theme"
+    },
+    "selectMainPagelistSubset": {
+      "children": "Show only children of the selected context",
+      "siblings": "Show only siblings of the selected context"
+    },
+    "selectMainPagelistDateFormat": {
+      "MMM Y": "Month and Year",
+      "Y": "Year only",
+      "d. LLLL Y": "Long",
+      "EEEE, d. LLLL Y": "Long with weekday",
+      "LLLL d, Y": "US format",
+      "EEEE, LLLL d, Y": "US format with weekday",
+      "Y-MM-dd": "YYYY-MM-DD",
+      "yyMMdd": "YYMMDD"
+    },
+    "selectMainPagelistSort": {
+      ":index asc": "Manual order",
+      "date desc": "Recent first",
+      "date asc": "Oldest first",
+      "title asc": "Alphabetically"
+    },
+    "selectMainPagelistLayout": {
+      "grid": "Grid",
+      "grid-large": "Grid large",
+      "masonry": "Masonry",
+      "masonry-large": "Masonry large",
+      "blog": "Blog"
     },
     "selectRelatedPagelistDateFormat": {
       "MMM Y": "Month and Year",
@@ -54,7 +101,7 @@
       "date asc": "Oldest first",
       "title asc": "Alphabetically"
     },
-    "selectRelatedPagelistType": {
+    "selectRelatedPagelistLayout": {
       "grid": "Grid",
       "grid-large": "Grid large",
       "masonry": "Masonry",
@@ -77,7 +124,7 @@
       "date asc": "Oldest first",
       "title asc": "Alphabetically"
     },
-    "selectTagPagelistType": {
+    "selectTagPagelistLayout": {
       "grid": "Grid",
       "grid-large": "Grid large",
       "masonry": "Masonry",

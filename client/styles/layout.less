@@ -73,7 +73,8 @@ body {
 			[nav-end title-end main-end];
 	}
 
-	&--page-sidebar {
+	&--page-sidebar,
+	&--pagelist-sidebar {
 		--block-margin-left: 0px;
 
 		@media (min-width: @std-breakpoint-m) {
@@ -114,6 +115,7 @@ body {
 	}
 
 	&--page-full-width-centered,
+	&--pagelist-full-width-centered,
 	&--page-not-found {
 		/* prettier-ignore */
 		--columns:
@@ -130,7 +132,8 @@ body {
 			[nav-end hero-end main-end];
 	}
 
-	&--page-full-width-left {
+	&--page-full-width-left,
+	&--pagelist-full-width-left {
 		--block-margin-left: 0px;
 		--am-block-max-width: ~'max(@{std-block-min-width}, calc(50% - @{std-layout-gap}))';
 

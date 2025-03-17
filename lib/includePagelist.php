@@ -12,14 +12,14 @@ Note that the following runtime variables have to be defined
 in order to render the pagelist correctly:
 
 	<@ set {
-		:relatedType: @{ selectRelatedPagelistType | def ('grid') },
+		:pagelistLayout: @{ selectRelatedPagelistLayout | def ('grid') },
 		:dateFormat: @{ selectRelatedPagelistDateFormat | def ('MMM Y') },
 		:locale: @{ locale | def (@{ :lang }) | def ('en_US') }
 	} @>
 
 #>
-<@ if @{ :relatedType } = 'grid' @><@ ../blocks/pagelist/grid.php @><@ end @>	
-<@ if @{ :relatedType } = 'grid-large' @><@ ../blocks/pagelist/grid-large.php @><@ end @>	
-<@ if @{ :relatedType } = 'masonry' @><@ ../blocks/pagelist/masonry.php @><@ end @>	
-<@ if @{ :relatedType } = 'masonry-large' @><@ ../blocks/pagelist/masonry-large.php @><@ end @>	
-<@ if @{ :relatedType } = 'blog' @><@ ../blocks/pagelist/blog.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'grid' @><@ ../blocks/pagelist/grid.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'grid-large' @><@ ../blocks/pagelist/grid-large.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'masonry' @><@ ../blocks/pagelist/masonry.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'masonry-large' @><@ ../blocks/pagelist/masonry-large.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'blog' @><@ ../blocks/pagelist/blog.php @><@ end @>	

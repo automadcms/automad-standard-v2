@@ -5,7 +5,11 @@ Automad Standard v2
 Copyright (c) 2024 by Marc Anton Dahmen, MIT license
 https://marcdahmen.de
 
-#><!DOCTYPE html>
+#>
+
+<@~ set { ':locale': @{ locale | def (@{ :lang }) | def ('en_US') } } ~@>
+
+<!DOCTYPE html>
 <html lang="en" class="@{ template | sanitize }<@ if @{ selectColorTheme | def ('switcher') } != 'switcher' @> @{ selectColorTheme }<@ end @>">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
