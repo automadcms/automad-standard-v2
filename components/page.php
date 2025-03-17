@@ -7,7 +7,7 @@ https://marcdahmen.de
 
 #>
 
-<@~ set { ':locale': @{ locale | def (@{ :lang }) | def ('en_US') } } ~@>
+<@~ set { :locale: @{ locale | def (@{ :lang }) | def ('en_US') } } ~@>
 
 <!DOCTYPE html>
 <html lang="en" class="@{ template | sanitize }<@ if @{ selectColorTheme | def ('switcher') } != 'switcher' @> @{ selectColorTheme }<@ end @>">
