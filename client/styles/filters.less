@@ -7,15 +7,20 @@
 
 .std-filters {
 	display: flex;
+	align-items: center;
 	flex-wrap: wrap;
-	gap: 0.4rem;
+	gap: 0.5rem;
 
 	&__link {
+		display: flex;
+		align-items: center;
+		gap: 0.1rem;
 		text-decoration: none;
 		color: inherit;
 
 		&--active {
 			text-decoration: underline;
+			text-underline-offset: 3px;
 		}
 	}
 }

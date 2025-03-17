@@ -33,7 +33,7 @@
 			minmax(var(--std-pagelist-grid-size, 12rem), 1fr)
 		);
 		grid-template-rows: auto auto;
-		gap: var(--std-pagelist-grid-gap, @std-layout-gap);
+		gap: var(--std-pagelist-grid-gap);
 
 		& > * {
 			display: grid;
@@ -47,7 +47,7 @@
 	&-masonry {
 		position: relative;
 		display: grid;
-		gap: var(--std-pagelist-grid-gap, @std-layout-gap);
+		gap: var(--std-pagelist-grid-gap);
 		grid-auto-rows: 10px;
 		grid-template-columns: repeat(
 			auto-fill,
