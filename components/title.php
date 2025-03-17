@@ -8,18 +8,24 @@ https://marcdahmen.de
 #>
 
 <@~ snippet title @>
-	<h1>@{ title }</h1>
+	<@ if not @{ checkboxHideTitle } @>
+		<h1>@{ title }</h1>
+		<@ tags @>
+	<@ end @>
 <@~ end @>
 
 <@ snippet tags @>
 	<@ if not @{ checkboxHideTags } @>
-		<@ foreach in tags @>
-			<a href="?tag=@{ :tag }">@{ :tag }</a>
-		<@ end @>
+		<div class="std-filters">
+			<@ foreach in tags @>
+				<a href="?tag=@{ :tag }" class="std-filters__link">
+					@{ :tag }
+				</a>
+			<@ end @>
+		</div>
 	<@ end @>
 <@ end @>
 
 <div class="std-layout__title">
 	<@ title @>
-	<@ tags @>
 </div>

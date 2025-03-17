@@ -9,20 +9,25 @@ https://marcdahmen.de
 
 <@~ snippet layoutTag ~@>
 	<div class="std-layout std-layout--tag">
-		<div class="std-layout__nav">
+		<div class="std-layout__navbar">
+			<@ if @{ selectColorTheme | def ('switcher') } = 'switcher' @>
+				<std-theme-switcher></std-theme-switcher>
+			<@ end @>
 			<a href="@{ url }">
 				<@ ../lib/icons/close.php @>
 			</a>
 		</div>
 		<div class="std-layout__title">
 			<h1># @{ ?tag }</h1>
-			<@ foreach in filters @>
-				<@ if @{ :filter } != @{ ?tag } @>
-					<a href="?tag=@{ :filter }">
-						@{ :filter }
-					</a>
+			<div class="std-filters">
+				<@ foreach in filters @>
+					<@ if @{ :filter } != @{ ?tag } @>
+						<a href="?tag=@{ :filter }" class="std-filters__link">
+							@{ :filter }
+						</a>
+					<@ end @>
 				<@ end @>
-			<@ end @>
+			</div>
 		</div>
 		<div class="std-layout__main">
 			<@ newPagelist {
@@ -30,9 +35,8 @@ https://marcdahmen.de
 				sort: @{ selectTagPagelistSort | def (':index asc') }
 			} @>	
 			<@ set {
-				:relatedType: @{ selectTagPagelistType | def ('grid') },
-				:dateFormat: @{ selectTagPagelistDateFormat | def ('MMM Y') },
-				:locale: @{ locale | def (@{ :lang }) | def ('en_US') }
+				:pagelistLayout: @{ selectTagPagelistLayout | def ('grid') },
+				:dateFormat: @{ selectTagPagelistDateFormat | def ('MMM Y') }
 			} @>
 			<@ ../lib/includePagelist.php @>
 		</div>
