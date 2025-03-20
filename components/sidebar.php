@@ -35,7 +35,7 @@ https://marcdahmen.de
 
 <@~ snippet sidebar ~@>
 	<aside class="std-layout__sidebar">
-		<div class="std-sidebar">
+		<nav class="std-sidebar">
 			<# Nav links #>	
 			<@ if not @{ checkboxHideNavbarLinksInMobileSidebar} @>
 			<ul class="std-sidebar__navbar-links">
@@ -55,7 +55,7 @@ https://marcdahmen.de
 				<@ tree @>
 			</ul>
 			<@~ end @>
-		</div>
+		</nav>
 	</aside>
 <@~ end ~@>
 

@@ -19,7 +19,7 @@ https://marcdahmen.de
 		<div class="std-filters">
 			<@ foreach in tags @>
 				<a href="?tag=@{ :tag }" class="std-filters__link">
-					@{ :tag }
+					<@ ../lib/icons/tag.php @>@{ :tag }
 				</a>
 			<@ end @>
 		</div>
