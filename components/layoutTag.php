@@ -18,27 +18,31 @@ https://marcdahmen.de
 			</a>
 		</div>
 		<div class="std-layout__title">
-			<h1># @{ ?tag }</h1>
+			<h1>@{ ?tag }</h1>
 			<div class="std-filters">
 				<@ foreach in filters @>
 					<@ if @{ :filter } != @{ ?tag } @>
 						<a href="?tag=@{ :filter }" class="std-filters__link">
-							@{ :filter }
+							<@ ../lib/icons/tag.php @>@{ :filter }
 						</a>
 					<@ end @>
 				<@ end @>
 			</div>
 		</div>
 		<div class="std-layout__main">
+			<@ set { :page: @{ ?page | def (1) } } @>
 			<@ newPagelist {
 				filter: @{ ?tag },
-				sort: @{ selectTagPagelistSort | def (':index asc') }
+				sort: @{ selectTagPagelistSort | def (':index asc') },
+				limit: @{ numberTagPagelistMaxNumberOfPages | def (12) },
+				page: @{ :page }
 			} @>	
 			<@ set {
 				:pagelistLayout: @{ selectTagPagelistLayout | def ('grid') },
 				:dateFormat: @{ selectTagPagelistDateFormat | def ('MMM Y') }
 			} @>
 			<@ ../lib/includePagelist.php @>
+			<@ pagelist/pagination.php @>
 		</div>
 	</div>
 <@~ end ~@>

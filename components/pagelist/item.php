@@ -12,8 +12,6 @@ https://marcdahmen.de
 <a href="@{ url }" class="std-pagelist__item">
 	<@ with @{ :pagelistImage } { width: 400 } @>
 		<img src="@{ :fileResized }" class="std-pagelist__img" alt="@{ :caption | def (@{ :basename }) }" />
-	<@ else @>
-		<div class="std-pagelist__img-fallback">@{ title | replace ('/^(.{2}).*/', '$1') | strtoupper }</div>
 	<@ end @>
 	<div>@{ title }</div>
 	<div>
