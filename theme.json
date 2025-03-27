@@ -16,7 +16,7 @@
       "selectMainPagelistSubset",
       "urlMainPagelistContext",
       "selectMainPagelistLayout",
-      "checkboxStretchMainPagelist",
+      "checkboxNarrowMainPagelist",
       "selectMainPagelistSort",
       "selectMainPagelistDateFormat"
     ]
@@ -37,7 +37,7 @@
     "selectMainPagelistSubset",
     "urlMainPagelistContext",
     "selectMainPagelistLayout",
-    "checkboxStretchMainPagelist",
+    "checkboxNarrowMainPagelist",
     "selectMainPagelistSort",
     "selectMainPagelistDateFormat",
     "numberMainPagelistMaxNumberOfPages",

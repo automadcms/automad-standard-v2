@@ -22,7 +22,7 @@ https://marcdahmen.de
 		:pagelistLayout: @{ selectMainPagelistLayout | def ('grid') },
 		:dateFormat: @{ selectMainPagelistDateFormat | def ('MMM Y') }
 	} @>
-	<div<@ if !@{ checkboxStretchMainPagelist } @> class="am-block"<@ end @>>
+	<div<@ if @{ checkboxNarrowMainPagelist } @> class="am-block"<@ end @>>
 		<div class="std-filters">
 			<@ foreach in filters @>
 				<@ if @{ :filter } != @{ ?filter } @>
