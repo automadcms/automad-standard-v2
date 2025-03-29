@@ -5,7 +5,7 @@ Following these conventions ensures better organization, readability, and consis
 
 ## PHP Files
 
-The names of templates in the root of this repository as well as block-templates in the `blocks/` directory are exposed to the UI. The character `_` is used to identify whitespace. Therefore, unlike the naming convention for other PHP files, these files must be named using snake casing. This allows the Dashboard to convert filenames into a human-readable form, such as `masonry_large.php` being displayed as `Masonry Large`.
+The names of templates in the root of this repository as well as block-templates in the `blocks/` and `snippets/` directories are exposed to the UI. The character `_` is used to identify whitespace. Therefore, unlike the naming convention for other PHP files, these files must be named using snake casing. This allows the Dashboard to convert filenames into a human-readable form, such as `masonry_large.php` being displayed as `Masonry Large`.
 
 All other PHP files in an Automad theme that are not exposed to the UI should follow the standard camelCasing style.
 
