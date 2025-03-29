@@ -18,7 +18,8 @@
       "selectMainPagelistLayout",
       "checkboxNarrowMainPagelist",
       "selectMainPagelistSort",
-      "selectMainPagelistDateFormat"
+      "selectMainPagelistDateFormat",
+      "numberMainPagelistMaxNumberOfPages"
     ]
   },
   "fieldOrder": [

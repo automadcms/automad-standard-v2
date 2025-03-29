@@ -8,5 +8,5 @@ https://marcdahmen.de
 #>
 
 <@ snippet main @>
-	<@ mainPagelist.php @>
+	<@ ../components/mainPagelist.php @>
 <@ end @>
