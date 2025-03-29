@@ -9,6 +9,8 @@
   "author": "Marc Anton Dahmen",
   "license": "MIT",
   "devDependencies": {
+    "@fontsource-variable/inter": "^5.2.5",
+    "@fontsource-variable/jetbrains-mono": "^5.2.5",
     "browser-sync": "^3.0.3",
     "browser-sync-v3-webpack-plugin": "^0.1.0",
     "css-loader": "^7.1.2",

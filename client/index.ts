@@ -5,6 +5,9 @@
  * https://marcdahmen.de
  */
 
+import '@fontsource-variable/inter';
+import '@fontsource-variable/jetbrains-mono';
+
 import 'modern-normalize/modern-normalize.css';
 import './styles/index.less';
 
