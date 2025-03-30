@@ -9,7 +9,7 @@ https://marcdahmen.de
 
 <a href="@{ url }" class="std-pagelist__item">
 	<@ ../../lib/setPagelistImage.php @>
-	<@ with @{ :pagelistImage } { width: 400 } @>
+	<@ with @{ :pagelistImage } { width: 900 } @>
 		<img src="@{ :fileResized }" class="std-pagelist__img" alt="@{ :caption | def (@{ :basename }) }" />
 	<@ end @>
 	<div>@{ title }</div>
@@ -22,5 +22,9 @@ https://marcdahmen.de
 			<br>
 		<@ end @>
 		@{ date | dateFormat (@{ :dateFormat }, @{ :locale }) }
+	</div>
+	<div>
+		<@ ../../lib/setPagelistText.php @>
+		@{ :pagelistText }
 	</div>
 </a>

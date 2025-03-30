@@ -7,7 +7,7 @@ https://marcdahmen.de
 
 #>
 
-<std-masonry class="std-pagelist-blog">
+<std-masonry class="std-pagelist-masonry std-pagelist-large">
 	<@ foreach in pagelist @>
 		<div>
 			<@ ../../components/pagelist/itemLarge.php @>

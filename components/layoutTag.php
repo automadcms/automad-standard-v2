@@ -41,7 +41,7 @@ https://marcdahmen.de
 				:pagelistLayout: @{ selectTagPagelistLayout | def ('grid') },
 				:dateFormat: @{ selectTagPagelistDateFormat | def ('MMM Y') }
 			} @>
-			<@ ../lib/includePagelist.php @>
+			<@ ../lib/includePagelistLayout.php @>
 			<@ pagelist/pagination.php @>
 		</div>
 	</div>

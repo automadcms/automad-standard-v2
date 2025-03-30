@@ -36,7 +36,7 @@ https://marcdahmen.de
 				<@ end @>
 			<@ end @>
 		</div>
-		<@ ../lib/includePagelist.php @>
+		<@ ../lib/includePagelistLayout.php @>
 		<@ pagelist/pagination.php @>
 	</div>	
 </main>

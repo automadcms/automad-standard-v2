@@ -18,7 +18,7 @@ https://marcdahmen.de
 			:dateFormat: @{ selectRelatedPagelistDateFormat | def ('MMM Y') }
 		} @>
 		<div class="std-layout__related">
-			<@ ../lib/includePagelist.php @>
+			<@ ../lib/includePagelistLayout.php @>
 		</div>
 	<@ end @>
 <@ end @>

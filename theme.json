@@ -84,11 +84,11 @@
     "selectMainPagelistLayout": {
       "blog": "Blog",
       "grid": "Grid",
-      "grid_large": "Grid (large)",
+      "grid_cards": "Grid Cards",
+      "grid_large": "Grid Large",
       "masonry": "Masonry",
-      "masonry_large": "Masonry (large)",
-      "cards": "Cards",
-      "cards_large": "Cards (large)"
+      "masonry_cards": "Masonry Cards",
+      "masonry_large": "Masonry Large"
     },
     "selectRelatedPagelistDateFormat": {
       "MMM Y": "Month and Year",
@@ -109,11 +109,11 @@
     "selectRelatedPagelistLayout": {
       "blog": "Blog",
       "grid": "Grid",
-      "grid_large": "Grid (large)",
+      "grid_cards": "Grid Cards",
+      "grid_large": "Grid Large",
       "masonry": "Masonry",
-      "masonry_large": "Masonry (large)",
-      "cards": "Cards",
-      "cards_large": "Cards (large)"
+      "masonry_cards": "Masonry Cards",
+      "masonry_large": "Masonry Large"
     },
     "selectTagPagelistDateFormat": {
       "MMM Y": "Month and Year",
@@ -134,11 +134,11 @@
     "selectTagPagelistLayout": {
       "blog": "Blog",
       "grid": "Grid",
-      "grid_large": "Grid (large)",
+      "grid_cards": "Grid Cards",
+      "grid_large": "Grid Large",
       "masonry": "Masonry",
-      "masonry_large": "Masonry (large)",
-      "cards": "Cards",
-      "cards_large": "Cards (large)"
+      "masonry_cards": "Masonry Cards",
+      "masonry_large": "Masonry Large"
     },
     "selectShowPageInNavbar": {
       "link": "Show as normal link",

@@ -18,8 +18,10 @@ in order to render the pagelist correctly:
 	} @>
 
 #>
-<@ if @{ :pagelistLayout } = 'grid' @><@ ../blocks/pagelist/grid.php @><@ end @>	
-<@ if @{ :pagelistLayout } = 'grid-large' @><@ ../blocks/pagelist/grid-large.php @><@ end @>	
-<@ if @{ :pagelistLayout } = 'masonry' @><@ ../blocks/pagelist/masonry.php @><@ end @>	
-<@ if @{ :pagelistLayout } = 'masonry-large' @><@ ../blocks/pagelist/masonry-large.php @><@ end @>	
 <@ if @{ :pagelistLayout } = 'blog' @><@ ../blocks/pagelist/blog.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'grid' @><@ ../blocks/pagelist/grid.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'grid_cards' @><@ ../blocks/pagelist/grid_cards.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'grid_large' @><@ ../blocks/pagelist/grid_large.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'masonry' @><@ ../blocks/pagelist/masonry.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'masonry_cards' @><@ ../blocks/pagelist/masonry_cards.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'masonry_large' @><@ ../blocks/pagelist/masonry_large.php @><@ end @>	
