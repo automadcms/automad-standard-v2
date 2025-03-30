@@ -84,12 +84,18 @@
     },
     "selectMainPagelistLayout": {
       "blog": "Blog",
+      "blog_without_images": "Blog Without Images",
       "grid": "Grid",
+      "grid_without_images": "Grid Without Images",
       "grid_cards": "Grid Cards",
+      "grid_cards_without_images": "Grid Cards Without Images",
+      "grid_cards_square": "Grid Cards Square",
       "grid_large": "Grid Large",
+      "grid_large_without_images": "Grid Large Without Images",
       "masonry": "Masonry",
       "masonry_cards": "Masonry Cards",
-      "masonry_large": "Masonry Large"
+      "masonry_large": "Masonry Large",
+      "masonry_large_without_images": "Masonry Large Without Images"
     },
     "selectRelatedPagelistDateFormat": {
       "MMM Y": "Month and Year",
@@ -109,12 +115,18 @@
     },
     "selectRelatedPagelistLayout": {
       "blog": "Blog",
+      "blog_without_images": "Blog Without Images",
       "grid": "Grid",
+      "grid_without_images": "Grid Without Images",
       "grid_cards": "Grid Cards",
+      "grid_cards_without_images": "Grid Cards Without Images",
+      "grid_cards_square": "Grid Cards Square",
       "grid_large": "Grid Large",
+      "grid_large_without_images": "Grid Large Without Images",
       "masonry": "Masonry",
       "masonry_cards": "Masonry Cards",
-      "masonry_large": "Masonry Large"
+      "masonry_large": "Masonry Large",
+      "masonry_large_without_images": "Masonry Large Without Images"
     },
     "selectTagPagelistDateFormat": {
       "MMM Y": "Month and Year",
@@ -134,12 +146,18 @@
     },
     "selectTagPagelistLayout": {
       "blog": "Blog",
+      "blog_without_images": "Blog Without Images",
       "grid": "Grid",
+      "grid_without_images": "Grid Without Images",
       "grid_cards": "Grid Cards",
+      "grid_cards_without_images": "Grid Cards Without Images",
+      "grid_cards_square": "Grid Cards Square",
       "grid_large": "Grid Large",
+      "grid_large_without_images": "Grid Large Without Images",
       "masonry": "Masonry",
       "masonry_cards": "Masonry Cards",
-      "masonry_large": "Masonry Large"
+      "masonry_large": "Masonry Large",
+      "masonry_large_without_images": "Masonry Large Without Images"
     },
     "selectShowPageInNavbar": {
       "link": "Show as normal link",

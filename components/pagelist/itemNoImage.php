@@ -8,14 +8,9 @@ https://marcdahmen.de
 #>
 
 <a href="@{ url }" class="std-pagelist__item">
-	<@ ../../lib/setPagelistImage.php @>
-	<@ with @{ :pagelistImage } { width: 900 } @>
-		<img src="@{ :fileResized }" class="std-pagelist__img" alt="@{ :caption | def (@{ :basename }) }" />
-	<@ end @>
 	<div class="std-pagelist__item-body">
 		<@ title.php @>
 		<@ date.php @>
 		<@ tags.php @>
-		<@ text.php @>
 	</div>
 </a>

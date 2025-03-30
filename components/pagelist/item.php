@@ -13,22 +13,8 @@ https://marcdahmen.de
 		<img src="@{ :fileResized }" class="std-pagelist__img" alt="@{ :caption | def (@{ :basename }) }" />
 	<@ end @>
 	<div class="std-pagelist__item-body">
-		<div class="std-pagelist__item-title">
-			@{ title }
-		</div>
-		<@~ if @{ date } @>
-			<div class="std-pagelist__item-date">
-				@{ date | dateFormat (@{ :dateFormat }, @{ :locale }) }
-			</div>
-		<@ end @>
-		<@~ if @{ tags } @>
-			<div class="std-pagelist__item-tags">
-				<@ foreach in tags ~@>
-					<span class="std-tag">
-						@{ :tag }
-					</span>
-				<@ end @>
-			</div>
-		<@~ end @>
+		<@ title.php @>
+		<@ date.php @>
+		<@ tags.php @>
 	</div>
 </a>
