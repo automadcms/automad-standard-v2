@@ -9,7 +9,7 @@ https://marcdahmen.de
 
 <std-masonry class="std-pagelist-masonry std-pagelist-cards">
 	<@ foreach in pagelist @>
-		<div>
+		<div class="std-pagelist-masonry__item-wrapper">
 			<@ ../../components/pagelist/item.php @>
 		</div>
 	<@ end @>

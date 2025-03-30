@@ -11,6 +11,9 @@
 		text-decoration: none;
 	}
 
+	&-blog {
+	}
+
 	&-grid {
 		display: grid;
 		grid-template-columns: repeat(
@@ -25,13 +28,17 @@
 	&-masonry {
 		position: relative;
 		display: grid;
-		row-gap: var(--std-pagelist-grid-row-gap);
+		row-gap: 0;
 		column-gap: var(--std-pagelist-grid-column-gap);
-		grid-auto-rows: 10px;
+		grid-auto-rows: 5px;
 		grid-template-columns: repeat(
 			auto-fill,
 			minmax(var(--std-pagelist-grid-size), 1fr)
 		);
+
+		&__item-wrapper {
+			padding-bottom: var(--std-pagelist-grid-row-gap);
+		}
 	}
 
 	&-masonry &__item {
@@ -42,5 +49,38 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
+	}
+
+	&-large {
+		--std-pagelist-grid-size: var(--std-pagelist-grid-size-large);
+	}
+
+	&-cards &__img {
+		border-bottom: var(--std-card-border);
+		transition: border-color 0.2s;
+	}
+
+	&-cards &__item:hover &__img {
+		border-bottom: var(--std-card-hover-border);
+	}
+
+	&-cards &__item {
+		display: flex;
+		flex-direction: column;
+		border: var(--std-card-border);
+		background-color: var(--std-card-bg);
+		border-radius: var(--std-card-radius);
+		overflow: hidden;
+		transition: border-color 0.2s;
+
+		&:hover {
+			border: var(--std-card-hover-border);
+		}
+	}
+
+	&-cards &__item-body {
+		display: flex;
+		flex-direction: column;
+		padding: var(--std-card-padding);
 	}
 }
