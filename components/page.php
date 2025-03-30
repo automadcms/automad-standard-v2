@@ -7,10 +7,18 @@ https://marcdahmen.de
 
 #>
 
-<@~ set { :locale: @{ locale | def (@{ :lang }) | def ('en_US') } } ~@>
+<@~ set { :locale: @{ locale | def (@{ :lang }) | def ('en_US') } } @>
+
+<@~ if @{ selectColorTheme | def ('switcher') } != 'switcher' @> 
+	<@~ set { :colorTheme: ' @{ selectColorTheme }' } @>
+<@~ end @>
+
+<@~ if @{ checkboxCompactLayout } @>
+	<@~ set { :compact: ' compact' } @>
+<@~ end ~@>
 
 <!DOCTYPE html>
-<html lang="en" class="@{ template | sanitize }<@ if @{ selectColorTheme | def ('switcher') } != 'switcher' @> @{ selectColorTheme }<@ end @>">
+<html lang="en" class="@{ template | sanitize }@{ :colorTheme }@{ :compact }">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="/packages/@{ theme }/dist/vendor.bundle.css" rel="stylesheet">

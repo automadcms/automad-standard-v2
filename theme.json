@@ -33,6 +33,7 @@
     "checkboxDisableSearch",
     "checkboxHideBreadcrumbs",
     "checkboxHidePreviousAndNextPageNavigation",
+    "checkboxCompactLayout",
     "selectShowPageInNavbar",
     "selectShowPageInFooter",
     "selectMainPagelistSubset",

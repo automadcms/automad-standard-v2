@@ -23,15 +23,15 @@ https://marcdahmen.de
 		:dateFormat: @{ selectMainPagelistDateFormat | def ('MMM Y') }
 	} @>
 	<div<@ if @{ checkboxNarrowMainPagelist } @> class="am-block"<@ end @>>
-		<div class="std-filters">
+		<div class="std-tags">
 			<@ foreach in filters @>
 				<@ if @{ :filter } != @{ ?filter } @>
-					<a href="@{ url }?filter=@{ :filter }" class="std-filters__link">
-						<@ ../lib/icons/tag.php @>@{ :filter }
+					<a href="@{ url }?filter=@{ :filter }" class="std-tag">
+						@{ :filter }
 					</a>
 				<@ else @>
-					<a href="@{ url }" class="std-filters__link std-filters__link--active">
-						<@ ../lib/icons/removeTag.php @>@{ :filter }
+					<a href="@{ url }" class="std-tag std-tag--active">
+						@{ :filter }
 					</a>
 				<@ end @>
 			<@ end @>

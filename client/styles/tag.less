@@ -1,0 +1,35 @@
+/*
+ * Automad Standard v2
+ *
+ * Copyright 2025 Marc Anton Dahmen, MIT license
+ * https://marcdahmen.de
+ */
+
+.std-tag {
+	display: inline-flex;
+	padding: var(--std-tag-padding);
+	font-size: var(--std-tag-font-size);
+	font-weight: var(--std-tag-font-weight);
+	line-height: var(--std-tag-line-height);
+	color: var(--std-tag-fg);
+	background-color: var(--std-tag-bg);
+	border: var(--std-tag-border);
+	border-radius: var(--std-tag-radius);
+	transition:
+		color 0.2s,
+		background-color 0.2s,
+		border-color 0.2s;
+
+	a&:hover {
+		color: var(--std-tag-hover-fg);
+		background-color: var(--std-tag-hover-bg);
+		border: var(--std-tag-hover-border);
+	}
+
+	&--active,
+	a&--active:hover {
+		color: var(--std-tag-active-fg);
+		background-color: var(--std-tag-active-bg);
+		border: var(--std-tag-active-border);
+	}
+}

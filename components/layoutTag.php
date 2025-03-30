@@ -19,11 +19,11 @@ https://marcdahmen.de
 		</div>
 		<div class="std-layout__title">
 			<h1>@{ ?tag }</h1>
-			<div class="std-filters">
+			<div class="std-tags">
 				<@ foreach in filters @>
 					<@ if @{ :filter } != @{ ?tag } @>
-						<a href="?tag=@{ :filter }" class="std-filters__link">
-							<@ ../lib/icons/tag.php @>@{ :filter }
+						<a href="?tag=@{ :filter }" class="std-tag">
+							@{ :filter }
 						</a>
 					<@ end @>
 				<@ end @>

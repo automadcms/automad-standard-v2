@@ -16,10 +16,10 @@ https://marcdahmen.de
 
 <@ snippet tags @>
 	<@ if not @{ checkboxHideTags } @>
-		<div class="std-filters">
+		<div class="std-tags">
 			<@ foreach in tags @>
-				<a href="?tag=@{ :tag }" class="std-filters__link">
-					<@ ../lib/icons/tag.php @>@{ :tag }
+				<a href="?tag=@{ :tag }" class="std-tag">
+					@{ :tag }
 				</a>
 			<@ end @>
 		</div>
