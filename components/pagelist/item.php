@@ -7,10 +7,10 @@ https://marcdahmen.de
 
 #>
 
-<a href="@{ url }" class="std-pagelist__item">
+<a href="@{ url }" class="std-pagelist__item" style="--index: @{ :i }">
 	<@ ../../lib/setPagelistImage.php @>
-	<@ with @{ :pagelistImage } { width: 400 } @>
-		<img src="@{ :fileResized }" class="std-pagelist__img" alt="@{ :caption | def (@{ :basename }) }" />
+	<@ with @{ :pagelistImage } { width: 450 } @>
+		<@ image.php @>
 	<@ end @>
 	<div class="std-pagelist__item-body">
 		<@ title.php @>

@@ -7,7 +7,7 @@ https://marcdahmen.de
 
 #>
 
-<a href="@{ url }" class="std-pagelist__item">
+<a href="@{ url }" class="std-pagelist__item" style="--index: @{ :i }">
 	<div class="std-pagelist__item-body">
 		<@ title.php @>
 		<@ date.php @>

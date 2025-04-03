@@ -11,6 +11,7 @@ import '@fontsource-variable/jetbrains-mono';
 import 'modern-normalize/modern-normalize.css';
 import './styles/index.less';
 
+import './components/ImgLoader';
 import './components/Masonry';
 import './components/MetaKey';
 import './components/Search';

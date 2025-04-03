@@ -15,10 +15,14 @@ https://marcdahmen.de
 
 <@~ if @{ checkboxCompactLayout } @>
 	<@~ set { :compact: ' compact' } @>
+<@~ end @>
+
+<@~ if @{ checkboxDisablePagelistAnimations } @>
+	<@~ set { :noPagelistAnimations: ' no-pagelist-animations' } @>
 <@~ end ~@>
 
 <!DOCTYPE html>
-<html lang="en" class="@{ template | sanitize }@{ :colorTheme }@{ :compact }">
+<html lang="en" class="@{ template | sanitize }@{ :colorTheme }@{ :compact }@{ :noPagelistAnimations }">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="/packages/@{ theme }/dist/vendor.bundle.css" rel="stylesheet">

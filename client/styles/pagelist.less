@@ -9,6 +9,23 @@
 	&__item {
 		color: inherit;
 		text-decoration: none;
+		animation-name: pagelistFadeIn;
+		animation-duration: 0.2s;
+		animation-delay: calc(var(--index) * 40ms);
+		animation-fill-mode: both;
+		animation-timing-function: ease-in-out;
+
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+		}
+
+		.no-pagelist-animations & {
+			animation: none;
+		}
+	}
+
+	&__item-img {
+		display: flex;
 	}
 
 	&-blog {
@@ -55,15 +72,6 @@
 		--std-pagelist-grid-size: var(--std-pagelist-grid-size-large);
 	}
 
-	&-cards &__img {
-		border-bottom: var(--std-card-border);
-		transition: border-color 0.2s;
-	}
-
-	&-cards &__item:hover &__img {
-		border-bottom: var(--std-card-hover-border);
-	}
-
 	&-cards &__item {
 		display: flex;
 		flex-direction: column;
@@ -76,6 +84,10 @@
 		&:hover {
 			border: var(--std-card-hover-border);
 		}
+	}
+
+	&-cards &__item-img {
+		border-bottom: var(--std-card-border);
 	}
 
 	&-cards &__item-body {
@@ -98,5 +110,17 @@
 
 		display: flex;
 		align-items: end;
+	}
+}
+
+@keyframes pagelistFadeIn {
+	0% {
+		transform: translateY(15px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
 	}
 }
