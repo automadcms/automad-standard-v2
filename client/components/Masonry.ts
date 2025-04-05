@@ -9,7 +9,7 @@ import { debounce } from '@/lib/utils';
 
 const cls = {
 	item: 'std-pagelist__item',
-	applied: 'std-pagelist-masonry--applied',
+	applied: 'std-pagelist--masonry-applied',
 } as const;
 
 const calcItemRowSpan = (

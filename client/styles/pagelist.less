@@ -6,9 +6,11 @@
  */
 
 .std-pagelist {
+	color: inherit;
+	text-decoration: none;
+	--size: var(--std-pagelist-grid-size);
+
 	&__item {
-		color: inherit;
-		text-decoration: none;
 		animation-name: pagelistFadeIn;
 		animation-duration: 0.2s;
 		animation-delay: calc(var(--index) * 40ms);
@@ -28,84 +30,84 @@
 		display: flex;
 	}
 
-	&-blog {
+	&--blog {
 	}
 
-	&-grid {
+	&--grid {
 		display: grid;
 		grid-template-columns: repeat(
 			auto-fill,
-			minmax(var(--std-pagelist-grid-size, 12rem), 1fr)
+			minmax(var(--size, 12rem), 1fr)
 		);
 		grid-template-rows: auto auto;
 		row-gap: var(--std-pagelist-grid-row-gap);
 		column-gap: var(--std-pagelist-grid-column-gap);
 	}
 
-	&-masonry {
+	&__masonry-item {
+		padding-bottom: var(--std-pagelist-grid-row-gap);
+	}
+
+	&--masonry {
 		position: relative;
 		display: grid;
 		row-gap: 0;
 		column-gap: var(--std-pagelist-grid-column-gap);
 		grid-auto-rows: 5px;
-		grid-template-columns: repeat(
-			auto-fill,
-			minmax(var(--std-pagelist-grid-size), 1fr)
-		);
-
-		&__item-wrapper {
-			padding-bottom: var(--std-pagelist-grid-row-gap);
-		}
+		grid-template-columns: repeat(auto-fill, minmax(var(--size), 1fr));
 	}
 
-	&-masonry &__item {
+	&--masonry &__item {
 		display: block;
 	}
 
-	&-masonry--applied &__item {
+	&--masonry-applied &__item {
 		display: flex;
 		flex-direction: column;
 		height: 100%;
 	}
 
-	&-large {
-		--std-pagelist-grid-size: var(--std-pagelist-grid-size-large);
-	}
-
-	&-cards &__item {
+	&--cards &__item {
 		display: flex;
 		flex-direction: column;
 		border: var(--std-card-border);
 		background-color: var(--std-card-bg);
 		border-radius: var(--std-card-radius);
 		overflow: hidden;
-		transition: border-color 0.2s;
+		transition:
+			background-color 0.2s,
+			color 0.2s;
 
 		&:hover {
+			background-color: var(--std-card-hover-bg);
 			border: var(--std-card-hover-border);
 		}
 	}
 
-	&-cards &__item-img {
+	&--cards &__item-img {
 		border-bottom: var(--std-card-border);
 	}
 
-	&-cards &__item-body {
+	&--cards &__item-body {
 		display: flex;
 		flex-direction: column;
 		padding: var(--std-card-padding);
 		flex-grow: 1;
 	}
 
-	&-cards--square {
-		--std-pagelist-grid-size: var(--std-pagelist-grid-size-square);
+	&--large {
+		--size: var(--std-pagelist-grid-size-large);
 	}
 
-	&-cards--square &__item {
+	&--square {
+		--size: var(--std-pagelist-grid-size-square);
+	}
+
+	&--square &__item {
 		aspect-ratio: 1;
 	}
 
-	&-cards--square &__item-tags {
+	&--square &__item-tags {
 		flex-grow: 1;
 
 		display: flex;
