@@ -196,17 +196,13 @@ body {
 			[nav-end hero-end breadcrumbs-end main-end prev-next-end related-end footer-end];
 	}
 
+	& .am-block {
+		margin-left: var(--block-margin-left);
+	}
+
 	&--page-split &__title {
 		position: sticky;
 		top: 1rem;
-	}
-
-	& .am-block {
-		margin-left: var(--block-margin-left);
-
-		& .am-block {
-			margin-left: auto;
-		}
 	}
 
 	&__brand {
@@ -299,9 +295,5 @@ body {
 		@media (max-width: @std-breakpoint-xs-max) {
 			grid-template-columns: 1fr;
 		}
-	}
-
-	& > * {
-		// border: 1px solid;
 	}
 }

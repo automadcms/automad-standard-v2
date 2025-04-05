@@ -55,7 +55,19 @@
     "checkboxHideNavbarLinksInMobileSidebar",
     "checkboxShowNavbarLinksInVerticalMenu",
     "locale",
-    "imagePagelist"
+    "imagePagelist",
+    "colorLightModeForegroundShade_1",
+    "colorLightModeForegroundShade_2",
+    "colorLightModeBackgroundShade_1",
+    "colorLightModeBackgroundShade_2",
+    "colorLightModeBackgroundShade_3",
+    "colorLightModeBackgroundShade_4",
+    "colorDarkModeForegroundShade_1",
+    "colorDarkModeForegroundShade_2",
+    "colorDarkModeBackgroundShade_1",
+    "colorDarkModeBackgroundShade_2",
+    "colorDarkModeBackgroundShade_3",
+    "colorDarkModeBackgroundShade_4"
   ],
   "options": {
     "selectColorTheme": {
