@@ -8,11 +8,13 @@ https://marcdahmen.de
 #>
 
 <@~ if @{ tags } @>
-	<div class="std-pagelist__item-tags std-tags">
-		<@ foreach in tags ~@>
-			<span class="std-tag">
-				@{ :tag }
-			</span>
-		<@ end @>
+	<div class="std-pagelist__item-tags">
+		<div class="std-tags">
+			<@ foreach in tags ~@>
+				<span class="std-tag">
+					@{ :tag }
+				</span>
+			<@ end @>
+		</div>
 	</div>
 <@~ end @>

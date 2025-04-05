@@ -17,6 +17,15 @@
 		animation-fill-mode: both;
 		animation-timing-function: ease-in-out;
 
+		& > * {
+			opacity: 1;
+			transition: opacity 0.2s;
+		}
+
+		& > :hover {
+			opacity: var(--std-pagelist-hover-opacity);
+		}
+
 		@media (prefers-reduced-motion: reduce) {
 			animation: none;
 		}
