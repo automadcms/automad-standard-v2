@@ -29,6 +29,7 @@ https://marcdahmen.de
 	<link href="/packages/@{ theme }/dist/main.bundle.css" rel="stylesheet">
 	<script src="/packages/@{ theme }/dist/vendor.bundle.js" type="text/javascript"></script>
 	<script src="/packages/@{ theme }/dist/main.bundle.js" type="text/javascript"></script>
+	<@~ ../lib/customizeColors.php ~@>
 </head>
 <body>
 	<@ if @{ ?tag } @>
