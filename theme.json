@@ -95,6 +95,8 @@
       "grid_large_without_images": "Grid Large Without Images",
       "masonry": "Masonry",
       "masonry_cards": "Masonry Cards",
+      "masonry_cards_large": "Masonry Cards Large",
+      "masonry_cards_large_without_images": "Masonry Cards Large Without Images",
       "masonry_large": "Masonry Large",
       "masonry_large_without_images": "Masonry Large Without Images"
     },
@@ -126,6 +128,8 @@
       "grid_large_without_images": "Grid Large Without Images",
       "masonry": "Masonry",
       "masonry_cards": "Masonry Cards",
+      "masonry_cards_large": "Masonry Cards Large",
+      "masonry_cards_large_without_images": "Masonry Cards Large Without Images",
       "masonry_large": "Masonry Large",
       "masonry_large_without_images": "Masonry Large Without Images"
     },
@@ -157,6 +161,8 @@
       "grid_large_without_images": "Grid Large Without Images",
       "masonry": "Masonry",
       "masonry_cards": "Masonry Cards",
+      "masonry_cards_large": "Masonry Cards Large",
+      "masonry_cards_large_without_images": "Masonry Cards Large Without Images",
       "masonry_large": "Masonry Large",
       "masonry_large_without_images": "Masonry Large Without Images"
     },

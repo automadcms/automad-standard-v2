@@ -29,5 +29,7 @@ in order to render the pagelist correctly:
 <@ if @{ :pagelistLayout } = 'grid_large_without_images' @><@ ../blocks/pagelist/grid_large_without_images.php @><@ end @>	
 <@ if @{ :pagelistLayout } = 'masonry' @><@ ../blocks/pagelist/masonry.php @><@ end @>	
 <@ if @{ :pagelistLayout } = 'masonry_cards' @><@ ../blocks/pagelist/masonry_cards.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'masonry_cards_large' @><@ ../blocks/pagelist/masonry_cards_large.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'masonry_cards_large_without_images' @><@ ../blocks/pagelist/masonry_cards_large_without_images.php @><@ end @>	
 <@ if @{ :pagelistLayout } = 'masonry_large' @><@ ../blocks/pagelist/masonry_large.php @><@ end @>	
 <@ if @{ :pagelistLayout } = 'masonry_large_without_images' @><@ ../blocks/pagelist/masonry_large_without_images.php @><@ end @>	
