@@ -11,15 +11,18 @@ https://marcdahmen.de
 	<@ if not @{ checkboxHideRelatedPages } @>
 		<@ newPagelist {
 			type: 'related',
-			sort: @{ selectRelatedPagelistSort | def (':index asc') }
+			sort: @{ selectRelatedPagelistSort | def (':index asc') },
+			limit: @{ numberRelatedPagelistMaxNumberOfPages | def (8) }
 		} @>
 		<@ set {
-			:pagelistLayout: @{ selectRelatedPagelistLayout | def ('grid') },
+			:pagelistLayout: @{ selectRelatedPagelistLayout | def ('masonry') },
 			:dateFormat: @{ selectRelatedPagelistDateFormat | def ('MMM Y') }
 		} @>
-		<div class="std-layout__related">
-			<@ ../lib/includePagelistLayout.php @>
-		</div>
+		<@ if @{ :pagelistCount } @>
+			<div class="std-layout__related">
+				<@ ../lib/includePagelistLayout.php @>
+			</div>
+		<@ end @>
 	<@ end @>
 <@ end @>
 

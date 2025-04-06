@@ -9,8 +9,10 @@ https://marcdahmen.de
 
 <@~ snippet title @>
 	<@ if not @{ checkboxHideTitle } @>
-		<h1>@{ title }</h1>
-		<@ tags @>
+		<div class="std-layout__title">
+			<h1>@{ title }</h1>
+			<@ tags @>
+		</div>
 	<@ end @>
 <@~ end @>
 
@@ -26,6 +28,4 @@ https://marcdahmen.de
 	<@ end @>
 <@ end @>
 
-<div class="std-layout__title">
-	<@ title @>
-</div>
+<@ title @>

@@ -12,13 +12,13 @@ https://marcdahmen.de
 		<@ brand.php @>
 		<@ navbar.php @>
 		<@ hero.php @>
-		<@ sidebar.php @>
 		<@ breadcrumbs.php @>
 		<@ title.php @>
 		<@ main.php @>
+		<@ sidebar.php @>
+		<@ toc.php @>
 		<@ prevNext.php @>
 		<@ related.php @>
-		<@ toc.php @>
 		<@ footer.php @>
 	</div>
 <@~ end ~@>

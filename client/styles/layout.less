@@ -21,47 +21,31 @@ body {
 	min-height: 100%;
 	margin: 0 auto;
 	--title-height: auto;
-	--title-space: 2rem;
 	--block-margin-left: auto;
 	--sidebar-width: @std-aside-width;
 	--gap: var(--std-layout-gap);
 
 	@media (max-width: @std-breakpoint-s-max) {
 		--sidebar-width: 0px;
-		--gap: 0px;
 	}
 
 	grid-template-columns: var(--columns);
 	grid-template-rows:
 		[navbar-top]
 		auto
-		[navbar-bottom]
-		2rem
-		[hero-top]
+		[navbar-bottom hero-top]
 		auto
-		[hero-bottom]
-		4rem
-		[breadcrumbs-top]
-		1.6rem
-		[breadcrumbs-bottom]
-		2rem
-		[title-top]
+		[hero-bottom breadcrumbs-top]
+		auto
+		[breadcrumbs-bottom title-top]
 		var(--title-height)
-		[title-bottom]
-		var(--title-space)
-		[main-top]
+		[title-bottom main-top]
 		1fr
-		[main-bottom]
-		2rem
-		[prev-next-top]
+		[main-bottom prev-next-top]
 		auto
-		[prev-next-bottom]
-		6rem
-		[related-top]
+		[prev-next-bottom related-top]
 		auto
-		[related-bottom]
-		6rem
-		[footer-top]
+		[related-bottom footer-top]
 		auto
 		[footer-bottom];
 
@@ -172,7 +156,6 @@ body {
 
 		@media (min-width: @std-breakpoint-m) {
 			--title-height: 0px;
-			--title-space: 0px;
 
 			/* prettier-ignore */
 			--columns:
@@ -234,14 +217,23 @@ body {
 		}
 	}
 
+	// In case there is no hero section apply the actual navbar bottom padding
+	// to the following element such as breadcrumbs or title as top padding.
+	&__navbar + :not(&__hero) {
+		padding-top: var(--std-navbar-space-bottom);
+	}
+
 	&__hero {
 		grid-column: hero-start / hero-end;
 		grid-row: hero-top / hero-bottom;
+		padding-top: var(--std-hero-space-top);
+		padding-bottom: var(--std-hero-space-bottom);
 	}
 
 	&__breadcrumbs {
 		grid-column: breadcrumbs-start / breadcrumbs-end;
 		grid-row: breadcrumbs-top / breadcrumbs-bottom;
+		padding-bottom: var(--std-breadcrumbs-space-bottom);
 	}
 
 	&__sidebar {
@@ -252,11 +244,13 @@ body {
 	&__title {
 		grid-column: title-start / title-end;
 		grid-row: title-top / title-bottom;
+		padding-bottom: var(--std-title-space-bottom);
 	}
 
 	&__main {
 		grid-column: main-start / main-end;
 		grid-row: main-top / main-bottom;
+		padding-bottom: var(--std-main-space-bottom);
 	}
 
 	&__toc {
@@ -274,6 +268,7 @@ body {
 		gap: var(--std-layout-gap);
 		grid-column: prev-next-start / prev-next-end;
 		grid-row: prev-next-top / prev-next-bottom;
+		padding-bottom: var(--std-prev-next-space-bottom);
 
 		@media (max-width: @std-breakpoint-xs-max) {
 			grid-template-columns: 1fr;
@@ -283,6 +278,7 @@ body {
 	&__related {
 		grid-column: related-start / related-end;
 		grid-row: related-top / related-bottom;
+		padding-bottom: var(--std-related-space-bottom);
 	}
 
 	&__footer {
@@ -291,9 +287,16 @@ body {
 		gap: var(--std-layout-gap);
 		grid-column: footer-start / footer-end;
 		grid-row: footer-top / footer-bottom;
+		padding-top: var(--std-footer-space-top);
 
 		@media (max-width: @std-breakpoint-xs-max) {
 			grid-template-columns: 1fr;
 		}
+	}
+
+	// In case there is no prev-next navigation and no related pagelist
+	// set the top padding to 0 in order deduplicate paddings with main.
+	&__main + &__footer {
+		padding-top: 0;
 	}
 }

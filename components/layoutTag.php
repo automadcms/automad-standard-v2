@@ -38,7 +38,7 @@ https://marcdahmen.de
 				page: @{ :page }
 			} @>	
 			<@ set {
-				:pagelistLayout: @{ selectTagPagelistLayout | def ('grid') },
+				:pagelistLayout: @{ selectTagPagelistLayout | def ('masonry') },
 				:dateFormat: @{ selectTagPagelistDateFormat | def ('MMM Y') }
 			} @>
 			<@ ../lib/includePagelistLayout.php @>

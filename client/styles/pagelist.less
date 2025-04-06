@@ -22,7 +22,7 @@
 			transition: opacity 0.2s;
 		}
 
-		& > :hover {
+		&:hover > * {
 			opacity: var(--std-pagelist-hover-opacity);
 		}
 
@@ -53,10 +53,6 @@
 		column-gap: var(--std-pagelist-grid-column-gap);
 	}
 
-	&__masonry-item {
-		padding-bottom: var(--std-pagelist-grid-row-gap);
-	}
-
 	&--masonry {
 		position: relative;
 		display: grid;
@@ -64,6 +60,11 @@
 		column-gap: var(--std-pagelist-grid-column-gap);
 		grid-auto-rows: 5px;
 		grid-template-columns: repeat(auto-fill, minmax(var(--size), 1fr));
+		margin-bottom: ~'calc(var(--std-pagelist-grid-row-gap) * -1)';
+
+		& .std-pagelist__masonry-item {
+			padding-bottom: var(--std-pagelist-grid-row-gap);
+		}
 	}
 
 	&--masonry &__item {

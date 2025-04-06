@@ -8,9 +8,11 @@ https://marcdahmen.de
 #>
 
 <@~ snippet hero @>
-	<section class="std-layout__hero">
-		@{ +hero }
-	</section>	
+	<@ if @{ +hero } @>
+		<section class="std-layout__hero">
+			@{ +hero }
+		</section>	
+	<@ end @>
 <@~ end ~@>
 
 <@ hero @>

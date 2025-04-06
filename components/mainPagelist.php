@@ -19,7 +19,7 @@ https://marcdahmen.de
 		page: @{ :page }
 	} @>	
 	<@ set {
-		:pagelistLayout: @{ selectMainPagelistLayout | def ('grid') },
+		:pagelistLayout: @{ selectMainPagelistLayout | def ('masonry') },
 		:dateFormat: @{ selectMainPagelistDateFormat | def ('MMM Y') }
 	} @>
 	<div<@ if @{ checkboxNarrowMainPagelist } @> class="am-block"<@ end @>>
