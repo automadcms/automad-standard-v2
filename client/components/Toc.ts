@@ -5,6 +5,12 @@
  * https://marcdahmen.de
  */
 
+type TocItem = {
+	id: string;
+	text: string;
+	level: number;
+};
+
 const css = {
 	wrapper: 'std-toc',
 	ul: 'std-toc__list',
@@ -30,9 +36,19 @@ class TocComponent extends HTMLElement {
 		let lastLevel = 1;
 		let html = '';
 
-		headings.forEach((heading) => {
-			const level = parseInt(heading.tagName.replace(/h/i, ''));
+		const items: TocItem[] = [
+			{ id: '', text: this.getAttribute('top'), level: 2 },
+		];
 
+		headings.forEach((heading) => {
+			items.push({
+				id: heading.id,
+				text: heading.textContent,
+				level: parseInt(heading.tagName.replace(/h/i, '')),
+			});
+		});
+
+		items.forEach(({ id, text, level }) => {
 			if (level > lastLevel) {
 				const diff = level - lastLevel;
 
@@ -55,7 +71,7 @@ class TocComponent extends HTMLElement {
 				html += '</li><li>';
 			}
 
-			html += `<a href="#${heading.id}" class="${css.a}">${heading.textContent}</a>`;
+			html += `<a href="#${id}" class="${css.a}">${text}</a>`;
 			lastLevel = level;
 		});
 

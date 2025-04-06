@@ -9,7 +9,7 @@ https://marcdahmen.de
 
 <@~ snippet toc @>
 	<aside class="std-layout__toc">
-		<std-toc></std-toc>
+		<std-toc top="@{ labelBackToTop | def('Top') }"></std-toc>
 	</aside>	
 <@~ end ~@>
 
