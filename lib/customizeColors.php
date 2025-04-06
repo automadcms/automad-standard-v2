@@ -10,53 +10,53 @@ https://marcdahmen.de
 <@~ set { :colorsLight: false, :colorsDark: false } @>
 
 <# Light Mode #>
-<@~ if @{ colorLightModeForegroundShade_1 } @>
-	<@~ set { :colorsLight: "@{ :colorsLight }--std-fg-1:@{ colorLightModeForegroundShade_1 };" } @>
+<@~ if @{ colorLightFg1 } @>
+	<@~ set { :colorsLight: "@{ :colorsLight }--std-fg-1:@{ colorLightFg1 };" } @>
 <@~ end @>
 
-<@~ if @{ colorLightModeForegroundShade_2 } @>
-	<@~ set { :colorsLight: "@{ :colorsLight }--std-fg-2:@{ colorLightModeForegroundShade_2 };" } @>
+<@~ if @{ colorLightFg2 } @>
+	<@~ set { :colorsLight: "@{ :colorsLight }--std-fg-2:@{ colorLightFg2 };" } @>
 <@~ end @>
 
-<@~ if @{ colorLightModeBackgroundShade_1 } @>
-	<@~ set { :colorsLight: "@{ :colorsLight }--std-bg-1:@{ colorLightModeBackgroundShade_1 };" } @>
+<@~ if @{ colorLightBg1 } @>
+	<@~ set { :colorsLight: "@{ :colorsLight }--std-bg-1:@{ colorLightBg1 };" } @>
 <@~ end @>
 
-<@~ if @{ colorLightModeBackgroundShade_2 } @>
-	<@~ set { :colorsLight: "@{ :colorsLight }--std-bg-2:@{ colorLightModeBackgroundShade_2 };" } @>
+<@~ if @{ colorLightBg2 } @>
+	<@~ set { :colorsLight: "@{ :colorsLight }--std-bg-2:@{ colorLightBg2 };" } @>
 <@~ end @>
 
-<@~ if @{ colorLightModeBackgroundShade_3 } @>
-	<@~ set { :colorsLight: "@{ :colorsLight }--std-bg-3:@{ colorLightModeBackgroundShade_3 };" } @>
+<@~ if @{ colorLightBg3 } @>
+	<@~ set { :colorsLight: "@{ :colorsLight }--std-bg-3:@{ colorLightBg3 };" } @>
 <@~ end @>
 
-<@~ if @{ colorLightModeBackgroundShade_4 } @>
-	<@~ set { :colorsLight: "@{ :colorsLight }--std-bg-4:@{ colorLightModeBackgroundShade_4 };" } @>
+<@~ if @{ colorLightBg4 } @>
+	<@~ set { :colorsLight: "@{ :colorsLight }--std-bg-4:@{ colorLightBg4 };" } @>
 <@~ end @>
 
 <# Dark Mode #>
-<@~ if @{ colorDarkModeForegroundShade_1 } @>
-	<@~ set { :colorsDark: "@{ :colorsDark }--std-fg-1:@{ colorDarkModeForegroundShade_1 };" } @>
+<@~ if @{ colorDarkFg1 } @>
+	<@~ set { :colorsDark: "@{ :colorsDark }--std-fg-1:@{ colorDarkFg1 };" } @>
 <@~ end @>
 
-<@~ if @{ colorDarkModeForegroundShade_2 } @>
-	<@~ set { :colorsDark: "@{ :colorsDark }--std-fg-2:@{ colorDarkModeForegroundShade_2 };" } @>
+<@~ if @{ colorDarkFg2 } @>
+	<@~ set { :colorsDark: "@{ :colorsDark }--std-fg-2:@{ colorDarkFg2 };" } @>
 <@~ end @>
 
-<@~ if @{ colorDarkModeBackgroundShade_1 } @>
-	<@~ set { :colorsDark: "@{ :colorsDark }--std-bg-1:@{ colorDarkModeBackgroundShade_1 };" } @>
+<@~ if @{ colorDarkBg1 } @>
+	<@~ set { :colorsDark: "@{ :colorsDark }--std-bg-1:@{ colorDarkBg1 };" } @>
 <@~ end @>
 
-<@~ if @{ colorDarkModeBackgroundShade_2 } @>
-	<@~ set { :colorsDark: "@{ :colorsDark }--std-bg-2:@{ colorDarkModeBackgroundShade_2 };" } @>
+<@~ if @{ colorDarkBg2 } @>
+	<@~ set { :colorsDark: "@{ :colorsDark }--std-bg-2:@{ colorDarkBg2 };" } @>
 <@~ end @>
 
-<@~ if @{ colorDarkModeBackgroundShade_3 } @>
-	<@~ set { :colorsDark: "@{ :colorsDark }--std-bg-3:@{ colorDarkModeBackgroundShade_3 };" } @>
+<@~ if @{ colorDarkBg3 } @>
+	<@~ set { :colorsDark: "@{ :colorsDark }--std-bg-3:@{ colorDarkBg3 };" } @>
 <@~ end @>
 
-<@~ if @{ colorDarkModeBackgroundShade_4 } @>
-	<@~ set { :colorsDark: "@{ :colorsDark }--std-bg-4:@{ colorDarkModeBackgroundShade_4 };" } @>
+<@~ if @{ colorDarkBg4 } @>
+	<@~ set { :colorsDark: "@{ :colorsDark }--std-bg-4:@{ colorDarkBg4 };" } @>
 <@~ end @>
 
 <@~ if @{ :colorsLight } or @{ :colorsDark } ~@>
