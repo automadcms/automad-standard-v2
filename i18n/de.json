@@ -1,0 +1,172 @@
+{
+  "labels": {
+    "brand": "Branding Logo (SVG, HTML oder Text)",
+    "imageLogo": "Logo als Bild (PNG, JPG, etc.)",
+    "imagePagelist": "Vorschaubild in Pagelists",
+    "numberLogoWidthDesktop": "Logo-Breite auf Desktop-Bildschirmen",
+    "numberLogoWidthMobile": "Logo-Breite auf kleinen Bildschirmen",
+    "checkboxCompactLayout": "Kompaktes Layout (kleinere Spalten zwischen Elementen)",
+    "selectMainPagelistSubset": "Haupt-Pagelist: Art von Pagelist-Inhalt",
+    "urlMainPagelistContext": "Haupt-Pagelist: Die URL der Seite, welche als Pagelist Kontext dient",
+    "selectMainPagelistLayout": "Haupt-Pagelist: Layout",
+    "checkboxNarrowMainPagelist": "Haupt-Pagelist: Pagelist nicht auf volle Breite ausdehnen (schmal)",
+    "selectMainPagelistSort": "Haupt-Pagelist: Sortierung",
+    "selectMainPagelistDateFormat": "Haupt-Pagelist: Datumsformat",
+    "numberMainPagelistMaxNumberOfPages": "Haupt-Pagelist: Maximale Anzahl von dargestellen Unterseiten pro Seite",
+    "selectTagPagelistLayout": "Schlagwort Overlay: Layout",
+    "selectTagPagelistSort": "Schlagwort Overlay: Sortierung",
+    "selectTagPagelistDateFormat": "Schlagwort Overlay: Datumsformat",
+    "numberTagPagelistMaxNumberOfPages": "Schlagwort Overlay: Maximale Anzahl von dargestellen Unterseiten pro Seite",
+    "checkboxHideRelatedPages": "Verwandte Seiten: Verwandte Seiten im Footer ausblenden",
+    "selectRelatedPagelistLayout": "Verwandte Seiten: Layout",
+    "selectRelatedPagelistSort": "Verwandte Seiten: Sortierung",
+    "selectRelatedPagelistDateFormat": "Verwandte Seiten: Datumsformat",
+    "numberRelatedPagelistMaxNumberOfPages": "Verwandte Seiten: Maximale Anzahl von Unterseiten",
+    "colorLightFg1": "Helles Farbthema: Primäre Text-Farbe",
+    "colorLightFg2": "Helles Farbthema: Sekundäre Text-Farbe",
+    "colorLightBg1": "Helles Farbthema: Hintergrund 1 (Seite)",
+    "colorLightBg2": "Helles Farbthema: Hintergrund 2 (Karten)",
+    "colorLightBg3": "Helles Farbthema: Hintergrund 3 (Schlagwörter, etc.)",
+    "colorLightBg4": "Helles Farbthema: Hintergrund 4",
+    "colorDarkFg1": "Dunkles Farbthema: Primäre Text-Farbe",
+    "colorDarkFg2": "Dunkles Farbthema: Sekundäre Text-Farbe",
+    "colorDarkBg1": "Dunkles Farbthema: Hintergrund 1 (Seite)",
+    "colorDarkBg2": "Dunkles Farbthema: Hintergrund 2 (Karten)",
+    "colorDarkBg3": "Dunkles Farbthema: Hintergrund 3 (Schlagwörter, etc.)",
+    "colorDarkBg4": "Dunkles Farbthema: Hintergrund 4",
+    "selectColorTheme": "Farbthema (hell/dunkel)",
+    "checkboxHideTitle": "Seitentitel ausblenden",
+    "checkboxHideTags": "Schlagwörter ausblenden",
+    "checkboxDisableSearch": "Suche deaktivieren",
+    "checkboxHideBreadcrumbs": "Breadcrumb-Navigation ausblenden",
+    "checkboxHidePreviousAndNextPageNavigation": "Vorherige/Nächste-Navigation ausblenden",
+    "checkboxDisablePagelistAnimations": "Pagelist-Animationen deaktivieren",
+    "selectShowPageInNavbar": "Seite in der Navigationsleiste anzeigen",
+    "selectShowPageInFooter": "Seite im Footer-Bereich anzeigen",
+    "checkboxHideNavbarLinksInMobileSidebar": "Navigationsleiste in mobiler Seitenleiste ausblenden",
+    "checkboxShowNavbarLinksInVerticalMenu": "Navigationsleistenelemnte vertikal anordnen",
+    "labelBackToTop": "Beschriftung für \"Zurück zum Seitenanfang\""
+  },
+  "options": {
+    "selectColorTheme": {
+      "switcher": "Theme-Switcher anzeigen, auswählbar durch Besucher",
+      "light": "Hell",
+      "dark": "Dunkel"
+    },
+    "selectMainPagelistSubset": {
+      "children": "Nur direkte Unterseiten from aktuellen Kontext anzeigen",
+      "siblings": "Nur Nachbarseiten anzeigen"
+    },
+    "selectMainPagelistDateFormat": {
+      "MMM Y": "Monat und Jahr",
+      "Y": "Nur Jahr",
+      "d. LLLL Y": "Lang",
+      "EEEE, d. LLLL Y": "Lang mit Wochentag",
+      "LLLL d, Y": "US Format",
+      "EEEE, LLLL d, Y": "US Format mit Wochentag",
+      "Y-MM-dd": "YYYY-MM-DD",
+      "yyMMdd": "YYMMDD"
+    },
+    "selectMainPagelistSort": {
+      ":index asc": "Manuelle Sortierung",
+      "date desc": "Neueste zuerst",
+      "date asc": "Älteste zuerst",
+      "title asc": "Alphabetisch"
+    },
+    "selectMainPagelistLayout": {
+      "blog": "Blog",
+      "blog_without_images": "Blog ohne Bilder",
+      "grid": "Raster",
+      "grid_without_images": "Raster ohne Bilder",
+      "grid_cards": "Raster mit Karten",
+      "grid_cards_without_images": "Raster mit Karten ohne Bilder",
+      "grid_cards_square": "Raster aus quadratischen Karten",
+      "grid_large": "Grosses Raster",
+      "grid_large_without_images": "Grosses Raster ohne Bilder",
+      "masonry": "Masonry",
+      "masonry_cards": "Masonry mit Karten",
+      "masonry_cards_large": "Masonry mit grossen Karten",
+      "masonry_cards_large_without_images": "Masonry mit grossen Karten ohne Bilder",
+      "masonry_large": "Masonry gross",
+      "masonry_large_without_images": "Masonry gross ohne Bilder"
+    },
+    "selectRelatedPagelistDateFormat": {
+      "MMM Y": "Monat und Jahr",
+      "Y": "Nur Jahr",
+      "d. LLLL Y": "Lang",
+      "EEEE, d. LLLL Y": "Lang mit Wochentag",
+      "LLLL d, Y": "US Format",
+      "EEEE, LLLL d, Y": "US Format mit Wochentag",
+      "Y-MM-dd": "YYYY-MM-DD",
+      "yyMMdd": "YYMMDD"
+    },
+    "selectRelatedPagelistSort": {
+      ":index asc": "Manuelle Sortierung",
+      "date desc": "Neueste zuerst",
+      "date asc": "Älteste zuerst",
+      "title asc": "Alphabetisch"
+    },
+    "selectRelatedPagelistLayout": {
+      "blog": "Blog",
+      "blog_without_images": "Blog ohne Bilder",
+      "grid": "Raster",
+      "grid_without_images": "Raster ohne Bilder",
+      "grid_cards": "Raster mit Karten",
+      "grid_cards_without_images": "Raster mit Karten ohne Bilder",
+      "grid_cards_square": "Raster aus quadratischen Karten",
+      "grid_large": "Grosses Raster",
+      "grid_large_without_images": "Grosses Raster ohne Bilder",
+      "masonry": "Masonry",
+      "masonry_cards": "Masonry mit Karten",
+      "masonry_cards_large": "Masonry mit grossen Karten",
+      "masonry_cards_large_without_images": "Masonry mit grossen Karten ohne Bilder",
+      "masonry_large": "Masonry gross",
+      "masonry_large_without_images": "Masonry gross ohne Bilder"
+    },
+    "selectTagPagelistDateFormat": {
+      "MMM Y": "Monat und Jahr",
+      "Y": "Nur Jahr",
+      "d. LLLL Y": "Lang",
+      "EEEE, d. LLLL Y": "Lang mit Wochentag",
+      "LLLL d, Y": "US Format",
+      "EEEE, LLLL d, Y": "US Format mit Wochentag",
+      "Y-MM-dd": "YYYY-MM-DD",
+      "yyMMdd": "YYMMDD"
+    },
+    "selectTagPagelistSort": {
+      ":index asc": "Manuelle Sortierung",
+      "date desc": "Neueste zuerst",
+      "date asc": "Älteste zuerst",
+      "title asc": "Alphabetisch"
+    },
+    "selectTagPagelistLayout": {
+      "blog": "Blog",
+      "blog_without_images": "Blog ohne Bilder",
+      "grid": "Raster",
+      "grid_without_images": "Raster ohne Bilder",
+      "grid_cards": "Raster mit Karten",
+      "grid_cards_without_images": "Raster mit Karten ohne Bilder",
+      "grid_cards_square": "Raster aus quadratischen Karten",
+      "grid_large": "Grosses Raster",
+      "grid_large_without_images": "Grosses Raster ohne Bilder",
+      "masonry": "Masonry",
+      "masonry_cards": "Masonry mit Karten",
+      "masonry_cards_large": "Masonry mit grossen Karten",
+      "masonry_cards_large_without_images": "Masonry mit grossen Karten ohne Bilder",
+      "masonry_large": "Masonry gross",
+      "masonry_large_without_images": "Masonry gross ohne Bilder"
+    },
+    "selectShowPageInNavbar": {
+      "link": "Als normalen Link anzeigen",
+      "action": "Als call-to-action Button anzeigen"
+    },
+    "selectShowPageInFooter": {
+      "primary": "In primärem Footer-Bereich anzeigen",
+      "secondary": "In sekundärem Footer-Bereich anzeigen"
+    }
+  },
+  "tooltips": {
+    "+hero": "Der Hero Bereich",
+    "+main": "Der Haupt-Inhalt"
+  }
+}
