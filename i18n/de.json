@@ -40,7 +40,7 @@
     "checkboxDisableSearch": "Suche deaktivieren",
     "checkboxHideBreadcrumbs": "Breadcrumb-Navigation ausblenden",
     "checkboxHidePreviousAndNextPageNavigation": "Vorherige/Nächste-Navigation ausblenden",
-    "checkboxDisablePagelistAnimations": "Pagelist-Animationen deaktivieren",
+    "checkboxDisableAnimations": "Animationen deaktivieren",
     "selectShowPageInNavbar": "Seite in der Navigationsleiste anzeigen",
     "selectShowPageInFooter": "Seite im Footer-Bereich anzeigen",
     "checkboxHideNavbarLinksInMobileSidebar": "Navigationsleiste in mobiler Seitenleiste ausblenden",

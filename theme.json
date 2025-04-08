@@ -7,7 +7,7 @@
   "masks": {
     "page": [
       "checkboxDisableSearch",
-      "checkboxDisablePagelistAnimations",
+      "checkboxDisableAnimations",
       "labelBackToTop"
     ],
     "shared": [
@@ -38,7 +38,7 @@
     "checkboxHideBreadcrumbs",
     "checkboxHidePreviousAndNextPageNavigation",
     "checkboxCompactLayout",
-    "checkboxDisablePagelistAnimations",
+    "checkboxDisableAnimations",
     "selectShowPageInNavbar",
     "selectShowPageInFooter",
     "selectMainPagelistSubset",

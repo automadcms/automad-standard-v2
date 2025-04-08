@@ -1,0 +1,30 @@
+/*
+ * Automad Standard v2
+ *
+ * Copyright 2025 Marc Anton Dahmen, MIT license
+ * https://marcdahmen.de
+ */
+
+@view-transition {
+	navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	&::view-transition-old(root) {
+		animation: none;
+	}
+
+	&::view-transition-new(root) {
+		animation: none;
+	}
+}
+
+.no-animations {
+	&::view-transition-old(root) {
+		animation: none;
+	}
+
+	&::view-transition-new(root) {
+		animation: none;
+	}
+}

@@ -17,12 +17,12 @@ https://marcdahmen.de
 	<@~ set { :compact: ' compact' } @>
 <@~ end @>
 
-<@~ if @{ checkboxDisablePagelistAnimations } @>
-	<@~ set { :noPagelistAnimations: ' no-pagelist-animations' } @>
+<@~ if @{ checkboxDisableAnimations } @>
+	<@~ set { :noAnimations: ' no-animations' } @>
 <@~ end ~@>
 
 <!DOCTYPE html>
-<html lang="en" class="@{ template | sanitize }@{ :colorTheme }@{ :compact }@{ :noPagelistAnimations }">
+<html lang="en" class="@{ template | sanitize }@{ :colorTheme }@{ :compact }@{ :noAnimations }">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="/packages/@{ theme }/dist/vendor.bundle.css" rel="stylesheet">
