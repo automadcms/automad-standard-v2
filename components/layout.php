@@ -9,13 +9,19 @@ https://marcdahmen.de
 
 <@~ snippet layout ~@>
 	<div class="std-layout std-layout--@{ template | sanitize }">
+		<# 
+		Note that the order of the components
+		is essential. The hero must follow the navbar 
+		and main, toc, prevNext, related and footer 
+		must be in that order to make optional spacing work!
+		#>
 		<@ brand.php @>
 		<@ navbar.php @>
 		<@ hero.php @>
 		<@ breadcrumbs.php @>
 		<@ title.php @>
-		<@ main.php @>
 		<@ sidebar.php @>
+		<@ main.php @>
 		<@ toc.php @>
 		<@ prevNext.php @>
 		<@ related.php @>
