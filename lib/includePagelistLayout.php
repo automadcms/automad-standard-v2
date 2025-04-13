@@ -25,6 +25,7 @@ in order to render the pagelist correctly:
 <@ if @{ :pagelistLayout } = 'grid_cards' @><@ ../blocks/pagelist/grid_cards.php @><@ end @>	
 <@ if @{ :pagelistLayout } = 'grid_cards_without_images' @><@ ../blocks/pagelist/grid_cards_without_images.php @><@ end @>	
 <@ if @{ :pagelistLayout } = 'grid_cards_square' @><@ ../blocks/pagelist/grid_cards_square.php @><@ end @>	
+<@ if @{ :pagelistLayout } = 'grid_framed' @><@ ../blocks/pagelist/grid_framed.php @><@ end @>	
 <@ if @{ :pagelistLayout } = 'grid_large' @><@ ../blocks/pagelist/grid_large.php @><@ end @>	
 <@ if @{ :pagelistLayout } = 'grid_large_without_images' @><@ ../blocks/pagelist/grid_large_without_images.php @><@ end @>	
 <@ if @{ :pagelistLayout } = 'masonry' @><@ ../blocks/pagelist/masonry.php @><@ end @>	
