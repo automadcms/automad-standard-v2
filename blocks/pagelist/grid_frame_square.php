@@ -7,7 +7,7 @@ https://marcdahmen.de
 
 #>
 
-<div class="std-pagelist std-pagelist--grid std-pagelist--framed">
+<div class="std-pagelist std-pagelist--grid std-pagelist--frame std-pagelist--frame-square">
 	<@ foreach in pagelist @>
 		<@ ../../components/pagelist/item.php @>
 	<@ end @>
