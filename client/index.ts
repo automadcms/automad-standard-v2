@@ -18,3 +18,5 @@ import './components/Search';
 import './components/SidebarToggle';
 import './components/ThemeSwitcher';
 import './components/Toc';
+
+import './lib/detectScrollbar';
