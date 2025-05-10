@@ -15,11 +15,16 @@
 		display: flex;
 		justify-content: center;
 		align-items: start;
+		width: 100vw;
 		inset: 0;
 		pointer-events: none;
 
 		&__backdrop {
 			.backdrop();
+		}
+
+		html:has(&--open) {
+			overflow: hidden;
 		}
 
 		&--open &__backdrop {

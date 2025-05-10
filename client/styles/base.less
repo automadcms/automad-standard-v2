@@ -20,13 +20,17 @@ html {
 		margin-right: ~'calc((100vw - 100%) * -1)';
 		margin-left: 0;
 		padding-right: 12px;
-		overflow-x: hidden;
 	}
 
 	& * {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
+}
+
+html,
+body {
+	overflow-x: clip;
 }
 
 h1 {
