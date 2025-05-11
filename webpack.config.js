@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 const TerserPlugin = require('terser-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-v3-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -51,6 +52,14 @@ module.exports = (env, argv) => {
 					use: [
 						MiniCssExtractPlugin.loader,
 						'css-loader',
+						{
+							loader: 'postcss-loader',
+							options: {
+								postcssOptions: {
+									plugins: [autoprefixer()],
+								},
+							},
+						},
 						'less-loader',
 					],
 				},

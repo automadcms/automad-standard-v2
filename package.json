@@ -11,6 +11,7 @@
   "devDependencies": {
     "@fontsource-variable/inter": "^5.2.5",
     "@fontsource-variable/jetbrains-mono": "^5.2.5",
+    "autoprefixer": "^10.4.21",
     "browser-sync": "^3.0.3",
     "browser-sync-v3-webpack-plugin": "^0.1.0",
     "css-loader": "^7.1.2",
@@ -19,6 +20,7 @@
     "less-loader": "^12.2.0",
     "mini-css-extract-plugin": "^2.9.2",
     "modern-normalize": "^3.0.1",
+    "postcss-loader": "^8.1.1",
     "string-replace-loader": "^3.1.0",
     "terser-webpack-plugin": "^5.3.10",
     "ts-loader": "^9.5.1",
