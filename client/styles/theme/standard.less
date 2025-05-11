@@ -8,7 +8,6 @@
 @import './blocks.less';
 
 /**
- * =========================================================
  * Colors
  */
 :root {
@@ -44,14 +43,13 @@
 }
 
 /**
- * =========================================================
  * Layout
  */
 :root {
 	/**
 	 * Normal Layout
 	 */
-	--std-layout-gap: 5rem;
+	--std-layout-gap: 2rem;
 	--std-navbar-align-items: start;
 	--std-navbar-space-bottom: 8rem;
 	--std-hero-space-top: 4rem;
@@ -62,17 +60,20 @@
 	--std-prev-next-space-bottom: 2rem;
 	--std-related-space-bottom: 2rem;
 	--std-footer-space-top: 6rem;
-}
 
-.compact {
+	@media (min-width: 1180px) {
+		--std-layout-gap: 5rem;
+	}
+
 	/**
 	 * Compact Layout
 	 */
-	--std-layout-gap: 1.5rem;
+	&.compact {
+		--std-layout-gap: 1.25rem;
+	}
 }
 
 /**
- * =========================================================
  * Pagelist
  */
 :root {
@@ -89,6 +90,12 @@
 
 	--std-pagelist-hover-opacity: 0.6;
 
+	--std-pagelist-item-compact-padding-bottom: 0;
+
+	&.compact {
+		--std-pagelist-item-compact-padding-bottom: 3rem;
+	}
+
 	--std-card-padding: 0.75rem;
 	--std-card-radius: 0.3rem;
 	--std-card-bg: var(--std-bg-2);
@@ -99,7 +106,6 @@
 }
 
 /**
- * =========================================================
  * Search
  */
 :root {
@@ -110,7 +116,6 @@
 }
 
 /**
- * =========================================================
  * Tags
  */
 :root {
@@ -135,7 +140,6 @@
 }
 
 /**
- * =========================================================
  * Typography
  */
 :root {
