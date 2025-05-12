@@ -5,6 +5,7 @@
     "imagePagelist": "Vorschaubild in Pagelists",
     "numberLogoWidthDesktop": "Logo-Breite auf Desktop-Bildschirmen",
     "numberLogoWidthMobile": "Logo-Breite auf kleinen Bildschirmen",
+    "checkboxCollapseSidebarNavigation": "Elternseiten in Seitenleiste zusammenfassen",
     "checkboxCompactLayout": "Kompaktes Layout (kleinere Spalten zwischen Elementen)",
     "selectMainPagelistSubset": "Haupt-Pagelist: Art von Pagelist-Inhalt",
     "urlMainPagelistContext": "Haupt-Pagelist: Die URL der Seite, welche als Pagelist Kontext dient",

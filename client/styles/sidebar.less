@@ -43,4 +43,56 @@ html.std-has-open-sidebar {
 			display: none;
 		}
 	}
+
+	&__breadcrumbs {
+		padding: 0;
+		margin-left: -0.125em;
+		list-style: none;
+
+		& li {
+			display: flex;
+			align-items: center;
+			gap: 0.4em;
+		}
+	}
+
+	&__tree {
+		padding: 0;
+		list-style: none;
+		color: var(--std-fg-2);
+
+		& li {
+			display: flex;
+			flex-direction: column;
+		}
+
+		& a {
+			position: relative;
+			display: flex;
+			padding-right: 1.35em;
+		}
+
+		& & {
+			padding-left: 0.9rem;
+			.small-text;
+		}
+
+		& .std-active,
+		& .std-active-path {
+			color: var(--std-fg-1);
+		}
+
+		& .std-active > a:before {
+			@size: 0.65em;
+			content: '';
+			position: absolute;
+			top: 0.425em;
+			right: 0;
+			display: block;
+			width: @size;
+			height: @size;
+			border-radius: @size;
+			background-color: var(--std-fg-1);
+		}
+	}
 }
