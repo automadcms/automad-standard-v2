@@ -5,9 +5,17 @@
  * https://marcdahmen.de
  */
 
+import iconArrowUp from '@/lib/icons/arrowUp.svg';
+import { create } from '@/lib/utils';
+
 type TocItem = {
-	id: string;
-	text: string;
+	link: HTMLAnchorElement;
+	observed: HTMLElement;
+	level: number;
+};
+
+type List = {
+	ul: HTMLUListElement;
 	level: number;
 };
 
@@ -25,66 +33,72 @@ class TocComponent extends HTMLElement {
 	}
 
 	connectedCallback(): void {
-		const main = document.querySelector('main');
-		const headings = Array.from(
-			main.querySelectorAll('h2[id], h3[id], h4[id]')
-		);
-
 		this.classList.add(css.wrapper);
 
-		let open = 0;
-		let lastLevel = 1;
-		let html = '';
+		const main = document.querySelector('main');
+		const top = document.querySelector<HTMLElement>('.std-brand');
+		const headings = Array.from(
+			main.querySelectorAll<HTMLElement>('h2[id], h3[id], h4[id]')
+		);
 
-		const items: TocItem[] = [
-			{ id: '', text: this.getAttribute('top'), level: 2 },
-		];
+		const items = new Map<HTMLElement, TocItem>();
+
+		items.set(top, {
+			link: create(
+				'a',
+				[css.a],
+				{ href: '#' },
+				null,
+				`${this.getAttribute('top')} ${iconArrowUp}`
+			),
+			level: 1,
+			observed: top,
+		});
 
 		headings.forEach((heading) => {
-			items.push({
-				id: heading.id,
-				text: heading.textContent,
-				level: parseInt(heading.tagName.replace(/h/i, '')),
+			items.set(heading, {
+				link: create(
+					'a',
+					[css.a],
+					{ href: `#${heading.id}` },
+					null,
+					heading.textContent
+				),
+				level: parseInt(heading.tagName[1]) - 1,
+				observed: heading,
 			});
 		});
 
-		items.forEach(({ id, text, level }) => {
-			if (level > lastLevel) {
-				const diff = level - lastLevel;
+		const root = create('ul', [css.ul], {}, this);
+		const stack: List[] = [{ ul: root, level: 1 }];
+		const current = () => stack[stack.length - 1];
 
-				for (let n = 1; n <= diff; n++) {
-					open++;
-					html += `<ul class="${css.ul}"><li class="${css.li}">`;
-				}
+		items.forEach((item) => {
+			while (stack.length > 0 && item.level < current().level) {
+				stack.pop();
 			}
 
-			if (level < lastLevel) {
-				const diff = lastLevel - level;
+			while (item.level > current().level) {
+				const parent = current().ul;
+				const li = parent.lastElementChild as HTMLLIElement;
+				const ul = create('ul', [css.ul], {}, li);
 
-				for (let n = 1; n <= diff; n++) {
-					open--;
-					html += '</li></ul>';
-				}
+				stack.push({ ul, level: current().level + 1 });
 			}
 
-			if (level <= lastLevel) {
-				html += '</li><li>';
-			}
+			const parent = current().ul;
+			const li = create('li', [css.li], {}, parent);
 
-			html += `<a href="#${id}" class="${css.a}">${text}</a>`;
-			lastLevel = level;
+			li.appendChild(item.link);
 		});
 
-		for (var i = 1; i <= open; i++) {
-			html += '</li></ul>';
-		}
-
-		this.innerHTML = html;
+		let lastLink: Element = null;
 
 		const observer = new IntersectionObserver((entries) => {
+			lastLink?.classList.remove(css.active);
+
 			entries.forEach((entry) => {
-				const id = entry.target.getAttribute('id');
-				const link = this.querySelector(`a[href="#${id}"]`);
+				const { link } = items.get(entry.target as HTMLElement);
 
 				try {
 					if (entry.intersectionRatio > 0) {
@@ -94,10 +108,22 @@ class TocComponent extends HTMLElement {
 					}
 				} catch (e) {}
 			});
+
+			if (!this.querySelector(`.${css.active}`)) {
+				lastLink = null;
+
+				items.forEach(({ observed, link }) => {
+					if (observed.offsetTop < window.scrollY) {
+						lastLink = link;
+					}
+				});
+
+				lastLink?.classList.add(css.active);
+			}
 		});
 
-		headings.forEach((heading) => {
-			observer.observe(heading);
+		items.forEach((item) => {
+			observer.observe(item.observed);
 		});
 	}
 }
