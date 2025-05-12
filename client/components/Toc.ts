@@ -80,7 +80,9 @@ class TocComponent extends HTMLElement {
 
 			while (item.level > current().level) {
 				const parent = current().ul;
-				const li = parent.lastElementChild as HTMLLIElement;
+				const li =
+					(parent.lastElementChild as HTMLLIElement) ??
+					create('li', [css.li], {}, parent);
 				const ul = create('ul', [css.ul], {}, li);
 
 				stack.push({ ul, level: current().level + 1 });
