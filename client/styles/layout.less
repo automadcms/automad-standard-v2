@@ -223,24 +223,8 @@ body {
 	}
 
 	&__navbar {
-		display: flex;
-		justify-content: end;
-		align-items: var(--std-navbar-align-items, start);
 		grid-column: nav-start / nav-end;
 		grid-row: navbar-top / navbar-bottom;
-
-		& &-links {
-			flex-grow: 1;
-			display: flex;
-
-			@media (max-width: @std-breakpoint-s-max) {
-				display: none;
-			}
-
-			&--vertical {
-				flex-direction: column;
-			}
-		}
 	}
 
 	// In case there is no hero section apply the actual navbar bottom padding

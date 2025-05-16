@@ -7,18 +7,21 @@ https://marcdahmen.de
 
 #>
 
-<@~ snippet navbarItems @>
+<@~ snippet navbarLinks @>
 	<@ ../lib/navbarLinksPagelist.php @>
 	<@ if @{ :pagelistCount } @>
-		<nav class="std-layout__navbar-links<@ if @{ checkboxShowNavbarLinksInVerticalMenu } @> std-layout__navbar-links--vertical<@ end @>">
+		<nav class="std-navbar__links<@ if @{ checkboxShowNavbarLinksInVerticalMenu } @> std-navbar__links--vertical<@ end @>">
 			<@ foreach in pagelist ~@>
 				<a href="@{ url }" class="<@ if @{ :current } @>active<@ end @>">@{ title }</a>
 			<@~ end ~@>
 		</nav>
 	<@ end @>
+<@ end @>
+
+<@~ snippet navbarButtons @>
 	<@ ../lib/navbarActionsPagelist.php @>
 	<@ if @{ :pagelistCount } @>
-		<nav class="std-layout__navbar-actions">
+		<nav class="std-navbar__buttons">
 			<@ foreach in pagelist ~@>
 				<a href="@{ url }">@{ title }</a>
 			<@~ end ~@>
@@ -26,15 +29,21 @@ https://marcdahmen.de
 	<@ end @>
 <@ end @>
 
-<@~ snippet search @>
-	<@ if not @{ checkboxDisableSearch } @>
-		<std-search src="/_api/public/pagelist">
+<@ snippet search ~@>
+	<@~ if not @{ checkboxDisableSearch } @>
+		<std-search src="/_api/public/pagelist" class="std-navbar__icon">
 			<@ ../lib/icons/search.php @>
-			<span>
+			<span class="std-navbar__tooltip">
 				<std-meta-key></std-meta-key>K
 			</span>
 		</std-search>
 	<@ end @>	
+<@~ end @>
+
+<@ snippet themeSwitcher @>
+	<@~ if @{ selectColorTheme | def ('switcher') } = 'switcher' ~@>
+		<std-theme-switcher class="std-navbar__icon"></std-theme-switcher>
+	<@~ end @>
 <@ end @>
 
 <@~ snippet sidebarToggle @>
@@ -50,17 +59,16 @@ https://marcdahmen.de
 		:navCount: @{ :navCount | + @{ :pagelistCount } }
 	} @>
 	<@~ if @{ :navCount } ~@>
-		<std-sidebar-toggle></std-sidebar-toggle>
+		<std-sidebar-toggle class="std-navbar__icon"></std-sidebar-toggle>
 	<@~ end ~@>
 <@ end @>
 
 <@~ snippet navbar ~@>
-	<div class="std-layout__navbar">
-		<@ navbarItems @>
+	<div class="std-layout__navbar std-navbar">
+		<@ navbarLinks @>
+		<@ navbarButtons @>
 		<@ search @>
-		<@ if @{ selectColorTheme | def ('switcher') } = 'switcher' @>
-			<std-theme-switcher></std-theme-switcher>
-		<@ end @>
+		<@ themeSwitcher @>
 		<@ sidebarToggle @>
 	</div>
 <@~ end ~@>

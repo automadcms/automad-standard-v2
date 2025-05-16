@@ -1,0 +1,73 @@
+/*
+ * Automad Standard v2
+ *
+ * Copyright 2025 Marc Anton Dahmen, MIT license
+ * https://marcdahmen.de
+ */
+
+.std-navbar {
+	display: flex;
+	justify-content: end;
+	align-items: var(--std-navbar-align-items, start);
+	margin-right: ~'calc(var(--std-navbar-gap) * -1 / 2)';
+
+	&__links {
+		flex-grow: 1;
+		display: flex;
+		column-gap: var(--std-navbar-gap);
+		padding: ~'calc((var(--std-navbar-button-height) - var(--std-navbar-link-height)) / 2)';
+
+		& > a {
+			display: flex;
+			line-height: var(--std-navbar-link-height);
+		}
+
+		@media (max-width: @std-breakpoint-s-max) {
+			display: none;
+		}
+
+		&--vertical {
+			flex-direction: column;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		padding: 0 ~'calc(var(--std-navbar-gap) / 2)';
+
+		& a {
+			display: flex;
+			align-items: center;
+			height: var(--std-navbar-button-height);
+			padding: 0 var(--std-navbar-button-padding-x);
+			margin: 0 ~'calc(var(--std-navbar-gap) / 2)';
+			border: var(--std-navbar-button-border);
+			border-radius: var(--std-navbar-button-radius);
+		}
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		height: var(--std-navbar-button-height);
+		padding: 0 ~'calc(var(--std-navbar-gap) / 2)';
+	}
+
+	&__tooltip {
+		position: absolute;
+		opacity: 0;
+		transition: opacity 0.2s;
+
+		:hover > & {
+			opacity: 1;
+		}
+
+		// padding: 0.11em 0.55em 0 0.55em;
+		// font-size: 0.8em;
+		// font-weight: 700;
+		// line-height: 1.35;
+		// border: 1px solid;
+		// border-radius: 2em;
+		// color: var(--std-fg-2);
+	}
+}
