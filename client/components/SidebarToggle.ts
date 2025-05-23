@@ -10,6 +10,7 @@ import { create } from '@/lib/utils';
 const cls = {
 	open: 'std-has-open-sidebar',
 	backdrop: 'std-sidebar-backdrop',
+	toggle: 'std-sidebar-toggle',
 };
 
 const toggleSidebar = () => {
@@ -22,6 +23,8 @@ class SidebarToggleComponent extends HTMLElement {
 	}
 
 	connectedCallback(): void {
+		this.classList.add(cls.toggle);
+
 		const backdrop = create(
 			'div',
 			[cls.backdrop],
