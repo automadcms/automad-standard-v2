@@ -14,6 +14,9 @@ https://marcdahmen.de
 			excludeCurrent: true
 		} @>
 		<nav class="std-layout__breadcrumbs">
+			<@ with '/' @>
+				<a href="@{ url }">@{ title }</a>
+			<@ end @>
 			<@ foreach in pagelist @>
 				<a href="@{ url }">@{ title }</a>
 			<@ end @>

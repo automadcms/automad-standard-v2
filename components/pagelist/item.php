@@ -9,7 +9,7 @@ https://marcdahmen.de
 
 <a href="@{ url }" class="std-pagelist__item" style="--index: @{ :i }">
 	<@ ../../lib/setPagelistImage.php @>
-	<@ with @{ :pagelistImage } { width: 450 } @>
+	<@ with @{ :pagelistImage } { width: 600 } @>
 		<@ image.php @>
 	<@ end @>
 	<div class="std-pagelist__item-body">

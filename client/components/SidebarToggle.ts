@@ -8,14 +8,14 @@
 import { create } from '@/lib/utils';
 import iconMenu from '@/lib/icons/menu.svg';
 
-const css = {
+const cls = {
 	open: 'std-has-open-sidebar',
 	backdrop: 'std-sidebar-backdrop',
 	toggle: 'std-sidebar-toggle',
 };
 
 const toggleSidebar = () => {
-	document.documentElement.classList.toggle(css.open);
+	document.documentElement.classList.toggle(cls.open);
 };
 
 class SidebarToggleComponent extends HTMLElement {
@@ -25,11 +25,11 @@ class SidebarToggleComponent extends HTMLElement {
 
 	connectedCallback(): void {
 		this.innerHTML = iconMenu;
-		this.classList.add(css.toggle);
+		this.classList.add(cls.toggle);
 
 		const backdrop = create(
 			'div',
-			[css.backdrop],
+			[cls.backdrop],
 			{},
 			document.body,
 			null,
