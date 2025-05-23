@@ -14,6 +14,7 @@ import './styles/index.less';
 import './components/ImgLoader';
 import './components/Masonry';
 import './components/MetaKey';
+import './components/Navbar';
 import './components/Search';
 import './components/SidebarToggle';
 import './components/ThemeSwitcher';

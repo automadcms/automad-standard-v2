@@ -59,6 +59,4 @@ https://marcdahmen.de
 	<@~ end @>
 <@ end ~@>
 
-<div class="std-layout__brand">
-	<@ brand @>	
-</div>
+<@ brand @>	

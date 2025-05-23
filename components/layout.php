@@ -15,7 +15,6 @@ https://marcdahmen.de
 		and main, toc, prevNext, related and footer 
 		must be in that order to make optional spacing work!
 		#>
-		<@ brand.php @>
 		<@ navbar.php @>
 		<@ hero.php @>
 		<@ breadcrumbs.php @>

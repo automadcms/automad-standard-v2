@@ -10,10 +10,15 @@ https://marcdahmen.de
 <@~ snippet navbarLinks @>
 	<@ ../lib/navbarLinksPagelist.php @>
 	<@ if @{ :pagelistCount } @>
-		<nav class="std-navbar__links<@ if @{ checkboxShowNavbarLinksInVerticalMenu } @> std-navbar__links--vertical<@ end @>">
-			<@ foreach in pagelist ~@>
-				<a href="@{ url }" class="<@ if @{ :current } @>active<@ end @>">@{ title }</a>
-			<@~ end ~@>
+		<nav class="std-navbar__links">
+			<span class="std-navbar__links-reveal">
+				<@ ../lib/icons/revealNavbarLinks.php @>
+			</span>
+			<span class="std-navbar__links-items">
+				<@ foreach in pagelist ~@>
+					<a href="@{ url }" class="<@ if @{ :current } @>active<@ end @>">@{ title }</a>
+				<@~ end ~@>
+			</span>
 		</nav>
 	<@ end @>
 <@ end @>
@@ -64,13 +69,22 @@ https://marcdahmen.de
 <@ end @>
 
 <@~ snippet navbar ~@>
-	<div class="std-layout__navbar std-navbar">
-		<@ navbarLinks @>
-		<@ navbarButtons @>
-		<@ search @>
-		<@ themeSwitcher @>
-		<@ sidebarToggle @>
-	</div>
+	<@ set { 
+		:navbarSticky: @{ selectNavbarSticky | def('scroll') },
+		:navbarLayout: @{ selectNavbarLayout | def('horizontal') },
+	} ~@>
+	<std-navbar class="std-layout__navbar std-navbar std-navbar--@{ :navbarLayout }" sticky="@{ :navbarSticky }">
+		<div class="std-navbar-brand">
+			<@ brand.php @>
+		</div>
+		<div class="std-navbar-nav">
+			<@ navbarLinks @>
+			<@ navbarButtons @>
+			<@ search @>
+			<@ themeSwitcher @>
+			<@ sidebarToggle @>
+		</div>
+	</std-navbar>
 <@~ end ~@>
 
 <@ navbar @>

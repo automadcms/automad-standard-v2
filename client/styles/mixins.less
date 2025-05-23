@@ -9,7 +9,7 @@
 	position: fixed;
 	inset: 0;
 	background-color: var(--std-backdrop-bg);
-	backdrop-filter: blur(30px);
+	backdrop-filter: blur(50px);
 	pointer-events: none;
 	opacity: 0;
 	transition: opacity 0.2s;
@@ -43,6 +43,10 @@
 	max-height: 100vh;
 	overflow: scroll;
 	scrollbar-width: none;
+
+	html.std-has-sticky-navbar & {
+		top: ~'calc(2 * @{std-body-padding} + var(--std-navbar-button-height))';
+	}
 
 	&::-webkit-scrollbar {
 		display: none;

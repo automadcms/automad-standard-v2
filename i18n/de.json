@@ -5,6 +5,9 @@
     "imagePagelist": "Vorschaubild in Pagelists",
     "numberLogoWidthDesktop": "Logo-Breite auf Desktop-Bildschirmen",
     "numberLogoWidthMobile": "Logo-Breite auf kleinen Bildschirmen",
+    "selectNavbarLayout": "Navigationsleisten-Layout",
+    "selectNavbarSticky": "Navigationsleiste-Verhalten",
+    "checkboxHideNavbarLinksInMobileSidebar": "Navigationsleiste in mobiler Seitenleiste ausblenden",
     "checkboxCollapseSidebarNavigation": "Elternseiten in Seitenleiste zusammenfassen",
     "checkboxCompactLayout": "Kompaktes Layout (kleinere Spalten zwischen Elementen)",
     "selectMainPagelistSubset": "Haupt-Pagelist: Art von Pagelist-Inhalt",
@@ -44,8 +47,6 @@
     "checkboxDisableAnimations": "Animationen deaktivieren",
     "selectShowPageInNavbar": "Seite in der Navigationsleiste anzeigen",
     "selectShowPageInFooter": "Seite im Footer-Bereich anzeigen",
-    "checkboxHideNavbarLinksInMobileSidebar": "Navigationsleiste in mobiler Seitenleiste ausblenden",
-    "checkboxShowNavbarLinksInVerticalMenu": "Navigationsleistenelemnte vertikal anordnen",
     "labelBackToTop": "Beschriftung für \"Zurück zum Seitenanfang\""
   },
   "options": {
@@ -53,6 +54,17 @@
       "switcher": "Theme-Switcher anzeigen, auswählbar durch Besucher",
       "light": "Hell",
       "dark": "Dunkel"
+    },
+    "selectNavbarLayout": {
+      "horizontal": "Horizontal am Raster ausgerichtete Links",
+      "full": "Horizontal ausgerichtete Links (volle Breite)",
+      "right": "Horizontal rechts ausgerichtete Links",
+      "vertical": "Vertikal angeordnete Links"
+    },
+    "selectNavbarSticky": {
+      "scroll": "Navbar nur bein Scrollen nach oben anzeigen",
+      "always": "Navbar immer am oberen Rand sichtbar machen",
+      "disabled": "Navbar nicht fixieren"
     },
     "selectMainPagelistSubset": {
       "children": "Nur direkte Unterseiten from aktuellen Kontext anzeigen",

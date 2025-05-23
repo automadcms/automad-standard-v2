@@ -6,29 +6,108 @@
  */
 
 .std-navbar {
-	display: flex;
-	justify-content: end;
-	align-items: var(--std-navbar-align-items, start);
-	margin-right: ~'calc(var(--std-navbar-gap) * -1 / 2)';
+	position: relative;
+	display: grid;
+	grid-template-columns: subgrid;
+	margin: -@std-body-padding;
+	padding: @std-body-padding;
+	z-index: 100;
+	transition: opacity 0.2s;
+	background-color: var(--std-backdrop-bg);
+	backdrop-filter: blur(50px);
+
+	&-brand {
+		grid-column: brand-start / brand-end;
+
+		position: relative;
+		z-index: 1;
+	}
+
+	&-nav {
+		grid-column: nav-start / nav-end;
+
+		display: flex;
+		justify-content: end;
+		align-items: start;
+		margin-right: ~'calc(var(--std-navbar-gap) * -1 / 2)';
+	}
+
+	&--right,
+	&--full {
+		display: flex;
+		column-gap: var(--std-navbar-gap);
+	}
+
+	&--full &-nav {
+		flex-grow: 1;
+	}
+
+	&--right {
+		justify-content: space-between;
+	}
+
+	&--sticky {
+		position: sticky;
+		top: 0;
+	}
+
+	&--hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
 
 	&__links {
 		flex-grow: 1;
-		display: flex;
-		column-gap: var(--std-navbar-gap);
-		padding: ~'calc((var(--std-navbar-button-height) - var(--std-navbar-link-height)) / 2)';
 
-		& > a {
+		position: relative;
+		display: flex;
+		padding: ~'calc((var(--std-navbar-button-height) - var(--std-navbar-link-height)) / 2)'
+			0;
+
+		&-reveal {
+			display: none;
+			align-items: center;
+			min-height: var(--std-navbar-link-height);
+		}
+
+		&-items {
 			display: flex;
-			line-height: var(--std-navbar-link-height);
+			column-gap: var(--std-navbar-gap);
+
+			& > a {
+				display: flex;
+				line-height: var(--std-navbar-link-height);
+			}
 		}
 
 		@media (max-width: @std-breakpoint-s-max) {
 			display: none;
 		}
+	}
 
-		&--vertical {
-			flex-direction: column;
-		}
+	&--vertical &__links-items {
+		flex-direction: column;
+	}
+
+	&--vertical&--scrolled &__links-reveal {
+		display: flex;
+	}
+
+	&--vertical&--scrolled &__links-items {
+		position: absolute;
+		padding: 1rem;
+		opacity: 0;
+		top: 100%;
+		pointer-events: none;
+		transition: opacity 0.2s;
+		background-color: var(--std-backdrop-bg);
+		backdrop-filter: blur(50px);
+		border-radius: 1rem;
+	}
+
+	&--scrolled&--vertical:hover &__links-items {
+		opacity: 1;
+		pointer-events: all;
 	}
 
 	&__buttons {

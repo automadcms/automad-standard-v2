@@ -214,16 +214,8 @@ body {
 		margin-left: var(--block-margin-left);
 	}
 
-	&__brand {
-		position: relative;
-		z-index: 1;
-		min-width: 150px;
-		grid-column: brand-start / brand-end;
-		grid-row: navbar-top / navbar-bottom;
-	}
-
 	&__navbar {
-		grid-column: nav-start / nav-end;
+		grid-column: brand-start / nav-end;
 		grid-row: navbar-top / navbar-bottom;
 	}
 
@@ -248,7 +240,7 @@ body {
 
 	&__sidebar {
 		grid-column: sidebar-start / sidebar-end;
-		grid-row: title-top / main-bottom;
+		grid-row: title-top / footer-bottom;
 	}
 
 	&__title {

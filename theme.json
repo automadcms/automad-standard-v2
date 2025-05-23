@@ -32,6 +32,9 @@
     "imageLogo",
     "numberLogoWidthDesktop",
     "numberLogoWidthMobile",
+    "selectNavbarLayout",
+    "selectNavbarSticky",
+    "checkboxHideNavbarLinksInMobileSidebar",
     "checkboxHideTitle",
     "checkboxHideTags",
     "checkboxDisableSearch",
@@ -58,8 +61,6 @@
     "selectRelatedPagelistSort",
     "selectRelatedPagelistDateFormat",
     "numberRelatedPagelistMaxNumberOfPages",
-    "checkboxHideNavbarLinksInMobileSidebar",
-    "checkboxShowNavbarLinksInVerticalMenu",
     "labelBackToTop",
     "locale",
     "imagePagelist",
@@ -83,6 +84,9 @@
     "numberLogoWidthDesktop": "Logo image width on desktops",
     "numberLogoWidthMobile": "Logo image width on small devices",
     "checkboxCollapseSidebarNavigation": "Collapse parent pages in sidebar navigation",
+    "selectNavbarLayout": "Navbar layout",
+    "selectNavbarSticky": "Navbar stickyness",
+    "checkboxHideNavbarLinksInMobileSidebar": "Hide navbar links in mobile sidebar",
     "checkboxCompactLayout": "Compact layout (small gaps between elements)",
     "selectMainPagelistSubset": "Main pagelist: Type of pagelist subset",
     "urlMainPagelistContext": "Main pagelist: The URL that is used as context for the subset",
@@ -118,6 +122,17 @@
       "switcher": "Show theme switcher, visitor can select theme",
       "light": "Light theme",
       "dark": "Dark theme"
+    },
+    "selectNavbarLayout": {
+      "horizontal": "Horizontally aligned links with grid",
+      "full": "Horizontally aligned stretched over the full width",
+      "right": "Horizontally and right aligned links",
+      "vertical": "Vertically aligned links"
+    },
+    "selectNavbarSticky": {
+      "scroll": "Reveal navbar only when scrolling up",
+      "always": "Keep navbar always visible at the top",
+      "disabled": "Do not make navbar stick to the top"
     },
     "selectMainPagelistSubset": {
       "children": "Show only children of the selected context",
