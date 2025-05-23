@@ -16,11 +16,18 @@
 	opacity: 1;
 	transition: opacity 0.2s;
 
+	@media (max-width: @std-breakpoint-s-max) {
+		display: flex;
+		justify-content: space-between;
+		column-gap: var(--std-navbar-gap);
+	}
+
 	&-brand {
 		grid-column: brand-start / brand-end;
 
 		position: relative;
 		z-index: 1;
+		min-width: 150px;
 	}
 
 	&-nav {
