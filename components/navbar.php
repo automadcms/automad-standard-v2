@@ -64,7 +64,9 @@ https://marcdahmen.de
 		:navCount: @{ :navCount | + @{ :pagelistCount } }
 	} @>
 	<@~ if @{ :navCount } ~@>
-		<std-sidebar-toggle class="std-navbar__icon"></std-sidebar-toggle>
+		<std-sidebar-toggle class="std-navbar__icon">
+			<@ ../lib/icons/openSidebar.php @>
+		</std-sidebar-toggle>
 	<@~ end ~@>
 <@ end @>
 

@@ -5,25 +5,39 @@
  * https://marcdahmen.de
  */
 
+.background-blur() {
+	background-color: var(--std-backdrop-bg);
+	backdrop-filter: blur(50px);
+}
+
 .backdrop() {
 	position: fixed;
 	inset: 0;
-	background-color: var(--std-backdrop-bg);
-	backdrop-filter: blur(50px);
 	pointer-events: none;
 	opacity: 0;
 	transition: opacity 0.2s;
+	.background-blur;
+}
+
+.popover() {
+	padding: var(--std-popover-padding-y) var(--std-popover-padding-x);
+	background-color: var(--std-bg-1);
+	border-radius: var(--std-popover-radius);
+	box-shadow: 0 1rem 3rem -1rem rgba(0, 0, 0, 0.25);
 }
 
 .sidebar-offcanvas() {
 	position: fixed;
 	z-index: 9999;
-	inset: 0 auto 0 0;
+	inset: @std-body-padding auto @std-body-padding @std-body-padding;
 	width: 100%;
-	max-width: @std-aside-width;
+	max-width: @std-offcanvas-width;
 	background-color: var(--std-bg-1);
-	transform: translateX(-@std-aside-width);
-	transition: transform 0.2s;
+	transform: translateX(
+		~'calc(-1 * @{std-offcanvas-width} - @{std-body-padding})'
+	);
+	transition: transform 0.3s;
+	.popover;
 
 	.std-has-open-sidebar & {
 		transform: translateX(0);

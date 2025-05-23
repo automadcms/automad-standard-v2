@@ -74,6 +74,10 @@ https://marcdahmen.de
 <@~ snippet sidebar ~@>
 	<aside class="std-layout__sidebar">
 		<nav class="std-sidebar">
+			<std-sidebar-toggle class="std-sidebar__close">
+				<@ ../lib/icons/close.php @>
+			</std-sidebar-toggle>
+
 			<# Navbar links #>	
 			<@ if not @{ checkboxHideNavbarLinksInMobileSidebar} @>
 				<ul class="std-sidebar__navbar-links">

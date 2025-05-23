@@ -38,6 +38,14 @@ html.std-has-open-sidebar {
 		.sidebar-offcanvas();
 	}
 
+	&__close {
+		display: none;
+	}
+
+	.std-has-open-sidebar &__close {
+		display: flex;
+	}
+
 	&__navbar-links {
 		@media (min-width: @std-breakpoint-m) {
 			display: none;

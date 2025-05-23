@@ -12,9 +12,9 @@
 	margin: -@std-body-padding;
 	padding: @std-body-padding;
 	z-index: 100;
+	opacity: 1;
 	transition: opacity 0.2s;
-	background-color: var(--std-backdrop-bg);
-	backdrop-filter: blur(50px);
+	.background-blur;
 
 	&-brand {
 		grid-column: brand-start / brand-end;
@@ -95,18 +95,20 @@
 
 	&--vertical&--scrolled &__links-items {
 		position: absolute;
-		padding: 1rem;
 		opacity: 0;
+		transform: translateY(-0.5rem);
 		top: 100%;
+		left: ~'calc(-1 * var(--std-popover-padding-x))';
 		pointer-events: none;
-		transition: opacity 0.2s;
-		background-color: var(--std-backdrop-bg);
-		backdrop-filter: blur(50px);
-		border-radius: 1rem;
+		transition:
+			opacity 0.2s,
+			transform 0.2s;
+		.popover;
 	}
 
 	&--scrolled&--vertical:hover &__links-items {
 		opacity: 1;
+		transform: translateY(0);
 		pointer-events: all;
 	}
 

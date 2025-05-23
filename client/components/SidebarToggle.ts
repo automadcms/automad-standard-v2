@@ -6,12 +6,10 @@
  */
 
 import { create } from '@/lib/utils';
-import iconMenu from '@/lib/icons/menu.svg';
 
 const cls = {
 	open: 'std-has-open-sidebar',
 	backdrop: 'std-sidebar-backdrop',
-	toggle: 'std-sidebar-toggle',
 };
 
 const toggleSidebar = () => {
@@ -24,9 +22,6 @@ class SidebarToggleComponent extends HTMLElement {
 	}
 
 	connectedCallback(): void {
-		this.innerHTML = iconMenu;
-		this.classList.add(cls.toggle);
-
 		const backdrop = create(
 			'div',
 			[cls.backdrop],
