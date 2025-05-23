@@ -9,7 +9,7 @@ import { debounce } from '@/lib/utils';
 
 type NavbarType = 'scroll' | 'always' | 'disabled';
 
-const minScroll = 200;
+const minScroll = 100;
 const debounceTime = 10;
 
 const cls = {

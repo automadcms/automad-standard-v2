@@ -12,9 +12,9 @@
 	margin: -@std-body-padding;
 	padding: @std-body-padding;
 	z-index: 100;
+	background-color: var(--std-bg-1);
 	opacity: 1;
 	transition: opacity 0.2s;
-	.background-blur;
 
 	&-brand {
 		grid-column: brand-start / brand-end;
@@ -36,6 +36,12 @@
 	&--full {
 		display: flex;
 		column-gap: var(--std-navbar-gap);
+	}
+
+	&--right &__links,
+	&--full &__links {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
 	}
 
 	&--full &-nav {
@@ -97,6 +103,7 @@
 		position: absolute;
 		opacity: 0;
 		transform: translateY(-0.5rem);
+		min-width: 14rem;
 		top: 100%;
 		left: ~'calc(-1 * var(--std-popover-padding-x))';
 		pointer-events: none;
