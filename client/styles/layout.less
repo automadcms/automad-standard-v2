@@ -181,7 +181,11 @@ body {
 
 			& .std-layout__title {
 				position: sticky;
-				top: 1rem;
+				top: @std-body-padding;
+
+				html.std-has-sticky-navbar & {
+					top: ~'calc(2 * @{std-body-padding} + var(--std-button-height))';
+				}
 			}
 
 			/* prettier-ignore */
