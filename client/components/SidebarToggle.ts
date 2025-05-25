@@ -25,14 +25,9 @@ class SidebarToggleComponent extends HTMLElement {
 	connectedCallback(): void {
 		this.classList.add(cls.toggle);
 
-		const backdrop = create(
-			'div',
-			[cls.backdrop],
-			{},
-			document.body,
-			null,
-			true
-		);
+		const backdrop =
+			document.querySelector(`.${cls.backdrop}`) ??
+			create('div', [cls.backdrop], {}, document.body, null, true);
 
 		this.addEventListener('click', toggleSidebar);
 		backdrop.addEventListener('click', toggleSidebar);

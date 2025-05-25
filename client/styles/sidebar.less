@@ -10,6 +10,9 @@ html.std-has-open-sidebar {
 }
 
 .std-sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 	.sticky();
 
 	&-backdrop {
@@ -54,6 +57,7 @@ html.std-has-open-sidebar {
 
 	&__breadcrumbs {
 		padding: 0;
+		margin: 0;
 		margin-left: -0.125em;
 		list-style: none;
 
@@ -66,6 +70,7 @@ html.std-has-open-sidebar {
 
 	&__tree {
 		padding: 0;
+		margin: 0;
 		list-style: none;
 		color: var(--std-fg-2);
 
