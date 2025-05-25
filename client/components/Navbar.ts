@@ -37,6 +37,11 @@ class NavbarComponent extends HTMLElement {
 			return;
 		}
 
+		document.documentElement.style.setProperty(
+			'--std-navbar-height',
+			`${Math.round(this.getBoundingClientRect().height)}px`
+		);
+
 		window.addEventListener(
 			'scroll',
 			debounce(() => {
@@ -63,7 +68,14 @@ class NavbarComponent extends HTMLElement {
 					return;
 				}
 
-				this.classList.toggle(cls.sticky, up && scrollY > minScroll);
+				if (up && scrollY > minScroll) {
+					this.classList.add(cls.sticky);
+				} else {
+					setTimeout(() => {
+						this.classList.remove(cls.sticky);
+					}, 200);
+				}
+
 				this.classList.toggle(cls.hidden, !up && scrollY > minScroll);
 
 				document.documentElement.classList.toggle(
