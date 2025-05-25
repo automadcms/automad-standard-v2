@@ -151,6 +151,12 @@
 		height: var(--std-button-height);
 		padding: 0 ~'calc(var(--std-navbar-gap) / 2)';
 		cursor: pointer;
+		color: inherit;
+		transition: color 0.2s;
+
+		&:hover {
+			color: var(--std-fg-2);
+		}
 	}
 
 	&__tooltip {

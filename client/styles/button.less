@@ -10,6 +10,18 @@
 	align-items: center;
 	height: var(--std-button-height);
 	padding: 0 var(--std-button-padding-x);
+	color: var(--std-button-color);
+	background-color: var(--std-button-bg);
 	border: var(--std-button-border);
 	border-radius: var(--std-button-radius);
+	transition:
+		color 0.2s,
+		background-color 0.2s,
+		border 0.2s;
+
+	&:hover {
+		color: var(--std-button-hover-color);
+		background-color: var(--std-button-hover-bg);
+		border: var(--std-button-hover-border);
+	}
 }
