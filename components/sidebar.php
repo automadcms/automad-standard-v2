@@ -8,12 +8,12 @@ https://marcdahmen.de
 #>
 
 <@~ snippet isActive @>
-	<@~ if @{ :currentPath } @>std-active-path<@ end @>
+	<@~ if @{ :currentPath } @> std-active-path<@ end @>
 	<@~ if @{ :current } @> std-active<@ end @>
 <@~ end @>
 
 <@~ snippet sidebarLink ~@>
-	<a href="@{ url }">@{title}</a>
+	<a href="@{ url }" class="std-link">@{title}</a>
 <@~ end @>
 
 <@~ snippet treeNode ~@>
@@ -48,8 +48,10 @@ https://marcdahmen.de
 			<ul class="std-sidebar__breadcrumbs">
 				<@ foreach in pagelist @>
 					<li class="<@ isActive @>">
-						<@ ../lib/icons/arrowLeft.php @>	
-						<a href="@{ url }">@{title}</a>
+						<a href="@{ url }" class="std-link">
+							<@ ../lib/icons/arrowLeft.php @>	
+							@{title}
+						</a>
 					</li>	
 				<@ end @>
 			</ul>
@@ -74,18 +76,29 @@ https://marcdahmen.de
 <@~ snippet sidebar ~@>
 	<aside class="std-layout__sidebar">
 		<nav class="std-sidebar">
-			<std-sidebar-toggle class="std-sidebar__close">
+			<std-sidebar-toggle class="std-sidebar__close std-link">
 				<@ ../lib/icons/close.php @>
 			</std-sidebar-toggle>
 
-			<# Navbar links #>	
+			<# Navbar items #>	
 			<@ if not @{ checkboxHideNavbarLinksInMobileSidebar} @>
-				<ul class="std-sidebar__navbar-links">
-					<@ ../lib/navbarLinksPagelist.php @>	
-					<@ foreach in pagelist @>
-						<li class="<@ isActive @>"><@ sidebarLink @></li>	
-					<@ end @>
-				</ul>
+				<@ ../lib/navbarActionsPagelist.php @>	
+				<@ if @{ :pagelistCount } @>
+					<div class="std-sidebar__navbar-buttons">
+						<@ foreach in pagelist @>
+							<a href="@{ url }" class="std-button">@{ title }</a>
+						<@ end @>
+					</div>
+				<@ end @>
+
+				<@ ../lib/navbarLinksPagelist.php @>	
+				<@ if @{ :pagelistCount } @>
+					<ul class="std-sidebar__navbar-links">
+						<@ foreach in pagelist @>
+							<li class="<@ isActive @>"><@ sidebarLink @></li>	
+						<@ end @>
+					</ul>
+				<@ end @>
 			<@ end @>
 
 			<# Tree #>

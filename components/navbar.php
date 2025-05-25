@@ -16,7 +16,9 @@ https://marcdahmen.de
 			</span>
 			<span class="std-navbar__links-items">
 				<@ foreach in pagelist ~@>
-					<a href="@{ url }" class="<@ if @{ :current } @>active<@ end @>">@{ title }</a>
+					<a href="@{ url }" class="std-link <@ if @{ :current } @>active<@ end @>">
+						@{ title }
+					</a>
 				<@~ end ~@>
 			</span>
 		</nav>
@@ -28,7 +30,7 @@ https://marcdahmen.de
 	<@ if @{ :pagelistCount } @>
 		<nav class="std-navbar__buttons">
 			<@ foreach in pagelist ~@>
-				<a href="@{ url }">@{ title }</a>
+				<a href="@{ url }" class="std-button">@{ title }</a>
 			<@~ end ~@>
 		</nav>
 	<@ end @>

@@ -1,0 +1,19 @@
+/*
+ * Automad Standard v2
+ *
+ * Copyright 2025 Marc Anton Dahmen, MIT license
+ * https://marcdahmen.de
+ */
+
+.std-link {
+	display: flex;
+	align-items: center;
+	gap: 0.4em;
+	color: var(--color, var(--std-fg-1));
+	transition: color 0.2s;
+	cursor: pointer;
+
+	&:hover {
+		color: var(--hover, var(--std-fg-2));
+	}
+}

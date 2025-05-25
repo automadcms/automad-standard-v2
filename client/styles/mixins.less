@@ -29,12 +29,12 @@
 .sidebar-offcanvas() {
 	position: fixed;
 	z-index: 9999;
-	inset: @std-body-padding auto @std-body-padding @std-body-padding;
+	inset: @std-body-padding @std-body-padding @std-body-padding auto;
 	width: 100%;
 	max-width: @std-offcanvas-width;
 	background-color: var(--std-bg-1);
 	transform: translateX(
-		~'calc(-1 * @{std-offcanvas-width} - @{std-body-padding})'
+		~'calc(@{std-offcanvas-width} + @{std-body-padding})'
 	);
 	transition: transform 0.3s;
 	.popover;
@@ -59,7 +59,7 @@
 	scrollbar-width: none;
 
 	html.std-has-sticky-navbar & {
-		top: ~'calc(2 * @{std-body-padding} + var(--std-navbar-button-height))';
+		top: ~'calc(2 * @{std-body-padding} + var(--std-button-height))';
 	}
 
 	&::-webkit-scrollbar {
