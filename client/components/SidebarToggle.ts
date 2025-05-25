@@ -13,6 +13,8 @@ const cls = {
 	toggle: 'std-sidebar-toggle',
 };
 
+const tag = 'std-sidebar-toggle';
+
 const toggleSidebar = () => {
 	document.documentElement.classList.toggle(cls.open);
 };
@@ -31,7 +33,21 @@ class SidebarToggleComponent extends HTMLElement {
 
 		this.addEventListener('click', toggleSidebar);
 		backdrop.addEventListener('click', toggleSidebar);
+
+		if (document.querySelectorAll(tag).length == 1) {
+			document.body.addEventListener(
+				'keydown',
+				(event: KeyboardEvent) => {
+					if (event.code == 'Escape') {
+						document.documentElement.classList.toggle(
+							cls.open,
+							false
+						);
+					}
+				}
+			);
+		}
 	}
 }
 
-customElements.define('std-sidebar-toggle', SidebarToggleComponent);
+customElements.define(tag, SidebarToggleComponent);
