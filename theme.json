@@ -34,6 +34,7 @@
     "numberLogoWidthMobile",
     "selectNavbarLayout",
     "selectNavbarSticky",
+    "selectSidebarToggleVisiblity",
     "checkboxHideNavbarLinksInMobileSidebar",
     "checkboxHideTitle",
     "checkboxHideTags",
@@ -86,6 +87,7 @@
     "checkboxCollapseSidebarNavigation": "Collapse parent pages in sidebar navigation",
     "selectNavbarLayout": "Navbar layout",
     "selectNavbarSticky": "Navbar stickyness",
+    "selectSidebarToggleVisiblity": "Sidebar toggle icon visibility in navbar",
     "checkboxHideNavbarLinksInMobileSidebar": "Hide navbar links in mobile sidebar",
     "checkboxCompactLayout": "Compact layout (small gaps between elements)",
     "selectMainPagelistSubset": "Main pagelist: Type of pagelist subset",
@@ -133,6 +135,11 @@
       "scroll": "Reveal navbar only when scrolling up",
       "always": "Keep navbar always visible at the top",
       "disabled": "Do not make navbar stick to the top"
+    },
+    "selectSidebarToggleVisiblity": {
+      "automatic": "Automatic",
+      "mobile": "Only on small devices",
+      "hidden": "Never show toggle"
     },
     "selectMainPagelistSubset": {
       "children": "Show only children of the selected context",

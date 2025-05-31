@@ -7,6 +7,7 @@
     "numberLogoWidthMobile": "Logo-Breite auf kleinen Bildschirmen",
     "selectNavbarLayout": "Navigationsleisten-Layout",
     "selectNavbarSticky": "Navigationsleiste-Verhalten",
+    "selectSidebarToggleVisiblity": "Sichtbarkeit von Seitenleisten Toggle in der Navigationsleiste",
     "checkboxHideNavbarLinksInMobileSidebar": "Navigationsleiste in mobiler Seitenleiste ausblenden",
     "checkboxCollapseSidebarNavigation": "Elternseiten in Seitenleiste zusammenfassen",
     "checkboxCompactLayout": "Kompaktes Layout (kleinere Spalten zwischen Elementen)",
@@ -65,6 +66,11 @@
       "scroll": "Navbar nur bein Scrollen nach oben anzeigen",
       "always": "Navbar immer am oberen Rand sichtbar machen",
       "disabled": "Navbar nicht fixieren"
+    },
+    "selectSidebarToggleVisiblity": {
+      "automatic": "Automatisch",
+      "mobile": "Nur auf kleinen Geräten",
+      "hidden": "Niemals anzeigen"
     },
     "selectMainPagelistSubset": {
       "children": "Nur direkte Unterseiten from aktuellen Kontext anzeigen",

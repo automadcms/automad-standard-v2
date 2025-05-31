@@ -38,6 +38,18 @@ html.std-has-open-sidebar {
 		}
 	}
 
+	&-toggle {
+		&--mobile {
+			@media (min-width: @std-breakpoint-m) {
+				display: none;
+			}
+		}
+
+		&--hidden {
+			display: none;
+		}
+	}
+
 	.std-layout:not([class*='-sidebar']) & {
 		.sidebar-offcanvas();
 	}
