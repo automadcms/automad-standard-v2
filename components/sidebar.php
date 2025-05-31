@@ -13,7 +13,7 @@ https://marcdahmen.de
 <@~ end @>
 
 <@~ snippet sidebarLink ~@>
-	<a href="@{ url }" class="std-link">@{title}</a>
+	<a href="@{ url }" class="std-link">@{ title }</a>
 <@~ end @>
 
 <@~ snippet treeNode ~@>
@@ -50,20 +50,23 @@ https://marcdahmen.de
 					<li class="<@ isActive @>">
 						<a href="@{ url }" class="std-link">
 							<@ ../lib/icons/arrowLeft.php @>	
-							@{title}
+							@{ title }
 						</a>
 					</li>	
 				<@ end @>
 			</ul>
 		<@ end @>
-		<@ with @{ :parent } ~@>
+		<@ with @{ :parent | def ('/') } ~@>
 			<ul class="std-sidebar__tree">
+				<@ if not @{ hidden } and @{ url } = '/' @>
+					<li class="<@ isActive @>"><@ sidebarLink @></li>	
+				<@ end @>
 				<@~ tree ~@>
 			</ul>
 		<@~ end @>
 	<@ else @>
 		<@ with '/' ~@>
-		<ul class="std-sidebar__tree">
+			<ul class="std-sidebar__tree">
 				<@ if not @{ hidden } @>
 					<li class="<@ isActive @>"><@ sidebarLink @></li>	
 				<@ end @>
